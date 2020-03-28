@@ -55,9 +55,9 @@ STARTONE:
 			fmt.Printf("恭喜您用了%d次就猜对了\n",i)
 			break
 		}else if usernum < rand  {
-			fmt.Printf("猜大了,还有%d次机会\n",max-i)
-		}else if usernum > rand {
 			fmt.Printf("猜小了,还有%d次机会\n",max-i)
+		}else if usernum > rand {
+			fmt.Printf("猜大了,还有%d次机会\n",max-i)
 		}
 		//如果次数到达最大限制 那么开始判断用户是否继续
 		if i == max {
