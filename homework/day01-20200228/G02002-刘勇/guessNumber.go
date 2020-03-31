@@ -36,7 +36,7 @@ func main() {
 			// 	fmt.Println("太小了")
 			// }
 			if guess == num {
-				fmt.Println("真厉害,第", times, "就猜中了")
+				fmt.Println("真厉害,第", times, "次就猜中了")
 				break
 			} else if guess > num {
 				fmt.Println("太大了")
