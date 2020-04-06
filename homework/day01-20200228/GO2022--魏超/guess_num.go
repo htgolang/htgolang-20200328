@@ -1,3 +1,6 @@
+/*
+猜数字
+*/
 package main
 
 import (

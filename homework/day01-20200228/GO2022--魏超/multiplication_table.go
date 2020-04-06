@@ -1,7 +1,6 @@
 
 /*
 九九乘法表
-
 */
 package main
 
