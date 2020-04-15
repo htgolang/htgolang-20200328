@@ -12,18 +12,18 @@ func binarySea(inSlice []int,destInt int) int  {
 	}
 	//low和high用于判断跳出循环使用
 	low := 0
-	high := sliceLen
+	high := sliceLen-1
 	for i := sliceLen/2;;{
 		if inSlice[i] > destInt{
-			high = i
+			high = i -1
 			i = (i+low)/2
 		}else if inSlice[i] < destInt{
-			low = i
+			low = i +1
 			i = (i+high)/2
 		}else {
 			return i
 		}
-		if low == high{
+		if low >= high{
 			return -1
 		}
 	}
@@ -31,5 +31,5 @@ func binarySea(inSlice []int,destInt int) int  {
 
 func main() {
 	srcSlice  := []int{1,2,6,9,12,16,20}
-	fmt.Println(binarySea(srcSlice,5))
+	fmt.Println(binarySea(srcSlice,16))
 }
