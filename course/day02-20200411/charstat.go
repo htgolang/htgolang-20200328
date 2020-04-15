@@ -66,11 +66,14 @@ func main() {
 		if ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' {
 			stat[ch]++
 		}
+
 	}
 
 	for ch, cnt := range stat {
 		fmt.Printf("%c : %d\n", ch, cnt)
+
 	}
+	fmt.Println(stat)
 
 	// 过滤掉非英文字符（byte/rune）整数
 	// xxx a - z xxxx A-Z
