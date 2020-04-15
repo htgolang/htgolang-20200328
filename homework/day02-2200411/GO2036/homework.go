@@ -40,6 +40,37 @@ func SecondMaxNum(nums []int) int{
 
 
 
+func SecondMaxNum2(nums []int) int{
+	if len(nums) == 0 {
+		panic("xxxx")
+	}
+
+	if len(nums) == 1 {
+		return nums[0]
+	}
+
+	var max, secondmax int
+	if nums[0] > nums[1] {
+		max = nums[0]
+		secondmax = nums[1]
+	} else {
+		max = nums[1]
+		secondmax = nums[0]
+	}
+
+	for i := 2;i < len(nums);i++ {
+		if nums[i] > secondmax {
+			if nums[i] <= max {
+				secondmax = nums[i]
+			} else {
+				secondmax,max = max,nums[i]
+			}
+		}
+	}
+
+	return secondmax
+}
+
 
 
 func BubbleSort(nums []int) []int {
@@ -84,7 +115,10 @@ func main() {
 
 
     Secondmax := SecondMaxNum(nums)
-    fmt.Println(Secondmax)
+    fmt.Println("第二大的数是：",Secondmax)
+
+    Secondmax = SecondMaxNum2(nums)
+    fmt.Println("第二大的数是：",Secondmax)
 
     BubbleSort(nums)
 	fmt.Println(nums)
