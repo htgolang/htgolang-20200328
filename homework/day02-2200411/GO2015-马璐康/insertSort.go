@@ -3,18 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{10, 2, 6, 3, 9, 1, 34, 7, 4}
-	for j := 0; j < len(nums)-1; j++ {
-		fmt.Printf("第%d轮\n", j)
-		for i := 0; i < len(nums)-j-1; i++ {
-			if nums[i] > nums[i+1] {
-				nums[i], nums[i+1] = nums[i+1], nums[i]
-			}
 
-			fmt.Println(nums)
+	arr := []int{36, 75, 6, 9, 36, 54, 76, 909, 102, 28}
+
+	for j := 1; j < len(arr); j++ {
+		key := arr[j]
+		i := j - 1
+
+		for i >= 0 && arr[i] > key {
+			arr[i+1] = arr[i]
+			i--
 		}
+		arr[i+1] = key
 
 	}
-	fmt.Println("最终结果：", nums)
-
+	fmt.Println("排序后：", arr)
 }
