@@ -18,7 +18,7 @@ var slice = []int{2, 1, 5, 4, 5}
 var newSlice  []int
 var myMap = make(map[int]int)
 
-//当不去重时的情况,冒泡算法排序，然后取len(slice)-1索引位置的值。同时得考虑最大值可能并列
+//冒泡算法排序，同时返回不去重时，第二大的数字
 func bubbleAlgorithmV1(slice []int) int {
 	for j := 0; j < len(slice); j++ {
 		for k := 0; k < len(slice)-1-j; k++ {
@@ -29,10 +29,10 @@ func bubbleAlgorithmV1(slice []int) int {
 			}
 		}
 	}
-	return slice[len(slice)-1]
+	return slice[len(slice)-2]
 }
 
-//当最大值算并列（存在并列）时，对sliec切片去重并排序后再取第二个最大值
+//获取去重后的第二大的值。先去重再排序，再取倒数第二个值
 func secMaxNum(slice []int) int {
 	//去重
 	for v, k := range slice {
@@ -41,9 +41,8 @@ func secMaxNum(slice []int) int {
 	for k := range myMap {
 		newSlice=append(newSlice,k)
 	}
-	//排序
-	bubbleAlgorithmV1(newSlice)
-	return newSlice[len(newSlice)-2]
+	//排序并获取第二大的值
+	return bubbleAlgorithmV1(newSlice)
 }
 
 func main() {
