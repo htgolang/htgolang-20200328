@@ -23,8 +23,8 @@ func main() {
 	// fmt.Println(a, b)
 	heigh := []int{168, 180, 166, 170, 169}
 
-	for j := 0; j < len(heigh) - 1; j++ {
-		for i := 0; i < len(heigh) - 1; i++ {
+	for j := 0; j < len(heigh)-1; j++ {
+		for i := 0; i < len(heigh)-1; i++ {
 			if heigh[i] > heigh[i+1] {
 				heigh[i], heigh[i+1] = heigh[i+1], heigh[i]
 
@@ -32,7 +32,6 @@ func main() {
 			fmt.Println(i, heigh)
 		}
 	}
-
 
 	fmt.Println(heigh)
 

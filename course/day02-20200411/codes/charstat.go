@@ -91,4 +91,10 @@ func main() {
 	// 	stat[ch] = cnt + 1
 	// }
 
+	es := [][2]int{}
+
+	{
+	"char", "count"
+	}
+
 }
