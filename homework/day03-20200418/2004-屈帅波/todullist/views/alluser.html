@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+<a href="/operation/">返回主菜单</a>
+<p><a href="/user/">返回上一级</a></p>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>名字</th>
+        <th>操   作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .users}}
+        <tr>
+            <td>{{ .Id }}</td>
+            <td>{{ .Name }}</td>
+            <td>
+                <a href="/user/change?id={{.Id}}">修改</a>
+                <a href="/user/del?id={{.Id}}" >删除</a>
+            </td>
+        </tr>
+    {{else}}
+        <td colspan="7">无数据</td>
+    {{end}}
+    </tbody>
+</table>
+</body>
+</html>

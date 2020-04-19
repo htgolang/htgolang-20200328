@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户查询</title>
+</head>
+<body>
+<a href="/operation/">返回主菜单</a>
+<a href="/user/">返回上一级</a>
+<!--
+这里显示的是浏览器的信息
+-->
+<form action="/user/seluser" method="POST">
+    <h1>用户查询</h1>
+    <div>
+        <label for="Name">用户名:</label>
+        <input id="username" name="Name" type="text" >
+    </div>
+    <div>
+        <input type="submit" value="查询">
+    </div>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>名字</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ .user.Id }}</td>
+        <td>{{ .user.Name }}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

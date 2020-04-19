@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务查询</title>
+</head>
+<body>
+<a href="/operation/">返回主菜单</a>
+<a href="/task/">返回上一级</a>
+<!--
+这里显示的是浏览器的信息
+-->
+<form action="/task/seltask" method="POST">
+    <h1>任务查询</h1>
+    <div>
+        <label for="TaskName">任务名:</label>
+        <input id="username" name="TaskName" type="text" >
+    </div>
+    <div>
+        <input type="submit" value="查询">
+    </div>
+</form>
+</body>
+</html>

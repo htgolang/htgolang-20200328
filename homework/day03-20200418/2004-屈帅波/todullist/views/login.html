@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登陆</title>
+</head>
+<body>
+<!--
+这里显示的是浏览器的信息
+-->
+<form action="/login" method="POST">
+    <h1>用户登录</h1>
+    <div>
+        <label for="Name">用户名:</label>
+        <input id="username" name="Name" type="text" >
+    </div>
+    <div>
+        <label for="Password">密码:</label>
+        <input id="password" name="Password" type="password">
+    </div>
+    <div>
+        <input type="submit" name="login" value="登陆">
+    </div>
+</form>
+<form action="/register" method="get">
+    <div>
+        <input type="submit" value="注册">
+    </div>
+</form>
+</body>
+</html>
