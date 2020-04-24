@@ -2,37 +2,10 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 )
-
-/*
-4. todo管理
-	1. 新建任务（任务ID，任务名称，任务创建时间，任务计划开始时间，任务目前的状态）
-	2. 查看任务（查看所有的任务／查看单个任务）
-
-    a. 编辑
-        请输入编辑的ID:
-        通过ID查找 => Task => 显示
-        用户确认是否进行编辑(y/yes): 编辑
-        用户输入: 任务名称, 开始时间，状态
-        // 状态如果是已完成, 初始化完成时间
-        // time.Now().Format("2006-01-02 15:04:05")
-
-    b. 删除
-        请输入编辑的ID:
-        通过ID查找 => Task => 显示
-        用户确认是否进行删除(y/yes): 删除
-
-    c. 数据验证（用户输入数据检查）
-        任务名称: 不能重复 (新增，编辑)
-        编辑：
-            a. 任务名称不变的时候则正常编辑
-            b. 任务名称改成其他已存在的任务名称时候，提示任务名称已存在，提示重新输入任务名称或者退出编辑，再次选择执行操作
-        任务状态:
-            未开始, 执行中, 已完成, 暂停
- */
 //任务存储在字典中，任务ID作为key,任务名称，任务计划开始时间，任务创建时间，任务状态为value
-
 //声明并初始化一个字典
 var taskMap = make(map[string][]string)
 //新建任务
@@ -57,8 +30,12 @@ func seeTask() {
 	fmt.Println("请输入任务名称或all来查看所有的任务信息:")
 	fmt.Scan(&taskName)
 	if taskName == "all" {
-		for k,v := range taskMap {
-			fmt.Printf("任务ID：%s 任务名称：%s 任务计划执行时间：%s 任务创建时间：%s  任务状态：%s\n",k,v[0],v[1],v[2],v[3])
+		if len(taskMap) == 0 {
+			fmt.Println("暂无任务")
+		}else {
+			for k,v := range taskMap {
+				fmt.Printf("任务ID：%s 任务名称：%s 任务计划执行时间：%s 任务创建时间：%s  任务状态：%s\n",k,v[0],v[1],v[2],v[3])
+			}
 		}
 	}else {
 		for k,v := range taskMap {
@@ -129,28 +106,28 @@ func deleteTask() {
 	fmt.Scan(&taskID)
 	delete(taskMap, taskID)
 }
+func quitTask() {
+	fmt.Println("退出程序！")
+	os.Exit(-1)
+}
 
 func main() {
+	var funcMap  = make(map[string]func())
+	funcMap["1"] = createTask
+	funcMap["2"] = seeTask
+	funcMap["3"] = editTask
+	funcMap["4"] = deleteTask
+	funcMap["5"] = quitTask
+
 	for {
 		fmt.Println("请输入你的选择：\n 1：创建任务  2：查看任务  3：编辑任务 4: 删除任务  5：退出")
 		var myChoice string
 		fmt.Scan(&myChoice)
-		if myChoice == "1" {
-			createTask()
-		} else if myChoice == "2" {
-			if len(taskMap) == 0  {
-				fmt.Println("暂无任务")
-			}else {
-				seeTask()
-			}
-		} else if myChoice == "3" {
-			editTask()
-		} else if myChoice == "5" {
-			break
-		} else if myChoice == "4" {
-			deleteTask()
-		} else {
-			fmt.Println("输入错误，请重新输入！")
+		if _,ok := funcMap[myChoice];ok {
+			funcMap[myChoice]()
+		}else {
+			fmt.Println("输入错误，退出！")
+			os.Exit(-1)
 		}
 	}
 }
