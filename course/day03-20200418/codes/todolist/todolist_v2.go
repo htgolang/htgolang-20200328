@@ -105,6 +105,10 @@ func query() {
 	}
 }
 
+func modify() {
+	//
+}
+
 func main() {
 	methods := map[string]func(){
 		"add":   add,
