@@ -82,7 +82,7 @@ func editTask() {
 						var taskState string
 						fmt.Scan(&taskState)
 						if taskState == "已完成" {
-							CreteTime := time.Now().Format("2006-01-02 15:04")
+							CreteTime := time.Now().Format("2006-01-02 15:04:05")
 							v[3] = taskState+ ",完成时间："+CreteTime
 						}else {
 							v[3] = taskState
@@ -90,6 +90,7 @@ func editTask() {
 
 					}
 					flag = true
+					break
 				}
 			}
 			if flag {
