@@ -244,7 +244,7 @@ func auth()  {
 
 func showall()  {
 	sortrules:="id"
-	for {
+EXIT:	for {
 		fmt.Printf("以%s排序\n",sortrules)
 		autoFmt:=false
 		autoWrp:=false
@@ -254,22 +254,42 @@ func showall()  {
 		t.SetAutoWrapText(autoWrp)
 		t.SetReflowDuringAutoWrap(reflows)
 		title := []string{"id","name","startTime","endTime","status","user"}
-		sort.SliceStable(todos, func(i, j int) bool {
+		if sortrules=="id"{		sort.SliceStable(todos, func(i, j int) bool {
 			a,_:=strconv.Atoi(todos[i]["id"])
 			b,_:=strconv.Atoi(todos[j]["id"])
 			return a<b
 
-		})
+		})}else {
+			sort.SliceStable(todos, func(i, j int) bool {
+
+				return todos[i][sortrules]<todos[j][sortrules]
+			})
+		}
 		t.SetHeader(title)
 		for _,j:=range todos{
 			t.Append([]string{j[title[0]],j[title[1]],j[title[2]],j[title[3]],j[title[4]],j[title[5]],})
 		}
 		t.Render()
-		fmt.Println("请输入排序规则(id/name/exit)")
-		fmt.Scan(&sortrules)
-		if sortrules=="exit"{
-			break
+		for {
+			have:=false
+			fmt.Println("请输入排序规则(id/name/exit/startTime)")
+			fmt.Scan(&sortrules)
+			if sortrules=="exit"{
+				break EXIT
+			}
+			for _,j:=range title{
+				if j ==sortrules{
+					have =true
+				}
+			}
+			if !have{
+				fmt.Println("没有这个字段，无法排序")
+			}else {
+				break
+			}
+
 		}
+
 	}
 
 
