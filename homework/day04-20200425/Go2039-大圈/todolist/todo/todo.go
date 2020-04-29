@@ -1,10 +1,13 @@
-package main
+package todo
 
 import (
 	"fmt"
+	"github.com/olekukonko/tablewriter"
 	"os"
+	"sort"
 	"time"
 )
+
 //任务存储在字典中，任务ID作为key,任务名称，任务计划开始时间，任务创建时间，任务状态为value
 //声明并初始化一个字典
 var taskMap = make(map[string][]string)
@@ -87,7 +90,6 @@ func editTask() {
 						}else {
 							v[3] = taskState
 						}
-
 					}
 					flag = true
 					break
@@ -105,23 +107,62 @@ func deleteTask() {
 	fmt.Println("请输入要删除的任务ID：")
 	var taskID string
 	fmt.Scan(&taskID)
-	delete(taskMap, taskID)
+	if _,ok := taskMap[taskID];ok{
+		delete(taskMap,taskID)
+	}else {
+		fmt.Println("ID不存在，请检查！")
+	}
 }
 func quitTask() {
 	fmt.Println("退出程序！")
 	os.Exit(-1)
 }
 
-func main() {
+//以表格的格式输出任务详情
+func tablePrint(s [][]string) {
+	table := tablewriter.NewWriter(os.Stdout)
+	table.SetHeader([]string{"任务ID","任务名称","任务计划执行时间","任务创建时间","任务状态"})
+	for _,v := range s{
+		table.Append(v)
+	}
+	table.Render()
+}
+//按任务名称或计划时间排序，升序
+//声明一个二维切片
+func taskSort() {
+	var nameSection [][]string
+		for k,v := range taskMap {
+			var tmpSection []string //清空切片
+			tmpSection = append(tmpSection,k)
+			tmpSection = append(tmpSection,v[0])
+			tmpSection = append(tmpSection,v[1])
+			tmpSection = append(tmpSection,v[2])
+			tmpSection = append(tmpSection,v[3])
+			nameSection = append(nameSection,tmpSection)
+		}
+	var choice string
+	fmt.Println("请输入你需要的排序规则：\n 1: taskName  2: taskExecTime")
+	fmt.Scan(&choice)
+	if choice == "1" {
+		sort.Slice(nameSection, func(i, j int) bool { return nameSection[i][1] < nameSection[j][1]})
+		tablePrint(nameSection)
+	}else if choice == "2" {
+		sort.Slice(nameSection, func(i, j int) bool { return nameSection[i][2] < nameSection[j][2]})
+		tablePrint(nameSection)
+	}
+}
+
+func Todolist() {
 	var funcMap  = make(map[string]func())
 	funcMap["1"] = createTask
 	funcMap["2"] = seeTask
 	funcMap["3"] = editTask
 	funcMap["4"] = deleteTask
-	funcMap["5"] = quitTask
+	funcMap["5"] = taskSort
+	funcMap["6"] = quitTask
 
 	for {
-		fmt.Println("请输入你的选择：\n 1：创建任务  2：查看任务  3：编辑任务 4: 删除任务  5：退出")
+		fmt.Println("请输入你的选择：\n 1：创建任务  2：查看任务  3：编辑任务 4: 删除任务 5: 任务排序 6: 退出")
 		var myChoice string
 		fmt.Scan(&myChoice)
 		if _,ok := funcMap[myChoice];ok {
