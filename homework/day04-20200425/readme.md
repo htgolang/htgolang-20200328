@@ -14,7 +14,7 @@
 
         第三方包: gopass
     b. sort
-        查询 输入输入排序方式(name:名字，time: 开始时间) 升序排列
+        查询 输入排序方式(name:名字 或 time: 开始时间) 升序排列
 
         第三方包: tablewriter
 

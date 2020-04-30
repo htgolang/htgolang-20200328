@@ -71,7 +71,7 @@ func editTask() {
 					fmt.Println("任务名称已经存在，请重新输入！")
 					break
 				} else {
-					v[0] = taskName
+					taskMap[ID][0] = taskName
 					var editChoice string
 					fmt.Println("请输入编辑的目的：\n 1：修改任务开始的计划时间\n 2: 修改任务状态：已完成、暂停、执行中")
 					fmt.Scan(&editChoice)
@@ -79,16 +79,16 @@ func editTask() {
 						fmt.Println("请输入新的任务计划开始时间：例如：15:05")
 						var execTaskTime string
 						fmt.Scan(&execTaskTime)
-						v[1] = execTaskTime
+						taskMap[ID][1] = execTaskTime
 					}else if editChoice == "2" {
 						fmt.Println("请输入任务状态：")
 						var taskState string
 						fmt.Scan(&taskState)
 						if taskState == "已完成" {
 							CreteTime := time.Now().Format("2006-01-02 15:04:05")
-							v[3] = taskState+ ",完成时间："+CreteTime
+							taskMap[ID][3] = taskState+ ",完成时间："+CreteTime
 						}else {
-							v[3] = taskState
+							taskMap[ID][3] = taskState
 						}
 					}
 					flag = true
