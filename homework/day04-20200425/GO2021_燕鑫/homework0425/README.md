@@ -2,18 +2,10 @@
 Practice of 《马哥教育GO实战班》
 特别感谢kk老师的倾囊相授！
 
-## 项目环境准备
-![Image text](https://raw.githubusercontent.com/yanxinfire/manabe/master/images/vm_env.jpg)
+## SELECT功能模块
+![Image text](https://raw.githubusercontent.com/htgolang/htgolang-202003/master/homework/day04-20200425/GO2021_%E7%87%95%E9%91%AB/homework0425/images/select_module.jpg)
 
-## 登录界面
-![Image text](https://raw.githubusercontent.com/yanxinfire/manabe/master/images/login.jpg)
+## UPDATE功能模块1
+![Image text](https://raw.githubusercontent.com/htgolang/htgolang-202003/master/homework/day04-20200425/GO2021_%E7%87%95%E9%91%AB/homework0425/images/update_module.jpg)
 
-## 网站首页
-![Image text](https://raw.githubusercontent.com/yanxinfire/manabe/master/images/index.jpg)
-
-## 部署开始
-![Image text](https://raw.githubusercontent.com/yanxinfire/manabe/master/images/deploy.jpg)
-
-## 部署进度展示
-![Image text](https://raw.githubusercontent.com/yanxinfire/manabe/master/images/mablog_2.jpg)
 
