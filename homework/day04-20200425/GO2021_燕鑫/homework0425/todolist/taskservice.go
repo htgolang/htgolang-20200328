@@ -29,9 +29,37 @@ func NewTaskService(dburl string, user string) *TaskService {
 	return tasksrv
 }
 
-func (t *TaskService) GetByFilter(filterstr string) ([]*task, string, error) {
+func (t *TaskService) GetByFilter(filterstr string) (tasks []*task, successmsg string, err error, sortby string, desc bool) {
 	defer trace(begin())
-	filters := strings.Fields(strings.TrimSpace(filterstr))
+	filterstmp := strings.Fields(strings.TrimSpace(filterstr))
+	filters := make([]string, 0)
+	for _, item := range filterstmp {
+		f := strings.Split(item, "=")
+		if f[0] == "sortby" {
+			if in(f[1], []string{"endtime", "id", "name", "starttime", "status", "user"}) {
+				sortby = f[1]
+				continue
+			} else {
+				return nil, "",
+					errors.New(`Error: you can only sort results by [id|name|starttime|endtime|status|user]`),
+					"", false
+			}
+		} else if f[0] == "desc" {
+			if f[1] == "true" {
+				desc = true
+				continue
+			} else if f[1] == "false" {
+				desc = false
+				continue
+			} else {
+				return nil, "",
+					errors.New(`Error: you can only specify desc=true or desc=false`),
+					"", false
+			}
+		} else {
+			filters = append(filters, item)
+		}
+	}
 	var rowcount int64 = 0
 	result := make([]*task, 0)
 	for _, task := range t.tasks {
@@ -43,12 +71,38 @@ func (t *TaskService) GetByFilter(filterstr string) ([]*task, string, error) {
 		for i := 0; i < len(filters); i++ {
 			f := strings.Split(filters[i], "=")
 			if len(f) != 2 {
-				return nil, "", errors.New(`Error: please use the format like "xx=xx yy=yy" to specify filter conditions `)
+				return nil, "",
+					errors.New(`Error: please use the format like "xx=xx yy=yy" to specify filter conditions `),
+					"", false
+			}
+
+			if f[0] == "sortby" {
+				if in(f[1], []string{"endtime", "id", "name", "starttime", "status", "user"}) {
+					sortby = f[1]
+					continue
+				} else {
+					return nil, "",
+						errors.New(`Error: you can only sort results by [id|name|starttime|endtime|status|user]`),
+						"", false
+				}
+			}
+			if f[0] == "desc" {
+				if f[1] == "true" {
+					desc = true
+					continue
+				} else if f[1] == "false" {
+					desc = false
+					continue
+				} else {
+					return nil, "",
+						errors.New(`Error: you can only specify desc=true or desc=false`),
+						"", false
+				}
 			}
 
 			if value, ok := (*task)[f[0]]; !ok {
 				errstr := fmt.Sprintf("Unknown column '%s' in field list ", f[0])
-				return nil, "", errors.New(errstr)
+				return nil, "", errors.New(errstr), "", false
 			} else if value == f[1] {
 				if i == len(filters)-1 {
 					result = append(result, task)
@@ -64,13 +118,13 @@ func (t *TaskService) GetByFilter(filterstr string) ([]*task, string, error) {
 	switch rowcount {
 	case 0:
 		fmt.Print("Empty set ")
-		return nil, "Empty set ", nil
+		return nil, "Empty set ", nil, "", false
 	case 1:
 		fmt.Printf("1 row in set ")
-		return result, "1 row in set ", nil
+		return result, "1 row in set ", nil, "", false
 	default:
 		resultstr := fmt.Sprintf("%d rows in set ", rowcount)
-		return result, resultstr, nil
+		return result, resultstr, nil, sortby, desc
 	}
 }
 
@@ -89,7 +143,7 @@ func (t *TaskService) CreateNewTask(taskname string) error {
 		"starttime": time.Now().Format("2006-01-02 15:04:05"),
 		"endtime":   "",
 		"status":    "created",
-		"users":      t.user,
+		"user":      t.user,
 	}
 	t.tasks = append(t.tasks, &newtask)
 	t.taskcount++
@@ -98,8 +152,8 @@ func (t *TaskService) CreateNewTask(taskname string) error {
 }
 
 func (t *TaskService) UpdateTask(taskitem *task, cols ...string) (string, error) {
-	if (*taskitem)["user"]!=t.user{
-		return "",errors.New("You don't have rights to operate this task!")
+	if (*taskitem)["user"] != t.user {
+		return "", errors.New("You don't have rights to operate this task!")
 	}
 	if cols[0] == "" && cols[1] == "" {
 		return "", errors.New("Nothing will change!")
@@ -130,8 +184,8 @@ func (t *TaskService) DeleteTask(taskid string) (string, error) {
 	loopflag := 0
 	for index, task := range t.tasks {
 		if (*task)["id"] == taskid {
-			if (*task)["user"]!=t.user{
-				return "",errors.New("You don't have rights to operate this task!")
+			if (*task)["user"] != t.user {
+				return "", errors.New("You don't have rights to operate this task!")
 			}
 			for i := index; i < len(t.tasks)-1; i++ {
 				t.tasks[i] = t.tasks[i+1]
@@ -232,15 +286,37 @@ func (t *TaskService) commit() (string, error) {
 	return "Data has writen to the disk!You can reload the task list to use the latest data!", nil
 }
 
-func (t *TaskService) printLines(results []*task) {
+func (t *TaskService) printLines(results []*task, sortkey string, desc bool) {
 	/*fmt.Printf("%-10s | %-15s | %-20s | %-20s | %-10s | %-10s\n", "id", "name", "starttime", "endtime", "status", "user")
 	for _, task := range results {
 		fmt.Printf("%-10s | %-15s | %-20s | %-20s | %-10s | %-10s\n", (*task)["id"], (*task)["name"], (*task)["starttime"],
 			(*task)["endtime"], (*task)["status"], (*task)["user"])
 	}*/
 
+	if sortkey == "" {
+		sortkey = "id"
+	}
 	table := tablewriter.NewWriter(os.Stdout)
 	table.SetHeader([]string{"id", "name", "starttime", "endtime", "status", "user"})
+
+	switch desc {
+	case true:
+		for i := 0; i < len(results)-1; i++ {
+			for j := 0; j < len(results)-i-1; j++ {
+				if (*results[j])[sortkey] < (*results[j+1])[sortkey] {
+					results[j], results[j+1] = results[j+1], results[j]
+				}
+			}
+		}
+	case false:
+		for i := 0; i < len(results)-1; i++ {
+			for j := 0; j < len(results)-i-1; j++ {
+				if (*results[j])[sortkey] > (*results[j+1])[sortkey] {
+					results[j], results[j+1] = results[j+1], results[j]
+				}
+			}
+		}
+	}
 
 	for _, task := range results {
 		table.Append([]string{(*task)["id"], (*task)["name"], (*task)["starttime"],
@@ -250,5 +326,14 @@ func (t *TaskService) printLines(results []*task) {
 }
 
 func (t *TaskService) login(user string) {
-	t.user=user
+	t.user = user
+}
+
+func in(key string, sli []string) bool {
+	for _, value := range sli {
+		if value == key {
+			return true
+		}
+	}
+	return false
 }

@@ -123,30 +123,31 @@ func selectAction(tsrv *TaskService) {
 		if filterstr == "q" {
 			break
 		}
-		result, resultstr, err := tsrv.GetByFilter(filterstr)
+
+		result, resultstr, err, sortkey, desc := tsrv.GetByFilter(filterstr)
 		if err != nil {
 			fmt.Println(err)
 			continue
 		}
-		tsrv.printLines(result)
+		tsrv.printLines(result, sortkey, desc)
 		fmt.Println(resultstr)
 	}
 }
 
 func updateAction(tsrv *TaskService) {
 	fmt.Println("Recent task list as following show:")
-	result, resultstr, err := tsrv.GetByFilter("")
+	result, resultstr, err, sortkey, desc := tsrv.GetByFilter("")
 	if err != nil {
 		fmt.Println("\n", err, "\n")
 		return
 	}
-	tsrv.printLines(result)
+	tsrv.printLines(result, sortkey, desc)
 	fmt.Println(resultstr)
 	fmt.Print("\nWhich task you wanna change,please enter the task id: ")
 	inputReader := bufio.NewReader(os.Stdin)
 	taskid, _ := inputReader.ReadString('\n')
 	taskid = strings.TrimSpace(taskid)
-	resultItem, _, err := tsrv.GetByFilter(fmt.Sprintf("id=%s", taskid))
+	resultItem, _, err, sortkey, desc := tsrv.GetByFilter(fmt.Sprintf("id=%s", taskid))
 	if err != nil {
 		fmt.Println("\n", err, "\n")
 		return
@@ -165,12 +166,12 @@ func updateAction(tsrv *TaskService) {
 	}
 	fmt.Println(resultstr)
 	fmt.Println("This task as following show:")
-	result, resultstr, err = tsrv.GetByFilter(fmt.Sprintf("id=%s", taskid))
+	result, resultstr, err, sortkey, desc = tsrv.GetByFilter(fmt.Sprintf("id=%s", taskid))
 	if err != nil {
 		fmt.Println("\n", err, "\n")
 		return
 	}
-	tsrv.printLines(result)
+	tsrv.printLines(result, sortkey, desc)
 	fmt.Println(resultstr)
 }
 
@@ -185,23 +186,23 @@ func createAction(tsrv *TaskService) {
 		return
 	}
 	fmt.Println("New task list as following show:")
-	result, resultstr, err := tsrv.GetByFilter("")
+	result, resultstr, err, sortkey, desc := tsrv.GetByFilter("")
 	if err != nil {
 		fmt.Println("\n", err, "\n")
 		return
 	}
-	tsrv.printLines(result)
+	tsrv.printLines(result, sortkey, desc)
 	fmt.Println(resultstr)
 }
 
 func deleteAction(tsrv *TaskService) {
 	fmt.Println("Recent task list as following show:")
-	result, resultstr, err := tsrv.GetByFilter("")
+	result, resultstr, err, sortkey, desc := tsrv.GetByFilter("")
 	if err != nil {
 		fmt.Println("\n", err, "\n")
 		return
 	}
-	tsrv.printLines(result)
+	tsrv.printLines(result, sortkey, desc)
 	fmt.Println(resultstr)
 	fmt.Print("\nWhich task you wanna change,please enter the task id: ")
 	inputReader := bufio.NewReader(os.Stdin)
@@ -214,12 +215,12 @@ func deleteAction(tsrv *TaskService) {
 	}
 	fmt.Println(resultstr)
 	fmt.Println("New task list as following show:")
-	result, resultstr, err = tsrv.GetByFilter("")
+	result, resultstr, err, sortkey, desc = tsrv.GetByFilter("")
 	if err != nil {
 		fmt.Println("\n", err, "\n")
 		return
 	}
-	tsrv.printLines(result)
+	tsrv.printLines(result, sortkey, desc)
 	fmt.Println(resultstr)
 }
 
