@@ -53,6 +53,7 @@ var todos = []map[string]string{
 	{"id": "3", "name": "eat", "startTime": "18:00", "endTime": "19:00", "status": statusNew, "user": "devon"},
 }
 
+// 获取用户输入信息
 func input(prompt string) string {
 	var text string
 	fmt.Print(prompt)
@@ -60,8 +61,8 @@ func input(prompt string) string {
 	return strings.TrimSpace(text)
 }
 
+// 生成最大的id
 func genId() int {
-	// 生成最大的id
 	var rt int
 	for _, todo := range todos {
 		todoId, _ := strconv.Atoi(todo["id"])
@@ -72,6 +73,7 @@ func genId() int {
 	return rt + 1
 }
 
+// 新任务初始化设置
 func newTask() map[string]string {
 	task := make(map[string]string)
 	task["id"] = strconv.Itoa(genId())
@@ -83,6 +85,7 @@ func newTask() map[string]string {
 	return task
 }
 
+//渲染输出任务信息
 func renderTask(tasks []map[string]string) {
 	header := []string{"ID", "name", startTime, endTime, status, user}
 	table := tablewriter.NewWriter(os.Stdout)
@@ -98,6 +101,7 @@ func renderTask(tasks []map[string]string) {
 	// table.AppendBulk(content)
 }
 
+// 添加一个任务
 func add() {
 	task := newTask()
 	fmt.Println("请输入任务信息:")
@@ -133,6 +137,7 @@ func add() {
 // 	}
 // }
 
+// 排序任务信息
 func sortTask(tasks []map[string]string, key string) []map[string]string {
 	if key == "name" || key == "startTime" {
 		sort.Slice(tasks, func(i, j int) bool { return tasks[i][key] < tasks[j][key] })
@@ -140,6 +145,7 @@ func sortTask(tasks []map[string]string, key string) []map[string]string {
 	return tasks
 }
 
+// 查询任务
 func querySort() {
 	q := input("请输入查询信息:")
 	content := make([]map[string]string, 0)
@@ -157,6 +163,7 @@ func querySort() {
 	}
 }
 
+// 修改任务
 func modify() {
 	q := input("请输入需要修改的任务ID:")
 	for _, task := range todos {
@@ -199,6 +206,7 @@ func modify() {
 	}
 }
 
+// 删除任务
 func remove() {
 	q := input("请输入需要删除的任务ID:")
 	for index, task := range todos {
@@ -217,6 +225,7 @@ func remove() {
 	}
 }
 
+// 验证任务名，确保唯一性
 func verify_name(inputName string) bool {
 	for _, task := range todos {
 		if inputName == task[name] {
@@ -226,6 +235,7 @@ func verify_name(inputName string) bool {
 	return true
 }
 
+// 验证状态值在可选列表内
 func verify_status(inputStatus string) bool {
 	for _, status := range statusChoice {
 		if inputStatus == status {
@@ -235,6 +245,7 @@ func verify_status(inputStatus string) bool {
 	return false
 }
 
+// 加盐MD5
 func saltMd5(input string) string {
 	hasher := md5.New()
 	io.WriteString(hasher, input)
@@ -244,6 +255,7 @@ func saltMd5(input string) string {
 	return cryptoPasswd
 }
 
+// 非明文显示终端输入信息，获取信息
 func getPassword() string {
 	fmt.Print("请输入密码: ")
 	passwd, _ := gopass.GetPasswdMasked()
