@@ -102,7 +102,7 @@ func renderTask(tasks []map[string]string) {
 }
 
 // 添加一个任务
-func add() {
+func addTask() {
 	task := newTask()
 	fmt.Println("请输入任务信息:")
 
@@ -146,7 +146,8 @@ func sortTask(tasks []map[string]string, key string) []map[string]string {
 }
 
 // 查询任务
-func querySort() {
+func queryTaskWithSort() {
+	var queryMap = map[string]string{"1": "name", "2": "startTime"}
 	q := input("请输入查询信息:")
 	content := make([]map[string]string, 0)
 	for _, task := range todos {
@@ -157,14 +158,14 @@ func querySort() {
 	if len(content) == 0 {
 		fmt.Println("未找到关联任务!")
 	} else {
-		key := input("请输入排序方式(name/startTime):")
-		newTasks := sortTask(content, key)
+		key := input("请输入排序方式[1.任务名称 2.任务开始时间]:")
+		newTasks := sortTask(content, queryMap[key])
 		renderTask(newTasks)
 	}
 }
 
 // 修改任务
-func modify() {
+func modifyTask() {
 	q := input("请输入需要修改的任务ID:")
 	for _, task := range todos {
 		if q == task["id"] {
@@ -185,7 +186,7 @@ func modify() {
 
 				for {
 					tempStaus := input("状态:")
-					if verify_status(tempStaus) {
+					if verifyStatus(tempStaus) {
 						if tempStaus == statusComplete {
 							task[endTime] = time.Now().Format("2006-01-02 15:04:05")
 						}
@@ -207,17 +208,17 @@ func modify() {
 }
 
 // 删除任务
-func remove() {
-	q := input("请输入需要删除的任务ID:")
+func deleteTask() {
+	queryId := input("请输入需要删除的任务ID:")
 	for index, task := range todos {
-		if q == task["id"] {
+		if queryId == task["id"] {
 			content := []map[string]string{task}
 			renderTask(content)
 			switch input("是否进行删除(y/yes):") {
 			case "y", "yes":
 				copy(todos[index:], todos[index+1:])
-				newTasks := todos[:len(todos)-1]
-				fmt.Printf("任务ID:%s 已删除"， q)
+				// newTasks := todos[:len(todos)-1]
+				fmt.Printf("任务ID:%s 已删除", queryId)
 			default:
 				fmt.Println("取消删除")
 			}
@@ -236,7 +237,7 @@ func verify_name(inputName string) bool {
 }
 
 // 验证状态值在可选列表内
-func verify_status(inputStatus string) bool {
+func verifyStatus(inputStatus string) bool {
 	for _, status := range statusChoice {
 		if inputStatus == status {
 			return true
@@ -262,43 +263,38 @@ func getPassword() string {
 	return string(passwd)
 }
 
-func main() {
-	var (
-		count = 0
-		limit = 3
-	)
-
-	methods := map[string]func(){
-		"add":    add,
-		"query":  querySort,
-		"modify": modify,
-		"delete": remove,
-	}
-
-	for {
-		if count < limit {
-			input := getPassword()
-			count++
-			if saltMd5(input) == password {
-				fmt.Println("密码验证成功，请进行后续操作!")
-				break
-			} else {
-				if count != 3 {
-					fmt.Printf("密码错误，还有%d次机会\n", limit-count)
-				}
-			}
+// 验证密码
+func verifyPassword() bool {
+	limit := 3
+	for count := 0; count < limit; count++ {
+		input := getPassword()
+		if saltMd5(input) == password {
+			return true
 		} else {
-			fmt.Println("3次密码验证错误，程序退出")
-			os.Exit(1)
+			fmt.Printf("密码验证错误，还剩%d次机会!\n", limit-count-1)
 		}
 	}
+	return false
+}
+
+func main() {
+	methods := map[string]func(){
+		"1": addTask,
+		"2": queryTaskWithSort,
+		"3": modifyTask,
+		"4": deleteTask,
+	}
+
+	if !verifyPassword() {
+		fmt.Println("3次密码验证错误，程序退出")
+		os.Exit(1)
+	}
 
 	for {
-		text := input("请输入操作[add/query/modify/delete/exit]:")
-		if text == "exit" {
+		text := input("请输入操作[1.添加任务 2.查询任务 3.修改任务 4.删除 5.退出]:")
+		if text == "5" {
 			break
 		}
-
 		if method, ok := methods[text]; ok {
 			method()
 		} else {
