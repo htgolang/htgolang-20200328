@@ -108,7 +108,7 @@ func addTask() {
 
 	for {
 		tempName := input("任务名:")
-		if verify_name(tempName) {
+		if verifyName(tempName) {
 			task[name] = tempName
 			break
 		} else {
@@ -121,21 +121,6 @@ func addTask() {
 	content := []map[string]string{task}
 	renderTask(content)
 }
-
-// func query() {
-// 	q := input("请输入查询信息:")
-// 	var content []map[string]string
-// 	for _, task := range todos {
-// 		if q == "all" || strings.Contains(task[name], q) {
-// 			content = append(content, task)
-// 		}
-// 	}
-// 	if len(content) == 0 {
-// 		fmt.Println("未找到关联任务!")
-// 	} else {
-// 		renderTask(content)
-// 	}
-// }
 
 // 排序任务信息
 func sortTask(tasks []map[string]string, key string) []map[string]string {
@@ -175,7 +160,7 @@ func modifyTask() {
 			case "y", "yes":
 				for {
 					tempName := input("任务名称:")
-					if verify_name(tempName) {
+					if verifyName(tempName) {
 						task[name] = tempName
 						break
 					} else {
@@ -227,7 +212,7 @@ func deleteTask() {
 }
 
 // 验证任务名，确保唯一性
-func verify_name(inputName string) bool {
+func verifyName(inputName string) bool {
 	for _, task := range todos {
 		if inputName == task[name] {
 			return false
