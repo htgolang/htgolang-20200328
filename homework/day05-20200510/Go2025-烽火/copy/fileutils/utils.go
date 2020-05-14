@@ -1,6 +1,7 @@
 package fileutils
 
 import (
+	"fmt"
 	"io"
 	"os"
 )
@@ -75,10 +76,16 @@ func TraverseCopy(src, dest string) {
 	}
 
 	for _, fileInfo := range fileInfos {
+		spath := src + "/" + fileInfo.Name()
+		dpath := dest + "/" + fileInfo.Name()
+
 		if fileInfo.IsDir() {
-			os.Mkdir(dest+"/"+fileInfo.Name(), fileInfo.Mode())
-			TraverseCopy(src+"/"+fileInfo.Name(), dest)
+			fmt.Println("dir: ", spath)
+			os.Mkdir(dpath, fileInfo.Mode())
+			TraverseCopy(spath, dpath)
+		} else {
+			fmt.Println("file: ", spath)
+			WriteFile(dpath, ReadFile(spath))
 		}
-		WriteFile(dest+"/"+fileInfo.Name(), ReadFile(src+"/"+fileInfo.Name()))
 	}
 }
