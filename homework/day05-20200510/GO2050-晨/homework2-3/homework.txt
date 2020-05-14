@@ -1,0 +1,28 @@
+1. 知识整理
+2. 结构体
+    Task改成结构体 (把切片里面的任务改为结构体)
+
+3. todolist 密码
+    检查密码文件.password
+    文件不存在, 让用户初始化密码
+    如果文件存储, 让用户输入密码进行验证
+    命令(增删改) 修改密码
+
+4. 文件/文件夹
+    cp -r dir1 dir2
+    实现cp命令
+
+5. todolist存储
+    id,name,startTime,endTime,status,user
+
+    scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		fmt.Println(scanner.Text()) // Println will add back the final '\n'
+	}
+	if err := scanner.Err(); err != nil {
+		fmt.Fprintln(os.Stderr, "reading standard input:", err)
+	}
+
+    // 每次读操作 read文件 写操作 write文件（用第一种）
+
+    // 程序启动 read文件 程序退出 write
