@@ -14,7 +14,7 @@ var (
 )
 
 func main() {
-	flag.BoolVar(&recursive, "r", false, "whether copy recursive")
+	flag.BoolVar(&recursive, "r", false, "copy recursive")
 	flag.BoolVar(&h, "h", false, "help")
 	flag.BoolVar(&help, "help", false, "help")
 	flag.Parse()
@@ -25,6 +25,7 @@ func main() {
 
 	if h || help {
 		flag.Usage()
+		os.Exit(1)
 	}
 
 	if flag.NArg() != 2 {
