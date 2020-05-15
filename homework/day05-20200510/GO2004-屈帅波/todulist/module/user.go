@@ -32,7 +32,7 @@ func (user *User) GetId(mold interface{}) error{
 	return nil
 }
 
-func (user User) Update(mold interface{}) error {
+func (user *User) Update(mold interface{}) error {
 	var (
 		err error
 		email string
@@ -40,20 +40,20 @@ func (user User) Update(mold interface{}) error {
 		name string
 	)
 	if mold.(*User) == nil {
-		return  errors.New("更新失败")
+		return  errors.New("获取失败,传入的是空值")
 	}
-	user = *mold.(*User)
+	user = mold.(*User)
 	o := orm.NewOrm()
 	//这里没有做重复检测  随后会加
 	email = user.Email
 	phone = user.Phone
 	name =  user.Name
-	fmt.Println(email,phone,name)
-	user.GetId(&user)
+
+	user.GetId(user)
 	user.Email = email
 	user.Name = name
 	user.Phone = phone
-	_,err = o.Update(&user)
+	_,err = o.Update(user)
 	if err != nil {
 		return errors.New("更新失败了")
 	}

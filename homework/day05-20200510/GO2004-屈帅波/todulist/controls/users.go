@@ -4,6 +4,7 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"strconv"
+	"time"
 	"todulist/module"
 )
 
@@ -138,6 +139,12 @@ func (usercon *UserControoler) ChangeUserPost() {
 		usercon.Redirect(UserErr,302)
 		return
 	}
+	//当用户修改的是自己的时候  把session中存放的user信息修改一下 保持最新
+	if id == ctxuser.Id {
+		usercon.Ctx.SetCookie("UserEmail",user.Email,time.Second*3600)
+		usercon.SetSession(user.Email,user)
+	}
+
 
 	usercon.Redirect("/user/show?UserIndex=1",302)
 }
@@ -226,7 +233,7 @@ func (usercon *UserControoler)  MyInfoGet() {
 	usercon.Layout = "layout.html"
 	usercon.Data["user"] = ctxuser
 }
-
+//修改个人资料
 func (usercon *UserControoler)  MyInfoPost() {
 	var (
 		operation  module.Operation = new(module.User)
@@ -237,6 +244,7 @@ func (usercon *UserControoler)  MyInfoPost() {
 	)
 	useremail = usercon.Ctx.GetCookie("UserEmail")
 	ctxuser = usercon.GetSession(useremail).(module.User)
+	user.Id = ctxuser.Id
 	if err = usercon.ParseForm(&user);err != nil {
 		beego.Error(err,"当前登录用户",ctxuser.Name,"MyInfoPost 获取前端传输用户信息失败")
 		usercon.Redirect(UserErr,302)
@@ -247,6 +255,9 @@ func (usercon *UserControoler)  MyInfoPost() {
 		usercon.Redirect(UserErr,302)
 		return
 	}
+
+	usercon.Ctx.SetCookie("UserEmail",user.Email,time.Second*3600)
+	usercon.SetSession(user.Email,user)
 	usercon.Redirect("/user/show?UserIndex=1",302)
 }
 
