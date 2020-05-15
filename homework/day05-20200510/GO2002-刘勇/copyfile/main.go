@@ -96,7 +96,7 @@ func main() {
 		os.Exit(-1)
 	}
 	if Exist(dest) {
-		fmt.Println(src, "文件/文件夹已存在")
+		fmt.Println(dest, "文件/文件夹已存在")
 		os.Exit(-1)
 	}
 
