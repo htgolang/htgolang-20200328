@@ -103,8 +103,9 @@ func (reg *RegisterControllers) RegPost() {
 
 
 func (login *LoginControllers)  Operation() {
-	username := login.Ctx.GetCookie("UserName")
-	login.Data["UserName"] = username
+	userEmail := login.Ctx.GetCookie("UserEmail")
+	user := login.GetSession(userEmail).(module.User)
+	login.Data["UserName"] = user.Name
 	login.TplName = `operation.html`
 	login.Layout = `layout.html`
 }
