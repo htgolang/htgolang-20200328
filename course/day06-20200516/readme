@@ -1,0 +1,43 @@
+type StructName struct {
+    attrName1, attrName2 attrType2
+    ...
+
+    attrNameN attrTypeN
+}
+
+type StructName struct {
+    attrName1, attrName2 attrType2
+    ...
+
+    attrNameN attrTypeN
+}
+
+var a string
+var b string
+
+var a, b string
+
+
+var name StructName
+StructName{
+    attrValue1,
+    attrValue2,
+    ...,
+
+    attrValueN,
+}
+
+StructName{
+    attrName1: attrValue1,
+    attrName2: attrValue2,
+    ...,
+
+    attrNameN: attrValueN,
+}
+
+name := struct{
+    attrName1 attrType1
+    attrName2 attrType2
+    ...
+    attrNameN attrTypeN
+}{attrValue1, attrValue2, ..., attrValueN}
