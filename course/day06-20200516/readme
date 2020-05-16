@@ -41,3 +41,12 @@ name := struct{
     ...
     attrNameN attrTypeN
 }{attrValue1, attrValue2, ..., attrValueN}
+
+
+json 有格式的字符串
+数据有类型
+数值: 1, 1.1, -1
+字符串: ""
+布尔类型: true, false
+数组类型(go切片): [1, 1, 1, 1]
+字典类型(go映射): {"":[]}
