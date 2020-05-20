@@ -25,6 +25,12 @@ type User struct {
 var users map[int]*User
 
 func init() {
+	if IsFile(TxtFile) {
+		b, _ := ioutil.ReadFile(TxtFile)
+		if string(b) != "" {
+			users = TxtRead(TxtFile)
+		}
+	}
 	users = make(map[int]*User, 0)
 
 }
@@ -83,11 +89,11 @@ func TxtWrite(f string) {
 }
 
 func AddUser(u *User) {
-	if IsFile(TxtFile) {
-		users = TxtRead(TxtFile)
-	} else {
-
-	}
+	//if IsFile(TxtFile) {
+	//	users = TxtRead(TxtFile)
+	//} else {
+	//
+	//}
 	//读取文件中的数据到users
 
 	//读取users的长度，确定id号
@@ -108,6 +114,7 @@ func Exists(f string) bool {
 		if os.IsExist(err) {
 			return true
 		}
+		error.Error(err)
 		return false
 	}
 	return true
@@ -129,7 +136,7 @@ func IsFile(f string) bool {
 }
 
 func Query() {
-	users = TxtRead(TxtFile)
+	//users = TxtRead(TxtFile)
 	for {
 		input := ""
 		fmt.Print("请输入你的选择（A，查询所有用户，B,根据条件查询，C返回主菜单）：")
@@ -187,8 +194,9 @@ func QuerySome(users map[int]*User, s string) {
 	return
 }
 
+//删除用户，假删除，标记status为1则不显示，强删除可以直接赋值所有值为初始值
 func DelUser(u *User) {
-	users = TxtRead(TxtFile)
+	//users = TxtRead(TxtFile)
 	input := 0
 	fmt.Print("输入需要删除的ID：")
 	fmt.Scan(&input)
@@ -196,19 +204,28 @@ func DelUser(u *User) {
 	//u = &users[input]
 	//u.Status = 1
 	//users[input] = u
+	if (*users[input]).Status == 1 {
+		fmt.Println("用户不存在")
+		return
+	}
 
 	(*users[input]).Status = 1
 	TxtWrite(TxtFile)
 	fmt.Println(users[input].Name, "已经删除")
 }
 
+//修改用户，调用inputuser返回修改的user
 func ModifyUser(u *User) {
-	users = TxtRead(TxtFile)
+	//users = TxtRead(TxtFile)
 	input := 0
 	fmt.Print("输入需要修改的ID：")
 	fmt.Scan(&input)
+	for n, _ := range users {
+		if n == input {
+			users[input].InputUser()
 
-	users[input].InputUser()
-
-	TxtWrite(TxtFile)
+			TxtWrite(TxtFile)
+		}
+	}
+	fmt.Println("输入的编号错误，请确认后输入")
 }
