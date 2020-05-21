@@ -488,7 +488,7 @@ EXIT:	for {
 
 }
 
-//备份数据
+//备份数据,根据时间排序，删除最老的备份
 func CheckBackFileName(prefix string)(fileName string){
 
 	type fileTime struct{
