@@ -45,7 +45,7 @@ func readfile(name string) {
 }
 
 //命令行工具，解析输入
-func menuFlag() {
+func MenuFlag() {
 	flag.StringVar(&filename, "n", "", "file name")
 	flag.BoolVar(&help, "h", false, "help")
 
@@ -66,7 +66,7 @@ Options:`)
 
 func main() {
 
-	menuFlag()
+	MenuFlag()
 
 	readfile(filename)
 
