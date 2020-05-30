@@ -52,3 +52,25 @@ var intfvar interface{
 }
 
 `json:"key,type,omitempty"`
+
+还没有人(goroutine)读取
+    有人读，没到时间
+没有人读取 没有<- 代码
+
+不带缓冲区
+写入时，还没有人(goroutine)读取，阻塞
+读时，还没有人(goroutine)写入，阻塞
+
+带缓冲区的
+写入, 缓冲区已满，还没有人(goroutine)读取，阻塞
+读时，没有数据，还没有人(goroutine)写入，阻塞
+
+监听多个管道
+
+<- A
+<- B
+
+select case
+
+
+main 有功能需要执行，要求5s之内，执行完成, 5s后自动结束
