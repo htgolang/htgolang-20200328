@@ -48,11 +48,11 @@ func fileCopy(src, dest string)  {
 
 func run()  {
 	flag.Parse()
-	//if h||src ==""||dest==""{
-	//	flag.PrintDefaults()
-	//}
-	src=`G:\rds\homework`
-	dest=`G:\rds\homework\test`
+	if h||src ==""||dest==""{
+		flag.PrintDefaults()
+	}
+	//src=`G:\rds\homework`
+	//dest=`G:\rds\homework\test`
 
 	if srcExist,_ := PathExists(src);!srcExist{
 		fmt.Printf("%s don't exist\n",src)
