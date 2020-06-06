@@ -1,0 +1,30 @@
+1. 知识整理
+2. socket
+   [自愿] 代理 nginx 反向代理
+        proxy -addr -host ip:port
+            server
+
+        client 连接到server后，将所有流量代理到指定的host上
+
+    [自愿]fileserver
+        ls/cat
+        upload/download/delete
+
+        => 必须 文件远程复制 server
+                        client -local xxx -remote xxxx
+    [自愿]chats
+        => point2point
+        => 群聊
+            Read 带缓冲的 阻塞
+
+            conn.SetDeadline
+                    setReadDeadline
+                    setWirteDeadline
+                    只有一次有效，需要重新设置
+
+3. http
+    [自愿] todolist
+            add post
+            query get
+            delete post
+            modify post

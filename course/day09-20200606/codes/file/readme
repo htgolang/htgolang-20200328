@@ -1,0 +1,40 @@
+fileserver
+服务器 启动
+
+
+客户端连接
+输入命令
+ls => 查看文件列表
+cat file => 查看某个文件内容
+delete file => 删除文件
+put localfile remotefile 上传文件
+download remotefile localfile => 下载文件
+
+bufio.ReadString(char)
+
+客户端->服务器端
+<op>|<count>|<params_1>|<params_2>|...|<params_n>|
+ls|0|
+cat|1|filename|
+delete|1|fil
+
+put|2|localfile|remotefile|
+1|<size>|<csize>|xxxx
+2|hash|
+
+ctx := make([]byte, 0, 1024 * 1024)
+read(ctx)
+
+服务器端->客户端
+ls
+size|xxxx:xxxx:
+
+cat 1kb
+size|xxxx
+
+delete
+size|string
+
+download
+1|<size>|csize|xxxx
+2|hash|

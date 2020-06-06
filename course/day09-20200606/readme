@@ -1,0 +1,57 @@
+前8节课: Go语法
+从第9节课开始:
+    1. Go库/包
+    2. 其他技术知识
+    3. 业务
+
+
+select {
+    case <-channel1:
+    case <-channel2:
+    case channel03<-:
+    case channel04<-:
+    default:
+
+}
+
+
+OSI 7层模型
+应用=> 应用，表现(表示)，会话
+传输
+网络
+数据链路
+物理
+
+TCP/IP 协议族
+应用: http, smtp, ftp, pop, dns
+传输层: tcp, udp
+网络层: ip, 路由(ospf, bpg), (r)arp, icmp
+
+网络编程 => socket编程 =>
+socket 操作系统提供的API（接口）供开发者调用实现网络传输
+
+net包
+IP地址:
+端口: 应用程序区分
+
+A -> B
+Aip Aport -> Bip Bport
+
+源A => 目的B
+A(客户端) -> B(服务端)
+            手机 => 启动服务
+            手机号 => 地址IP: port
+
+
+客户端 -> 服务器
+(write)Time1 -> (read)
+(write)Time2 -> (read)
+(write)Time3 -> (read)
+(read)       -> (read)
+
+
+(write) -> (write)
+
+
+客户端发送消息: 从控制台输入
+服务器端回复消息: 从控制台输入

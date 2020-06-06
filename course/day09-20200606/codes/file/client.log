@@ -1,0 +1,132 @@
+2020/06/06 15:06:01 connected fileserver
+2020/06/06 15:24:23 connected fileserver
+2020/06/06 15:24:32 reade size err: %!s(<nil>)
+2020/06/06 15:24:32 read filename err: %!s(<nil>)
+2020/06/06 15:24:32 read filename err: %!s(<nil>)
+2020/06/06 15:24:32 read filename err: %!s(<nil>)
+2020/06/06 15:24:32 read filename err: %!s(<nil>)
+2020/06/06 15:24:32 read filename err: %!s(<nil>)
+2020/06/06 15:24:32 read filename err: %!s(<nil>)
+2020/06/06 15:24:54 reade size err: %!s(<nil>)
+2020/06/06 15:24:54 read filename err: %!s(<nil>)
+2020/06/06 15:24:54 read filename err: %!s(<nil>)
+2020/06/06 15:24:54 read filename err: %!s(<nil>)
+2020/06/06 15:24:54 read filename err: %!s(<nil>)
+2020/06/06 15:24:54 read filename err: %!s(<nil>)
+2020/06/06 15:24:54 read filename err: %!s(<nil>)
+2020/06/06 15:24:54 read filename err: %!s(<nil>)
+2020/06/06 15:26:39 connected fileserver
+2020/06/06 15:26:41 reade size err: %!s(<nil>)
+2020/06/06 15:26:41 read filename err: %!s(<nil>)
+2020/06/06 15:26:41 read filename err: %!s(<nil>)
+2020/06/06 15:26:41 read filename err: %!s(<nil>)
+2020/06/06 15:26:41 read filename err: %!s(<nil>)
+2020/06/06 15:26:41 read filename err: %!s(<nil>)
+2020/06/06 15:26:41 read filename err: %!s(<nil>)
+2020/06/06 15:26:41 read filename err: %!s(<nil>)
+2020/06/06 15:36:24 connected fileserver
+2020/06/06 15:36:26 reade size err: %!s(<nil>)
+2020/06/06 15:36:26 read filename err: %!s(<nil>)
+2020/06/06 15:36:26 read filename err: %!s(<nil>)
+2020/06/06 15:36:26 read filename err: %!s(<nil>)
+2020/06/06 15:36:26 read filename err: %!s(<nil>)
+2020/06/06 15:36:26 read filename err: %!s(<nil>)
+2020/06/06 15:36:26 read filename err: %!s(<nil>)
+2020/06/06 15:36:26 read filename err: %!s(<nil>)
+2020/06/06 15:38:24 connected fileserver
+2020/06/06 15:39:27 connected fileserver
+2020/06/06 15:39:42 connected fileserver
+2020/06/06 15:40:30 read size err: read tcp 127.0.0.1:54054->127.0.0.1:9999: wsarecv: An existing connection was forcibly closed by the remote host.
+2020/06/06 15:40:41 connected fileserver
+2020/06/06 15:41:28 read size err: read tcp 127.0.0.1:54066->127.0.0.1:9999: wsarecv: An existing connection was forcibly closed by the remote host.
+2020/06/06 15:41:35 connected fileserver
+2020/06/06 15:42:22 read size err: read tcp 127.0.0.1:54089->127.0.0.1:9999: wsarecv: An existing connection was forcibly closed by the remote host.
+2020/06/06 15:42:30 connected fileserver
+2020/06/06 15:42:33 read size err: <nil>
+2020/06/06 15:42:33 atoi err: <nil>
+2020/06/06 15:42:47 read size err: <nil>
+2020/06/06 15:42:47 atoi err: <nil>
+2020/06/06 15:42:47 read content err: <nil>
+2020/06/06 15:43:03 read size err: <nil>
+2020/06/06 15:43:03 atoi err: <nil>
+2020/06/06 15:43:03 read content err: <nil>
+2020/06/06 15:46:56 connected fileserver
+2020/06/06 15:48:29 connected fileserver
+2020/06/06 15:48:39 connected fileserver
+2020/06/06 15:49:04 reade size err: %!s(<nil>)
+2020/06/06 15:49:04 read filename err: %!s(<nil>)
+2020/06/06 15:49:04 read filename err: %!s(<nil>)
+2020/06/06 15:49:04 read filename err: %!s(<nil>)
+2020/06/06 15:49:04 read filename err: %!s(<nil>)
+2020/06/06 15:49:04 read filename err: %!s(<nil>)
+2020/06/06 15:49:04 read filename err: %!s(<nil>)
+2020/06/06 15:49:04 read filename err: %!s(<nil>)
+2020/06/06 15:50:30 reade size err: read tcp 127.0.0.1:54184->127.0.0.1:9999: wsarecv: An existing connection was forcibly closed by the remote host.
+2020/06/06 15:50:40 connected fileserver
+2020/06/06 15:51:04 connected fileserver
+2020/06/06 15:52:19 connected fileserver
+2020/06/06 15:53:25 connected fileserver
+2020/06/06 15:56:15 connected fileserver
+2020/06/06 15:56:25 connected fileserver
+2020/06/06 15:57:06 connected fileserver
+2020/06/06 15:57:07 reade size err: %!s(<nil>)
+2020/06/06 15:57:07 read filename err: %!s(<nil>)
+2020/06/06 15:57:07 read filename err: %!s(<nil>)
+2020/06/06 15:57:07 read filename err: %!s(<nil>)
+2020/06/06 15:57:07 read filename err: %!s(<nil>)
+2020/06/06 15:57:07 read filename err: %!s(<nil>)
+2020/06/06 15:57:07 read filename err: %!s(<nil>)
+2020/06/06 15:57:07 read filename err: %!s(<nil>)
+2020/06/06 15:57:09 reade size err: %!s(<nil>)
+2020/06/06 15:57:09 read filename err: %!s(<nil>)
+2020/06/06 15:57:09 read filename err: %!s(<nil>)
+2020/06/06 15:57:09 read filename err: %!s(<nil>)
+2020/06/06 15:57:09 read filename err: %!s(<nil>)
+2020/06/06 15:57:09 read filename err: %!s(<nil>)
+2020/06/06 15:57:09 read filename err: %!s(<nil>)
+2020/06/06 15:57:09 read filename err: %!s(<nil>)
+2020/06/06 15:57:24 connected fileserver
+2020/06/06 15:57:52 connected fileserver
+2020/06/06 15:59:16 reade size err: read tcp 127.0.0.1:54317->127.0.0.1:9999: wsarecv: An existing connection was forcibly closed by the remote host.
+2020/06/06 15:59:39 connected fileserver
+2020/06/06 16:00:01 reade size err: %!s(<nil>)
+2020/06/06 16:00:01 read filename err: %!s(<nil>)
+2020/06/06 16:00:01 read filename err: %!s(<nil>)
+2020/06/06 16:00:01 read filename err: %!s(<nil>)
+2020/06/06 16:00:01 read filename err: %!s(<nil>)
+2020/06/06 16:00:01 read filename err: %!s(<nil>)
+2020/06/06 16:00:01 read filename err: %!s(<nil>)
+2020/06/06 16:00:01 read filename err: %!s(<nil>)
+2020/06/06 16:00:07 connected fileserver
+2020/06/06 16:00:11 reade size err: %!s(<nil>)
+2020/06/06 16:00:11 read filename err: %!s(<nil>)
+2020/06/06 16:00:11 read filename err: %!s(<nil>)
+2020/06/06 16:00:11 read filename err: %!s(<nil>)
+2020/06/06 16:00:11 read filename err: %!s(<nil>)
+2020/06/06 16:00:11 read filename err: %!s(<nil>)
+2020/06/06 16:00:11 read filename err: %!s(<nil>)
+2020/06/06 16:00:11 read filename err: %!s(<nil>)
+2020/06/06 16:00:39 connected fileserver
+2020/06/06 16:00:43 connected fileserver
+2020/06/06 16:00:44 reade size err: %!s(<nil>)
+2020/06/06 16:00:44 read filename err: %!s(<nil>)
+2020/06/06 16:00:44 read filename err: %!s(<nil>)
+2020/06/06 16:00:44 read filename err: %!s(<nil>)
+2020/06/06 16:00:44 read filename err: %!s(<nil>)
+2020/06/06 16:00:44 read filename err: %!s(<nil>)
+2020/06/06 16:00:44 read filename err: %!s(<nil>)
+2020/06/06 16:00:44 read filename err: %!s(<nil>)
+2020/06/06 16:00:46 reade size err: %!s(<nil>)
+2020/06/06 16:00:46 read filename err: %!s(<nil>)
+2020/06/06 16:00:46 read filename err: %!s(<nil>)
+2020/06/06 16:00:46 read filename err: %!s(<nil>)
+2020/06/06 16:00:46 read filename err: %!s(<nil>)
+2020/06/06 16:00:46 read filename err: %!s(<nil>)
+2020/06/06 16:00:46 read filename err: %!s(<nil>)
+2020/06/06 16:00:46 read filename err: %!s(<nil>)
+2020/06/06 16:00:51 read size err: <nil>
+2020/06/06 16:00:51 atoi err: <nil>
+2020/06/06 16:00:51 read content err: <nil>
+2020/06/06 16:00:57 read size err: <nil>
+2020/06/06 16:00:57 atoi err: <nil>
+2020/06/06 16:00:57 read content err: <nil>
