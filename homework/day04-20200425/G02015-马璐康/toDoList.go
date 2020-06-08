@@ -149,6 +149,8 @@ func remove() {
 }
 
 func main() {
+	const passwd  = "123456"
+	var isOk bool
 	methods := map[string]func(){
 		"add":    add,
 		"query":  query,
@@ -156,7 +158,17 @@ func main() {
 		"delete": remove,
 	}
 	for {
+		for i := 1;i<=3;i++{
+
+		}
+		if isOk = true{
+
+		}
+
+
+
 		text := input("请输入操作：add/query/modify/delete/exit...\n")
+
 		if text == "exit" {
 			break
 		}
