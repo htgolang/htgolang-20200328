@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>我的网站</title>
+    </head>
+    <body>
+        我的第一个网站
+        <!-- 我是注释 -->
+
+        标题
+        <h1>标题一</h1>
+        <h2>标题二</h2>
+        <h3>标题三</h3>
+        <h4>标题四</h4>
+        <h5>标题五</h5>
+        <h6>标题六</h6>
+
+        段落
+        <p>
+            君不见黄河之水天上来，奔流到海不复回。
+            君不见高堂明镜悲白发，朝如青丝暮成雪。
+            人生得意须尽欢，莫使金樽空对月。
+            天生我材必有用，千金散尽还复来。
+            烹羊宰牛且为乐，会须一饮三百杯。
+            岑夫子，丹丘生，将进酒，杯莫停。
+            与君歌一曲，请君为我倾耳听。
+            钟鼓馔玉不足贵，但愿长醉不复醒。
+            古来圣贤皆寂寞，惟有饮者留其名。
+            陈王昔时宴平乐，斗酒十千恣欢谑。
+            主人何为言少钱，径须沽取对君酌。
+            五花马，千金裘，
+            呼儿将出换美酒，与尔同销万古愁
+        </p>
+
+        超链接
+        <a href="http://www.baidu.com" target="_blank">百度</a>
+
+        图片
+        <img src="http://t7.baidu.com/it/u=378254553,3884800361&fm=79&app=86&f=JPEG?w=1280&h=2030"/>
+
+
+        关于
+        <a href="/static/about.html">关于</a>
+
+
+        列表
+        有序
+        <ol>
+            <li>洗衣服</li>
+            <li>做饭</li>
+            <li>写作业</li>
+        </ol>
+        无须
+        <ul>
+            <li>洗衣服</li>
+            <li>做饭</li>
+            <li>写作业</li>
+        </ul>
+        自定义
+        <dl>
+            <dt>何森</dt>
+            <dd>北京一位帅哥</dd>
+
+            <td>詹林</td>
+            <dd>深圳一位帅哥</dd>
+        </dl>
+
+        表格
+        <table>
+            <thead>
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>工作地</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>52</td>
+                    <td>何森</td>
+                    <td>男</td>
+                    <td>北京</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>烽火</td>
+                    <td>男</td>
+                    <td>上海</td>
+                </tr>
+                <tr>
+                    <td>53</td>
+                    <td>詹林</td>
+                    <td>男</td>
+                    <td>深圳</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>大圈</td>
+                    <td>男</td>
+                    <td>北京</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>共有xx人</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        表单
+        <form action="/registe/" method="POST">
+            <label>用户名: </label><input type="text" name="username" value="kk" /> <br/>
+            <label>密码: </label><input type="password" name="password" value="" /> <br/>
+            <label>性别: </label><input type="radio" name="sex" value="1" checked="checked"><label>男</label>
+                                 <input type="radio" name="sex" value="0"><label>女</label><br/>
+            <label>爱好: </label><input type="checkbox" name="hobby" value="football" checked="checked"><label>足球</label>
+                                 <input type="checkbox" name="hobby" value="basketball" checked="checked"><label>篮球</label><br/>
+            <label>备注: </label><textarea name="remark">我是kk</textarea><br/>
+            <label>部门: </label><select name="department">
+                                    <option value="developer">开发者</option>
+                                    <option value="tester">测试</option>
+                                    <option value="ops" selected="selected">运维</option>
+                                </select><br/>
+            <label>部署服务器: </label><select name="servers" multiple="multiple">
+                                        <option value="192.168.1.100">192.168.1.100</option>
+                                        <option value="192.168.1.101">192.168.1.101</option>
+                                        <option value="192.168.1.102">192.168.1.102</option>
+                                    </select><br/>
+            <input type="submit" value="提交数据"/>
+        </form>
+
+
+        <div>我的第一个div</div>
+        <div>我的第二个div</div>
+        <span>我的第一个span</span>
+        <span>我的第二个span</span>
+    </body>
+</html>
