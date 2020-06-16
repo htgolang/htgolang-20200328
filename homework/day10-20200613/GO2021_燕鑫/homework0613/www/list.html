@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+{{ if .err }}
+    <div>{{ .errstr }}</div>
+{{ else }}
+    <table border="1">
+        <tr>
+            {{ range .theader }}
+                <th>{{ . }}</th>
+            {{ end }}
+        </tr>
+        {{ range .tbody }}
+            <tr>
+                <td>{{ .Id }}</td>
+                <td>{{ .Name }}</td>
+                <td>{{ .StartTime }}</td>
+                <td>{{ .EndTime }}</td>
+                <td>{{ .Status }}</td>
+                <td>{{ .User }}</td>
+            </tr>
+        {{ end }}
+        <tr>
+            <td>SUM</td>
+            <td colspan="5" align="center">{{ .resultcnt }}</td>
+        </tr>
+    </table>
+{{ end }}
+</body>
+</html>
