@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>list</title>
+  </head>
+  <body>
+    <a href="/add/">add</a>
+    <a href="/del/">del</a></br>
+    <table height="100%" width="100%" border="1">
+      <thead >
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+      </thead>
+      <tbody>
+        {{ range . }}
+        <tr>
+          <th>{{ .ID }}</th>
+          <th>{{ .Name }}</th>
+          <th>{{ .Status }}</th>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </body>
+</html>
