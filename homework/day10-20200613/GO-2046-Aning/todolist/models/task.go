@@ -33,6 +33,7 @@ func DelTask(id int) {
 	tasks = newTasks
 }
 
+//修改
 func EditTask(id int, name string) {
 	for i, task := range tasks {
 		if task.ID == id {

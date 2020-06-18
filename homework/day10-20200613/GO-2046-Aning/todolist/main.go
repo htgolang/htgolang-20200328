@@ -9,10 +9,10 @@ import (
 
 func main() {
 	addr := ":9999"
-	//展示列表
-	http.HandleFunc("/list/", func(response http.ResponseWriter, request *http.Request) {
-		tpl := template.Must(template.ParseFiles("views/list.html"))
-		tpl.ExecuteTemplate(response, "list.html", models.GetTasks())
+	//查询列表
+	http.HandleFunc("/query/", func(response http.ResponseWriter, request *http.Request) {
+		tpl := template.Must(template.ParseFiles("views/query.html"))
+		tpl.ExecuteTemplate(response, "query.html", models.GetTasks())
 	})
 
 	//新增
@@ -47,6 +47,12 @@ func main() {
 		}
 		tpl := template.Must(template.ParseFiles("views/edit.html"))
 		tpl.ExecuteTemplate(response, "edit.html", nil)
+	})
+
+	//主页面
+	http.HandleFunc("/", func(response http.ResponseWriter, request *http.Request) {
+		tpl := template.Must(template.ParseFiles("views/list.html"))
+		tpl.ExecuteTemplate(response, "list.html", nil)
 	})
 	//监听服务
 	http.ListenAndServe(addr, nil)

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>list</title>
+  </head>
+  <body>
+    <h3>welcome to todolist-web  v1.0.0</h3>
+    <table height="100%" width="100%" border="1">
+      <thead >
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+      </thead>
+      <tbody>
+        {{ range . }}
+        <tr>
+          <th>{{ .ID }}</th>
+          <th>{{ .Name }}</th>
+          <th>{{ .Status }}</th>
+        </tr>
+        {{ end }}
+      </tbody>
+    </table>
+    <a href="/">back to list</a>
+  </body>
+</html>
