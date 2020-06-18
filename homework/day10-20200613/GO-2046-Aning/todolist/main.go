@@ -37,6 +37,17 @@ func main() {
 		tpl.ExecuteTemplate(response, "del.html", nil)
 	})
 
+	//修改
+	http.HandleFunc("/edit/", func(response http.ResponseWriter, request *http.Request) {
+		if request.Method == http.MethodPost {
+			id, _ := strconv.Atoi(request.PostFormValue("id"))
+			name := request.PostFormValue("name")
+			models.EditTask(id, name)
+			http.Redirect(response, request, "/list/", 302)
+		}
+		tpl := template.Must(template.ParseFiles("views/edit.html"))
+		tpl.ExecuteTemplate(response, "edit.html", nil)
+	})
 	//监听服务
 	http.ListenAndServe(addr, nil)
 }
