@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>任务列表</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+            background-color: black;
+            color:#f2f2f2;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h3 style="text-align: center;"> 查询任务</h3>
+    <form method="GET" action="/list/">
+        <label>任务名称</label><input type="text" name="name" required autocomplete="on" autofocus><br>
+        <input type="submit" value="提交"> <br>
+    </form>
+    </div>
+    <hr />
+    <div>
+        {{ if .Ok }}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>状态</th>
+                <th>负责人</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .Task }}
+            <tr>
+                <td>{{ .ID }}</td>
+                <td>{{ .Name }}</td>
+                <td>{{ .StartTime }}</td>
+                <td>{{ .EndTime }}</td>
+                <td>{{ .Status }}</td>
+                <td>{{ .User }}</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+    {{ end }}
+    </div>
+</body>
+</html>

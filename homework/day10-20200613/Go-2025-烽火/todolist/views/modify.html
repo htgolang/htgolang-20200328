@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改任务</title>
+    <style type="text/css">
+        caption {
+            caption-side: top;
+        }
+        table, th, td
+        {
+            table-layout: automatic;
+            border-collapse: collapse;
+        }
+        table, td, th
+        {
+            border:1px solid black;
+            background-color: wheat;
+        }
+        td {
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+        display: inline;
+        }
+
+        </style>
+</head>
+<body>
+    <div>
+        <h3 style="text-align: left;">修改任务</h3>
+        <form method="POST" action="/modify/">
+            <label>任务名称:</label><input type="text" name="name" required autofocus autocomplete="on"><br>
+            <label>任务状态:</label><select name="status">
+                <option value="1" selected>未执行</option>
+                <option value="2">开始</option>
+                <option value="3">暂停</option>
+                <option value="4">完成</option>
+            </select><br>
+            <label>负责人:</label><input type="text" name="user" required autofocus><br>
+            <input type="submit" value="提交" onclick="window.location.href='/list/'"><br>
+        </form>
+    <div>
+</body>
+</html>

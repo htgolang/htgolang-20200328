@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>添加任务</title>
+</head>
+<body>
+    <h3 style="text-align: left;">添加任务</h3>
+    <form method="POST" action="/add/">
+        <label>任务名称:</label><input type="text" name="name" required autofocus autocomplete="on"><br>
+        <label>开始时间:</label><input type="datetime-local" name="startTime" required><br>
+        <label>结束时间:</label><input type="datetime-local" name="endTime" required><br>
+        <label>任务状态:</label><select name="status">
+            <option value="1" selected>未执行</option>
+            <option value="2">开始</option>
+            <option value="3">暂停</option>
+            <option value="4">完成</option>
+        </select><br>
+        <label>负责人:</label><input type="text" name="user" required autofocus><br>
+        <input type="submit" value="提交" onclick="window.location.href='/'"><br>
+    </form>
+</body>
+</html>
