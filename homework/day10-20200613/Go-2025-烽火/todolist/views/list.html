@@ -2,36 +2,21 @@
 <head>
     <meta charset="utf-8">
     <title>任务列表</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th {
-            background-color: black;
-            color:#f2f2f2;
-        }
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/css/search.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mystyle.css" />
 </head>
 <body>
-    <div>
-    <h3 style="text-align: center;"> 查询任务</h3>
+    <p>任务名称:</p>
     <form method="GET" action="/list/">
-        <label>任务名称</label><input type="text" name="name" required autocomplete="on" autofocus><br>
-        <input type="submit" value="提交"> <br>
+        <div id="search">
+           <input type="text" name="name" placeholder="Search..." required autocomplete="on" autofocus>
+        </div>
+        <!-- <input type="submit" value="提交"> <br> -->
     </form>
-    </div>
+
     <hr />
-    <div>
-        {{ if .Ok }}
+    <br>
+    {{ if .Ok }}
     <table>
         <thead>
             <tr>
@@ -57,6 +42,5 @@
         </tbody>
     </table>
     {{ end }}
-    </div>
 </body>
 </html>

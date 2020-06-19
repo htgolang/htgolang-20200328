@@ -35,6 +35,11 @@ func main() {
 		}
 	})
 
+	// css
+	http.Handle("/css/", http.FileServer(http.Dir("./views/")))
+	// image
+	http.Handle("/image/", http.FileServer(http.Dir("./views/")))
+
 	// 登陆页
 	http.HandleFunc("/login/", func(writer http.ResponseWriter, request *http.Request) {
 		request.ParseForm()
@@ -55,8 +60,6 @@ func main() {
 		tpl := template.Must(template.ParseFiles("views/login.html"))
 		tpl.ExecuteTemplate(writer, "login.html", nil)
 	})
-
-	// http.Handle("/views/", http.FileServer(http.Dir(".")))
 
 	// 查询任务
 	http.HandleFunc("/list/", func(writer http.ResponseWriter, request *http.Request) {

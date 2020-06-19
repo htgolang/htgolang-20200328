@@ -180,19 +180,3 @@ func String2time(txt string) *time.Time {
 func Time2string(t *time.Time) string {
 	return t.Format(config.Config.TimeLayout)
 }
-
-//设置密码
-// func SetPassword(path string, flag int) {
-// 	for {
-// 		password := getPassword(flag)
-// 		if len(password) >= passwordLength {
-// 			salt := generateSalt(saltLimit)
-// 			md5password := hashPassword(password, salt)
-// 			WriteFile(path, md5password)
-// 			fmt.Println("密码设置成功!")
-// 			break
-// 		} else {
-// 			fmt.Printf("密码长度不能少于%d位!\n", passwordLength)
-// 		}
-// 	}
-// }

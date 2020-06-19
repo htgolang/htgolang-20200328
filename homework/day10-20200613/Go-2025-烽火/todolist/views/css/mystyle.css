@@ -1,0 +1,47 @@
+#header {
+    color: white;
+    background-color:black;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    /* background-color:cadetblue; */
+    float:left;
+    padding:5px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    }
+
+
+li {
+    float: left;
+}
+
+li a {
+    display:block;
+    text-align: center;
+    font-size: large;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    background-color: cadetblue;
+    color: black;
+}
+td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
