@@ -13,6 +13,7 @@
             {{ range .theader }}
                 <th>{{ . }}</th>
             {{ end }}
+            <th>OPERATION</th>
         </tr>
         {{ range .tbody }}
             <tr>
@@ -22,11 +23,19 @@
                 <td>{{ .EndTime }}</td>
                 <td>{{ .Status }}</td>
                 <td>{{ .User }}</td>
+                <td>
+                    <a href="/updatetask/{{ .User }}/{{ .Id }}" >
+                        <button type="button">UPDATE</button>
+                    </a>
+                    <a href="">
+                        <button type="button">DELETE</button>
+                    </a>
+                </td>
             </tr>
         {{ end }}
         <tr>
             <td>SUM</td>
-            <td colspan="5" align="center">{{ .resultcnt }}</td>
+            <td colspan="6" align="center">{{ .resultcnt }}</td>
         </tr>
     </table>
 {{ end }}

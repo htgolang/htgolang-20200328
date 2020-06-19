@@ -24,13 +24,19 @@ type TaskService struct {
 	logger *logging.Logger
 }
 
-func NewTaskService(dburl string, user string) *TaskService {
+
+
+func NewTaskService(dburl string) *TaskService {
 	tasksrv := &TaskService{dburl: dburl}
 	tasksrv.logger = logging.NewLogger()
-	tasksrv.login(user)
+	//tasksrv.login(user)
 	tasksrv.tasks, tasksrv.taskcount = tasksrv.selectAll()
 	tasksrv.lastid, _ = strconv.ParseInt((*tasksrv.tasks[len(tasksrv.tasks)-1]).Id, 0, 0)
 	return tasksrv
+}
+
+func (t *TaskService) SetUser(user string) {
+	t.user = user
 }
 
 func (t *TaskService) GetByFilter(filterstr string) (tasks []*task, resultcnt int64, err error, sortby string, desc bool) {
