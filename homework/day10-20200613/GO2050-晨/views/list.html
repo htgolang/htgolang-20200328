@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{range .}}
+            <tr>
+                <th>{{.ID}}</th>
+                <th>{{.Name}}</th>
+                <th>{{.Status}}</th>
+                <th><a href="/delete/?id={{.ID}}">删除</a></th>
+                <th><a href="/modify/?id={{.ID}}">修改</a></th>
+            </tr>
+        {{end}}
+        </tbody>
+    </table>
+    <a href="/add/">添加新任务</a>
+    <a href="/query/">查询</a>
+</body>
+</html>
