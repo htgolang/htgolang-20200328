@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>任务列表</title>
+    </head>
+    <body>
+        <a href="/add/">新建</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>负责人</th>
+                    <th>状态</th>
+                    <th>开始时间</th>
+                    <th>完成时间</th>
+                    <th>限期</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Tasks }}
+                    <tr>
+                        <td>{{ .Name }}</td>
+                        <td>{{ .User }}</td>
+                        <td>{{ .StatusText }}</td>
+                        <td>{{ datetime .StartTime }}</td>
+                        <td>{{ datetime .CompleteTime }}</td>
+                        <td>{{ datetime .DeadlineTime }}</td>
+                        <td>
+                            <a href="/delete/?id={{ .ID }}">删除</a>
+                        </td>
+                    </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>任务列表</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>负责人</th>
+                    <th>状态</th>
+                    <th>开始时间</th>
+                    <th>完成时间</th>
+                    <th>限期</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Tasks }}
+                    <tr>
+                        <td>{{ .Name }}</td>
+                        <td>{{ .User }}</td>
+                        <td>
+                            {{ if eq .Status 0 }}
+                            新建
+                            {{ else if eq .Status 1 }}
+                            正在执行
+                            {{ else if eq .Status 2 }}
+                            停止
+                            {{ else }}
+                            完成
+                            {{ end }}
+                        </td>
+                        <td>{{ datetime .StartTime }}</td>
+                        <td>{{ datetime .CompleteTime }}</td>
+                        <td>{{ datetime .DeadlineTime }}</td>
+                    </tr>
+                {{ end }}
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,345 @@
+1. 安装
+    windows exe安装包
+        root/密码 远程访问(禁止)
+
+    linux
+        centos
+            yum install mariadb-server 5.5
+        ubuntu
+            apt install mariadb-server
+
+        启动服务
+        mysql_secure_installation
+
+2. 创建新用户
+    create user golang identified by "golang@2020";
+    grant all privileges on database.table to name@addr identified by password;
+    addr %
+    database.table *.* database.*
+
+    grant all privileges on *.* to golang@'%' identified by "golang@2020";
+
+    flush privileges;
+
+3. 库
+    database
+
+    创建：
+        create database name default charset utf8mb4;
+    查询:
+        show databases;
+    查看:
+        show create database name;
+    删除:
+        drop database name;
+
+
+4. 表
+    use database;
+    创建
+        create table name (
+            colname coltype 修饰,
+
+            index indexname (colname, colname1, colname2)
+        ) engine=innodb default charset=utf8mb4;
+
+        colname: 列明 小写英文字母，数字, _组成
+        coltype: 数值类型
+                    int
+                    bigint
+                    float
+                    double
+                    decimal(m, n)
+                字符串类型
+                    varchar(n)
+                    char(n)
+                时间类型
+                    data
+                    datetime
+                    time
+                文本类型
+                    text 64K
+                    mediumtext 16M
+                    longtext 4G
+                二进制类型
+                    blob
+                    longblob
+                json/array
+                ...
+        修饰:
+            主键: primary key
+            唯一: unique
+            自动增长: auto_increment
+            默认值: default 0, default ''
+            是否允许为null, 不允许为NULL, NOT NULL
+            注释: COMMENT ''
+
+        索引:
+            index
+
+        create table task(
+            id bigint primary key auto_increment,
+            name varchar(64) not null default '' comment '任务名称',
+            status int not null default 0 comment '状态, 0: 新建，1: 正在执行，2: 停止, 3: 完成',
+            start_time datetime comment '开始时间',
+            complete_time datetime comment '完成时间',
+            deadline_time datetime not null comment '截至时间',
+            index idx_name (name),
+            index idx_deadline_time(deadline_time)
+        ) engine=innodb default charset utf8mb4 auto_increment 1000;
+    查看
+        desc name;
+        show create table name;
+    查询
+        show tables;
+
+    删除表:
+        drop table name;
+
+    修改表
+        alter table name 动作;
+
+        只允许添加列:
+            alter table name add column colname coltype 修饰;
+        删除列:
+            alter table name drop column colname;
+        修改列:
+            alter table name modify column colname coltype 修饰;
+
+5. 索引
+    create index name on table (column, column2, ...);
+    drop index name on table;
+
+    create unique index name on table (column, column2, ...);
+
+6. 转义 ``
+7. 表数据操作
+    增
+        insert into `table`(`c1`, `c2`, `c3`, `c4`) values(v1, v2, v3, v4);
+        insert into `table`(`c1`, `c2`, `c3`, `c4`) values
+        (v11, v12, v13, v14),
+        (v21, v22, v23, v24),
+        (v41, v42, v43, v44);
+    查
+        select * from table;
+        select c1, c2 from table;
+        select * from table where colname condition value;
+
+        condition:
+            =, !=, >, <, >=, <=
+            like 模糊匹配
+                开头: like value%
+                结尾: like %value
+                包含: like %value%
+
+                % 任务多个
+                __ 一个
+                like '%/%%' escape '/'
+            in (v1, v2) colname = v1 或者 colname = v2
+            colname between v1 and v2 => colname >= v1 and colname <= v2
+
+        逻辑关系
+            与
+                and
+            或
+                or
+                colname = v1 or colname = v2
+            非
+                not
+            c1 = v1 and (c2 = v2 or c3 = v3)
+
+    删
+        delete from table;
+        delete from table where 条件；
+        truncate table name;
+    改
+        update table
+        set colname=v1, col2=v2, col3=v3;
+
+        update table
+        set colname=v1, col2=v2, col3=v3
+        where 条件;
+
+sql:
+    用户，权限，运维 操作:
+    库，表 操作: truncate table name; 重建
+    表数据 操作:
+
+8: 数量
+    count(*)
+    count(id)
+
+9. as 别名
+
+10. 查询
+    排序
+        order by colname [asc|desc], col2 [asc|desc]
+    分页
+        展示多少条数据 每页的数据量
+        展示第几页 页面
+        limit 限制查询数量
+        offset 设置偏移
+
+        每页展示5条 limit 5
+        第一页 offset 0
+        第二页 offset 5 (pageNum - 1) * pageSize
+    分组
+        IP time url status_code
+        ip出现的次数
+        status_code出现的次数
+        url, status_code出现的次数
+        ip url status_code出现的次数
+        group by
+        select [] from table group by colname,colname2 [having 过滤条件;]
+
+        select 元素必须是 指定分组的列名或者聚合类结果
+            count(*)
+            求和
+            最小值
+            最大值
+            平均值
+
+
+
+        insert into task(name, content, deadline_time) values
+        ('1', '1', '2020-06-06'),
+        ('2', '1', '2020-06-05'),
+        ('3', '1', '2020-06-04'),
+        ('4', '1', '2020-06-02'),
+        ('5', '1', '2020-06-02'),
+        ('6', '1', '2020-06-02'),
+        ('7', '1', '2020-06-03');
+
+
+        create table accesslog(
+            id bigint primary key auto_increment,
+            logtime datetime not null comment '访问时间',
+            ip varchar(128) not null default '' comment '访问来源',
+            url varchar(4096) not null default '' comment '访问地址',
+            status int not null default 0 comment '状态码'
+        ) engine=innodb default charset utf8mb4;
+
+
+        insert into accesslog(logtime, ip, url, status) values
+        ('2020-06-06 01:01:01', '1.1.1.1', '/index', 200),
+        ('2020-06-05 01:01:02', '1.1.1.1', '/home', 302),
+        ('2020-06-07 01:01:02', '1.1.1.1', '/back.zip', 404),
+        ('2020-06-06 01:01:04', '1.1.1.1', '/ip.exe', 404),
+        ('2020-06-05 01:01:04', '1.1.1.2', '/ip.exe', 404),
+        ('2020-06-06 01:01:04', '1.1.1.2', '/ip.exe', 404),
+        ('2020-06-05 01:01:04', '1.1.1.2', '/ip.exe', 404),
+        ('2020-06-08 01:01:04', '1.1.1.3', '/home', 200);
+
+        每天的访问数量
+            datetime => date '年-月-日'
+            select date_format(logtime, '%Y-%m-%d') as log_day, count(*) as cnt from accesslog
+            group by log_day;
+
+
+        ip出现的次数
+            select ip, count(*) from accesslog group by ip;
+        status_code出现的次数
+            select status, count(*) from accesslog group by status;
+        url, status_code出现的次数
+            select url, status, count(*) from accesslog group by url, status
+        ip url status_code出现的次数
+            select ip, url, status, count(*) from accesslog group by ip, url, status;
+
+
+
+
+        create table score(
+            id bigint primary key auto_increment,
+            day date not null comment '日期',
+            name varchar(32) not null default '' comment '姓名',
+            score float not null default 0 comment '分数'
+        )engine=innodb default charset utf8mb4;
+
+        insert into score(day, name, score) values
+        ('2020-06-01', '烽火', 8),
+        ('2020-06-01', '魏超', 6),
+        ('2020-06-01', '阿宁', 7),
+        ('2020-06-02', '烽火', 5),
+        ('2020-06-02', '魏超', 5),
+        ('2020-06-02', '阿宁', 7),
+        ('2020-06-03', '烽火', 7),
+        ('2020-06-03', '魏超', 10),
+        ('2020-06-03', '阿宁', 9);
+
+        统计每个人的总分, 最高分, 最低分，平均分
+        求和 sum
+        最小值 min
+        最大值 max
+        平均值 avg
+
+        select name, sum(score),max(score),min(score), avg(score) from score group by name;
+    联查
+        多张表进行查询数据
+        join
+        left join on
+        inner join on
+        right join on
+
+
+        create table user(
+            id bigint primary key auto_increment,
+            name varchar(32) not null default '',
+            status int not null default 0 comment '0:在职, 1:离职'
+        ) engine=innodb default charset utf8mb4;
+
+
+        alter table task add column user bigint;
+
+        insert into user(name, status) values
+        ('詹林', 0),
+        ('阿宁', 0),
+        ('cc', 1);
+
+        insert into task(name, content, deadline_time, user) values
+        ('完成web todolist', '', now(), 1),
+        ('跑10圈', '', now(), 1),
+        ('洗衣服', '', now(), 1),
+        ('完成web todolist', '', now(), 2);
+
+
+        每个人(名字)未完成的任务
+
+        select user.name, task.name from task left join user on task.user=user.id where task.status!=3;
+
+        select user.name, task.name from task right join user on task.user=user.id where task.status!=3;
+
+        insert into task(name, content, deadline_time, user) values
+        ('不存在用户的任务', '', now(), 5);
+
+11. 内置函数(调用)
+    now()
+    md5()
+    date_format(time, layout)
+
+12. 扩展
+    pg => 表继承
+    task
+        date
+    task_2020_05
+    task_2020_06
+
+    insert int task
+    select * from task
+
+    过程
+
+
+13.
+    用户，权限，运维 操作: 执行
+    库，表 操作: 执行, 读
+    表数据 操作: 增，删，改 => 执行
+                查 => 读
+
+    执行
+    读
+
+
+编辑
+    1. 点击编辑按钮 id => 内容显示
+    2. 内容修改 id => 提交按钮 => 数据验证 => 更新数据
+        input type="hidden" value="{{ task.ID }}"

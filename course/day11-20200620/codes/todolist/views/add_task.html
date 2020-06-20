@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>添加任务</title>
+    </head>
+    <body>
+        <form action="/add/" method="POST">
+            <label>名称: </label> <input type="text" name="name" value="{{ .Task.Name }}" />{{ .Errors.name }}<br />
+            <label>描述: </label> <textarea name="content">{{ .Task.Content }}{{ .Errors.content }}</textarea><br />
+            <label>期限: </label> <input type="date" name="deadline_time" value="{{ .Task.DeadlineTime }}"/>{{ .Errors.deadline_time }} <br/>
+            <input type="submit" value="提交" />
+        </form>
+    </body>
+</html>
