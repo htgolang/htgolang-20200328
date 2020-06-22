@@ -1,0 +1,52 @@
+<body class="layui-layout-body" style="background: url('../../static/images/panda.png');background-size: cover;opacity: 2;">
+<form class="layui-form" action="/user/my/info" method="post" id="dame1" style="margin-left: 90px;">
+    <div class="layui-form-item" style="width: 400px;">
+        <label class="layui-form-label" style="color: #fffdfe">用户名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="Name" lay-verify="title"  value="{{ .user.Name }}"  autocomplete="off" placeholder="用户名称" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item" style="width: 400px;">
+        <label class="layui-form-label" style="color: #fffdfe">联系电话</label>
+        <div class="layui-input-block">
+            <input type="text" name="Phone" lay-verify="phone" lay-reqtext="phone是必填项，岂能为空？"  value="{{ .user.Phone}}"  placeholder="请输入联系电话" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item" style="width: 400px">
+        <div class="layui-inline">
+            <label class="layui-form-label" style="color: #fffdfe">联系邮箱</label>
+            <div class="layui-input-inline">
+                <input type="text" name="Email" lay-verify="email" autocomplete="off" class="layui-input" value="{{ .user.Email}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即修改</button>
+        </div>
+    </div>
+</form>
+
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+
+        //自定义验证规则
+        form.verify({
+            phone: function(value){
+                if(value.length < 11){
+                    return '手机号至少11位';
+                }
+            }
+            ,content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+        //监听提交
+    });
+</script>
+</body>

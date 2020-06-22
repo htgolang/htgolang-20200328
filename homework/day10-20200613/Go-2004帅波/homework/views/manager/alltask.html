@@ -1,0 +1,64 @@
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>任务名称</th>
+        <th>任务信息</th>
+        <th>开始时间</th>
+        <th>结束时间</th>
+        <th>任务状态</th>
+        <th>创建人</th>
+        <th>身份</th>
+        <th>操   作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .tasks}}
+        <tr>
+            <td>{{ .Id }}</td>
+            <td>{{ .TaskName }}</td>
+            <td>{{ .Taskinfo }}</td>
+            <td>{{ .StartTime.Format "2006-01-03 15:04:05" }}</td>
+            <td>{{ .StopTime | TimeForMat}}</td>
+            <td>
+                {{if eq .TaskStatus  0 }}创建
+                {{else if eq .TaskStatus 1 }}进行中
+                {{else if eq .TaskStatus 2 }}暂停
+                {{else if eq .TaskStatus 3 }}完成
+                {{else if eq .TaskStatus 4 }}失败
+                {{end}}
+            </td>
+            <td>{{.User.Name}}</td>
+            <td>{{.User.Role | Roles}}</td>
+            <td>
+                <a href="/task/pause?id={{.Id}}" >暂停</a>
+                <a href="/task/cancel?id={{.Id}}" >取消</a>
+                <a href="/task/retry?id={{.Id}}" >重试</a>
+                <a href="/task/del?id={{.Id}}">删除</a>
+            </td>
+        </tr>
+    {{end}}
+    </tbody>
+</table>
+<form method="get" action="/task/show">
+    <ui>
+        <div>
+            <a href="/task/show?taskIndex=1">首页</a>
+            {{if  or (eq .taskIndex 1)  (eq .taskIndex 0)}}
+                上一页
+            {{else }}
+                <a href="/task/show?taskIndex={{.taskIndex | Left}}">上一页 </a>
+            {{end}}
+            {{if or ( compare .taskIndex .pagenum) (compare .pagenum 0)}}
+                下一页
+            {{else}}
+                <a href="/task/show?taskIndex={{.taskIndex | Right}}">下一页</a>
+            {{end}}
+            <a href="/task/show?taskIndex={{.pagenum}}">末页</a>
+        </div>
+        <div>
+            <td>共{{.count}}条记录/共{{.pagenum }}页/当前{{if compare .pagenum 0}}0{{else}}{{ .taskIndex }}{{end}}页</td>
+        </div>
+    </ui>
+</form>

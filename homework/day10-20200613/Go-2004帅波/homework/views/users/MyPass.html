@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>运维平台登录</title>
+    <link rel="stylesheet" href="../../static/css/layui.css">
+</head>
+<body class="layui-layout-body" style="background: url('../../static/images/panda.png');background-size: cover;opacity: 2;">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 120px; width: 600px;">
+            <legend style="color: #fffdfe">密码修改</legend>
+        </fieldset>
+
+        <form class="layui-form" action="/user/change/mypass" method="post" lay-filter="example">
+            <div class="layui-form-item" style="width: 510px">
+                <label class="layui-form-label" style="color: #fffdfe">邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="Email" lay-verify="email" autocomplete="off" placeholder="邮箱" class="layui-input" value="{{.Email}}">
+                </div>
+            </div>
+            <div class="layui-form-item" style="width: 510px">
+                <label class="layui-form-label" style="color: #fffdfe">旧密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="oldpass" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item" style="width: 510px">
+                <label class="layui-form-label" style="color: #fffdfe">新密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="newpass" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="width: 510px">
+                <label class="layui-form-label" style="color: #fffdfe">确认密码</label>
+                <div class="layui-input-block">
+                    <input type="password" name="newpass2" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+
+    </div>
+</div>
+<script src="../static/layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+        form.on('submit(demo1)', function(data){
+            // layer.alert(JSON.stringify(data.field), {
+            //     title: '最终的提交信息'
+            // })
+            if (data.field.newpass !== data.field.newpass2){
+                layer.alert("俩次输入的密码不一致")
+                return false;
+            }
+            return true
+        });
+        //自定义验证规则
+        form.verify({
+            pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ],
+            content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+    });
+</script>
+</body>
+</html>

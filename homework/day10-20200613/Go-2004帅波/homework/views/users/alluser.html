@@ -1,0 +1,56 @@
+<table class="layui-table">
+    <colgroup>
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="300">
+        <col>
+    </colgroup>
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>职位</th>
+        <th>联系方式</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .users }}
+    <tr>
+        <td>{{ .Name }}</td>
+        <td>{{ .Role | Roles }}</td>
+        <td>{{ .Phone }}</td>
+        <td>
+            {{if compare $.conuserrole 2}}
+            <a href="/user/info?id={{.Id}}" class="layui-btn layui-btn-radius" right="2" >查看</a>
+            <a href="/user/change?id={{.Id}}" class="layui-btn layui-btn-radius layui-btn-warm" >编辑</a>
+            <a href="/user/change/userpass?id={{.Id}}" class="layui-btn layui-btn-radius layui-btn-warm" >重置密码</a>
+            <a href="/user/del?id={{.Id}}" class="layui-btn layui-btn-radius layui-btn-danger" >删除</a>
+            {{end}}
+        </td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+
+<form method="get" action="/user/show">
+    <ui>
+        <div>
+            <a href="/user/show?UserIndex=1">首页</a>
+            {{if  or ( compare  $.UserIndex 1) ( eq  $.UserIndex 0 )   }}
+                上一页
+            {{else }}
+                <a href="/user/show?UserIndex={{.UserIndex | Left}}" class="layui-btn layui-btn-warm" class="layui-btn layui-btn-sm">上一页 </a>
+            {{end}}
+            {{if  compare  $.UserIndex $.pagenum   }}
+                下一页
+            {{else}}
+                <a href="/user/show?UserIndex={{.UserIndex | Right}}"  class="layui-btn layui-btn-warm" class="layui-btn layui-btn-sm">下一页</a>
+            {{end}}
+            <a href="/user/show?UserIndex={{.pagenum}}">末页</a>
+        </div>
+        <div>
+            <td>共{{.count}}条记录/共{{.pagenum }}页/当前{{if compare  .pagenum 0  }}0{{else}}{{  .UserIndex }}{{end}}页</td>
+        </div>
+    </ui>
+</form>
