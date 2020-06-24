@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>任务管理系统首页</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+</head>
+<body>
+    <!-- <div id="nav"> -->
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/add/">New</a></li>
+            <li><a href="/query/">Query</a></li>
+            <!-- <li><a href="/modify/">修改任务</a></li> -->
+            <!-- <li><a href="/delete/">删除任务</a></li> -->
+            <li style="float:right"><a class="active" href="#about">About</a></li>
+        </ul>
+    <!-- </div> -->
+
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>截止时间</th>
+                <th>状态</th>
+                <th>负责人</th>
+                <th>内容</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .Tasks }}
+            <tr>
+                <td>{{ .ID }}</td>
+                <td>{{ .Name }}</td>
+                <td>{{ datetime .StartTime }}</td>
+                <td>{{ datetime .EndTime }}</td>
+                <td>{{ datetime .DeadlineTime }}</td>
+                <td>{{ .Status }}</td>
+                <td>{{ .User }}</td>
+                <td>{{ .Content }}</td>
+                <td>
+                {{ if ne .Status "完成" }}
+                    <a href="/modify/?id={{ .ID }}">修改</a>
+                {{ else }}
+                    <label style="text-decoration:line-through; font-weight: bold;">修改</label>
+                {{ end }}
+                    <a href="/delete/?id={{ .ID }}">删除</a>
+            </td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+
+</body>
+</html>
