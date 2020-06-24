@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="/static/color.css">
+<head>
+    <meta charset="UTF-8">
+    <title>添加用户</title>
+</head>
+<body>
+<div>
+    <form action="useradd" method="post">
+        <input name="username" value="{{ .Username }}" type="text"><p id="red">{{ .Err.name }}</p>
+        <button type="submit">提交</button>
+    </form>
+</div>
+</body>
+</html>
