@@ -35,8 +35,9 @@ const (
 	sqlQueryAllTask          = "select task.id, task.name, task.status, start_time, end_time, deadline_time, user.name, content from task left join user on task.user=user.id"
 	sqlDeleteTask            = `delete from task where id=?`
 	sqlQueryTask             = `select id, name, status, start_time, deadline_time, content, user from task where id=?`
+	sqlQueryTaskWithName     = `select task.id, task.name, task.status, start_time, end_time, deadline_time, content, user.name from task  left join user on task.user=user.id where task.id=?`
 	sqlUpdateTaskIncludeTime = `update task set name=?, status=?, start_time=?, deadline_time=?, end_time=?, content=?, user=? where id=?`
-	sqlUpdateTask            = `update task set name=?, status=?, start_time=?, deadline_time=?, content=? user=? where id=?`
+	sqlUpdateTask            = `update task set name=?, status=?, start_time=?, deadline_time=?, content=?,user=? where id=?`
 	sqlQueryAllUser          = `select * from user`
 )
 
@@ -53,8 +54,8 @@ type Task struct {
 	ID           int
 	Name         string
 	StartTime    *time.Time
-	EndTime      *time.Time
-	DeadlineTime time.Time
+	CompleteTime *time.Time
+	DeadlineTime *time.Time
 	Status       string
 	Content      string
 	User         string
@@ -91,8 +92,6 @@ func main() {
 	}
 	// css image
 	http.Handle("/static/", http.FileServer(http.Dir("./views/")))
-	// // image
-	// http.Handle("/image/", http.FileServer(http.Dir("./views/")))
 
 	// homepage
 	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
@@ -103,7 +102,7 @@ func main() {
 				var t Task
 				var status int
 				var description interface{}
-				err := rows.Scan(&t.ID, &t.Name, &status, &t.StartTime, &t.EndTime, &t.DeadlineTime, &t.User, &description)
+				err := rows.Scan(&t.ID, &t.Name, &status, &t.StartTime, &t.CompleteTime, &t.DeadlineTime, &t.User, &description)
 				t.Status = statusMap[status]
 				if desc, ok := description.([]byte); ok {
 					t.Content = string(desc)
@@ -155,8 +154,6 @@ func main() {
 			deadlineTime := strings.TrimSpace(request.PostFormValue("deadline_time"))
 			suid := strings.TrimSpace(request.PostFormValue("user"))
 			uid, _ := strconv.Atoi(suid)
-			// user := strings.TrimSpace(request.PostFormValue("user"))
-			// fmt.Println(name, content, deadlineTime)
 
 			// 检查任务名称
 			if rt, ok := utils.CheckTaskName(name); !ok {
@@ -196,12 +193,56 @@ func main() {
 			}
 		}
 
-		tpl := template.Must(template.ParseFiles("views/add.html"))
+		tpl := template.Must(template.ParseFiles("views/task/add.html"))
 		tpl.ExecuteTemplate(writer, "add.html", struct {
 			Task   TaskForm
 			User   []user.User
 			Errors map[string]string
 		}{task, users, errors})
+	})
+
+	http.HandleFunc("/query/", func(writer http.ResponseWriter, request *http.Request) {
+		var (
+			task        Task
+			status      int
+			ok          bool
+			error       string
+			description interface{}
+		)
+
+		tid := request.FormValue("id")
+		row := db.QueryRow(sqlQueryTaskWithName, tid)
+		err := row.Scan(&task.ID, &task.Name, &status, &task.StartTime, &task.CompleteTime, &task.DeadlineTime, &description, &task.User)
+		if err == nil {
+			// 	检查任务描述
+			if description != nil {
+				cnt, _ := description.([]byte)
+				task.Content = string(cnt)
+			}
+
+			task.Status = statusMap[status]
+			ok = true
+		} else if err == sql.ErrNoRows {
+			error = "该任务不存在!"
+		} else {
+			error = err.Error()
+		}
+
+		funcs := template.FuncMap{
+			"datetime": func(t *time.Time) string {
+				if t == nil {
+					return "--"
+				}
+				return t.Format(utils.TimeLayout)
+			},
+		}
+
+		tpl := template.Must(template.New("tpl").Funcs(funcs).ParseFiles("views/task/query.html"))
+		tpl.ExecuteTemplate(writer, "query.html", struct {
+			T     Task
+			Error string
+			OK    bool
+		}{task, error, ok})
 	})
 
 	// 修改任务
@@ -210,8 +251,9 @@ func main() {
 			task             TaskForm
 			tempStartTime    string
 			tempDeadlineTime string
-			errors           map[string]string
-			content          interface{}
+			// username         string
+			errors  map[string]string
+			content interface{}
 		)
 
 		account := user.NewUser()
@@ -222,6 +264,7 @@ func main() {
 			id := request.FormValue("id")
 			row := db.QueryRow(sqlQueryTask, id)
 			err := row.Scan(&task.ID, &task.Name, &task.Status, &tempStartTime, &tempDeadlineTime, &content, &task.User)
+			// err := row.Scan(&task.ID, &task.Name, &task.Status, &tempStartTime, &tempDeadlineTime, &content, &username)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -240,13 +283,13 @@ func main() {
 			// fmt.Printf("%#v\n", task)
 
 		} else if request.Method == http.MethodPost {
-			id := request.PostFormValue("id")
-			name := request.PostFormValue("name")
-			status := request.PostFormValue("status")
-			startTime := request.PostFormValue("start_time")
-			deadlineTime := request.PostFormValue("deadline_time")
-			content := request.PostFormValue("content")
-			uid := request.PostFormValue("user")
+			id := strings.TrimSpace(request.PostFormValue("id"))
+			name := strings.TrimSpace(request.PostFormValue("name"))
+			status := strings.TrimSpace(request.PostFormValue("status"))
+			startTime := strings.TrimSpace(request.PostFormValue("start_time"))
+			deadlineTime := strings.TrimSpace(request.PostFormValue("deadline_time"))
+			content := strings.TrimSpace(request.PostFormValue("content"))
+			uid := strings.TrimSpace(request.PostFormValue("user"))
 
 			// 检查任务名称
 			if rt, ok := utils.CheckTaskName(name); !ok {
@@ -269,11 +312,13 @@ func main() {
 				db.Exec(sqlUpdateTaskIncludeTime, name, status, startTime, deadlineTime, completeTime, content, uid, id)
 			} else {
 				db.Exec(sqlUpdateTask, name, status, startTime, deadlineTime, content, uid, id)
+				// sqlUpdateTask            = `update task set name=?, status=?, start_time=?, deadline_time=?, content=? user=? where id=?`
+
 			}
 			http.Redirect(writer, request, "/", http.StatusFound)
 
 		}
-		tpl := template.Must(template.ParseFiles("views/modify.html"))
+		tpl := template.Must(template.ParseFiles("views/task/modify.html"))
 		tpl.ExecuteTemplate(writer, "modify.html", struct {
 			Task   TaskForm
 			User   []user.User

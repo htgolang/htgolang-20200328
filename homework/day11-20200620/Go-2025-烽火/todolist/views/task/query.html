@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询任务</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/search.css" />
+</head>
+<body>
+    <form method="GET" action="/query/?id={{ .T.ID }}">
+        <div id="search">
+            <input type="text" name="id" placeholder="task id..." required autofocus>
+        </div>
+        <br>
+    </form>
+
+    {{ if .OK }}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>截止时间</th>
+                <th>任务详情</th>
+                <th>状态</th>
+                <th>用户</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ .T.ID }}</td>
+                <td>{{ .T.Name }}</td>
+                <td>{{ datetime .T.StartTime }}</td>
+                <td>{{ datetime .T.CompleteTime }}</td>
+                <td>{{ datetime .T.DeadlineTime }}</td>
+                <td>{{ .T.Content }}</td>
+                <td>{{ .T.Status }}</td>
+                <td>{{ .T.User }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{ end }}
+</body>
+</html>

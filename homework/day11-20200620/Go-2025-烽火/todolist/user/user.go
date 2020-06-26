@@ -29,7 +29,7 @@ func init() {
 }
 
 func (u *User) GetAccounts(db *sql.DB) []User {
-	var accounts []User
+	var accounts []*User
 	rows, err := db.Query(sqlQueryAllUser)
 	if err != nil {
 		log.Fatal(err)

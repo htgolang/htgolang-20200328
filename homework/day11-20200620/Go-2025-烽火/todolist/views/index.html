@@ -37,14 +37,14 @@
                 <td>{{ .ID }}</td>
                 <td>{{ .Name }}</td>
                 <td>{{ datetime .StartTime }}</td>
-                <td>{{ datetime .EndTime }}</td>
+                <td>{{ datetime .CompleteTime }}</td>
                 <td>{{ datetime .DeadlineTime }}</td>
                 <td>{{ .Status }}</td>
                 <td>{{ .User }}</td>
                 <td>{{ .Content }}</td>
                 <td>
                 {{ if ne .Status "完成" }}
-                    <a href="/modify/?id={{ .ID }}">修改</a>
+                    <a href="/modify/?id={{ .ID }}" target="_blank" >修改</a>
                 {{ else }}
                     <label style="text-decoration:line-through; font-weight: bold;">修改</label>
                 {{ end }}
