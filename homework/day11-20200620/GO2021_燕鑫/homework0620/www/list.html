@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+<div>
+    <a href="/login/">
+        <input type="button" value="LOGOUT">
+    </a>
+</div>
+{{ if .err }}
+    <div>{{ .errstr }}</div>
+{{ else }}
+    <table border="1">
+        <tr>
+            {{ range .theader }}
+                <th>{{ . }}</th>
+            {{ end }}
+            <th>OPERATION</th>
+        </tr>
+        {{ range .tbody }}
+            <tr>
+                <td>{{ .Id }}</td>
+                <td>{{ .Name }}</td>
+                <td>{{ .StartTime }}</td>
+                <td>{{ .EndTime }}</td>
+                <td>{{ .Status }}</td>
+                <td>{{ .User }}</td>
+                <td>
+                    <a href="/updatetask/{{ .User }}/{{ .Id }}" >
+                        <button type="button">UPDATE</button>
+                    </a>
+                    <a href="/deletetask/{{ .User }}/{{ .Id }}">
+                        <button type="button">DELETE</button>
+                    </a>
+                </td>
+            </tr>
+        {{ end }}
+        <tr>
+            <td>SUM</td>
+            <td colspan="6" align="center">{{ .resultcnt }}</td>
+        </tr>
+    </table>
+{{ end }}
+<div>
+    <a href="/createtask/{{ .currentuser }}/">
+        <input type="button" value="CREATE NEWTASK">
+    </a>
+</div>
+</body>
+</html>
