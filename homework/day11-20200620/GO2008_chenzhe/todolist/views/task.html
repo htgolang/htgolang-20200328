@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务列表</title>
+</head>
+<body>
+<div>
+    <table border="1">
+        <tr>
+            <th>任务名</th>
+            <th>用户</th>
+            <th>工作内容</th>
+            <th>状态</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th><a>操作</a></th>
+        </tr><br>
+        {{range .}}
+            <tr>
+                <td>{{ .Name }}</td>
+                <td>{{ .User.Username }}</td>
+                <td>{{ .Content }}</td>
+                <td>{{ .Status }}</td>
+                <td>{{ .StartTime }}</td>
+                <td>{{ .CompleteTime }}</td>
+                <td><a href="/taskdelete?id={{ .ID }}">删除</a>|<a href="/taskedit?id={{ .ID }}">编辑</a></td>
+            </tr>
+        {{end}}
+    </table>
+</div>
+<div> <a href="/taskadd">新增任务</a></div>
+
+</body>
+</html>

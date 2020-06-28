@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"strings"
 	"time"
+	//"todolist/until/task"
 )
 const (
 	dateTimeLayout = "2006-01-02 15:04:05"
@@ -22,7 +23,9 @@ const (
 	dbPort     = 3306
 )
 const (
-	sqlTasks = "select task.id, task.name, task.status, task.start_time, task.complete_time, task.deadline_time, user.name as user from task left join user on task.user=user.id"
+	sqlTasks = "select task.id, task.task_name,task.content, task.status, task.starttime,user.id as user_id, user.name as user_name, task.completetime from task left join user on task.user_id=user.id"
+	sqlTaskDel = "delete from user where id=?"
+	sqlTaskAdd = "insert into task(`user_id`,`task_name`,`content`,`status`,`starttime`,`completetime`) values (?,?,?,?,?,?)"
 	sqlUsers = "select id,name from user"
 	sqlUserDel = "delete from user where id=?"
 	sqlUser = "select name from user where name=?"
@@ -50,11 +53,24 @@ type User struct {
 type Task struct {
 	ID           int
 	Name         string
+	Content		string
+	StatusId	int
 	Status       string
-	StartTime    *time.Time
-	CompleteTime *time.Time
-	DeadlineTime *time.Time
-	User         *string
+	StartTime    string
+	CompleteTime string
+	//User         *string
+	User User
+}
+
+type TaskData struct {
+	Id string
+	Name string
+	Content string
+	Status string
+	Starttime string
+	Completetime string
+	Err map[string]string
+	User []User
 }
 var (
 	dsn = fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=true&loc=PRC", dbUser, dbPassword, dbHost, dbPort, dbName)
@@ -185,6 +201,128 @@ func EditUser(w http.ResponseWriter, r *http.Request) {
 
 		//db.Exec(sqlUserUpdete,name,id)
 		//http.Redirect(w,r,"/user",301)
+	}
+
+}
+
+func ListTask(w http.ResponseWriter, r *http.Request){
+
+	tpl,_ := template.ParseFiles("views/task.html","views/task.html")
+	data := make([]Task,0)
+	rows,err :=db.Query(sqlTasks)
+	if err !=nil{
+		log.Println(err)
+	}
+	var task_name,task_starttime,task_completetime,user_name,task_content string
+	var task_id,task_status,user_id int
+	for rows.Next(){
+		rows.Scan(&task_id,&task_name,&task_content,&task_status,&task_starttime,&user_id,&user_name,&task_completetime)
+		if task_completetime == ""{
+			task_completetime = "未结束"
+		}
+
+		data = append(data,Task{
+			ID:task_id,
+			Name:task_name,
+			Content:task_content,
+			StatusId:task_status,
+			Status:statusMap[task_status],
+			StartTime:task_starttime,
+			CompleteTime:task_completetime,
+			User:User{
+				Id:user_id,
+				Username:user_name,
+			},
+		})
+
+	}
+	tpl.ExecuteTemplate(w,"task.html",data)
+
+}
+
+func DeleteTask(w http.ResponseWriter, r *http.Request){
+	id := r.FormValue("id")
+	db.Exec(sqlTaskDel,id)
+	http.Redirect(w,r,"/task",http.StatusFound)
+}
+
+func AddTask(w http.ResponseWriter, r *http.Request) {
+	tpl,_ := template.ParseFiles("views/taskadd.html","views/taskadd.html")
+	rows,err := db.Query(sqlUsers)
+	if err != nil{
+		fmt.Println(err)
+	}
+	Users := make([]User,0)
+	var id int
+	var name string
+	for rows.Next() {
+		rows.Scan(&id, &name)
+		Users = append(Users,User{
+			Id:id,
+			Username:name,
+		})
+	}
+	data := TaskData{
+		User:Users,
+	}
+	if r.Method == http.MethodGet{
+
+		tpl.ExecuteTemplate(w,"taskadd.html",data)
+	}
+	if r.Method == http.MethodPost{
+		r.ParseForm()
+		errs := make(map[string]string)
+		id := r.PostForm.Get("id")
+		name := r.PostForm.Get("name")
+		if strings.TrimSpace(name)=="" {
+			errs["name"] = "名称有误或不能为空"
+		}
+		content := r.PostForm.Get("content")
+		if strings.TrimSpace(content)=="" {
+			errs["content"] = "内容有误或不能为空"
+		}
+		status := r.PostForm.Get("status")
+		starttime := r.PostForm.Get("starttime")
+		if strings.TrimSpace(starttime)=="" {
+			errs["starttime"] = "时间有误或不能为空"
+		}
+		completetime := r.PostForm.Get("completetime")
+		if status == "3"{
+			if strings.TrimSpace(completetime)=="" {
+				errs["completetime"] = "时间有误或不能为空"
+			}
+		}
+		if len(errs) !=0{
+
+			tpl.ExecuteTemplate(w,"taskadd.html",TaskData{
+				Id:id,
+				Name:name,
+				Content:content,
+				Status:status,
+				Starttime:starttime,
+				Completetime:completetime,
+				Err:errs,
+				User:Users,
+
+			})
+			fmt.Println(Users)
+			fmt.Println(TaskData{
+				Id:id,
+				Name:name,
+				Content:content,
+				Status:status,
+				Starttime:starttime,
+				Completetime:completetime,
+				Err:errs,
+				User:Users,
+
+			})
+		}else {
+			res, err := db.Exec(sqlTaskAdd, id, name, content, status, starttime, completetime)
+			fmt.Println(res)
+			fmt.Println(err)
+			http.Redirect(w, r, "/task", http.StatusFound)
+		}
 	}
 
 }

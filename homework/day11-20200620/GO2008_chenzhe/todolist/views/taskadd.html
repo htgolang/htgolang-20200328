@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/color.css">
+    <meta charset="UTF-8">
+    <title>增加任务</title>
+</head>
+<body>
+<div>
+<form action="taskadd" method="post">
+    <p>任务名：<input name="name" type="text" value="{{ .Name }}"><t id="red">{{ .Err.name }}</t></p>
+    <p>任务内容：<input name="content" type="text" value="{{ .Content }}"><t id="red">{{ .Err.content }}</t></p>
+    <p>状态 <select name="status">
+            <option value="0" >新建</option>
+            <option value="1" >正在进行</option>
+            <option value="2" >暂停</option>
+            <option value="3" >完成</option>
+        </select></p>
+    <p>开始时间：<input type="datetime-local" name="starttime" value="{{ .Starttime }}"><t id="red">{{ .Err.starttime }}</t></p>
+    <p>结束时间<input type="datetime-local" name="completetime" value="{{ .Completetime }}"><t id="red">{{ .Err.completetime }}</t></p>
+    <p>用户：<select name="id">
+            {{ range .User}}
+            <option value="{{ .Id }}">{{ .Username }}</option>
+            {{ end }}
+        </select></p>
+    <button type="submit">提交</button>
+
+</form>
+</div>
+</body>
+</html>

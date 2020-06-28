@@ -8,7 +8,7 @@
 <body>
 <div>
     <form action="useradd" method="post">
-        <input name="username" value="{{ .Username }}" type="text"><p id="red">{{ .Err.name }}</p>
+        <p>用户名：</p><input name="username" value="{{ .Username }}" type="text"><p id="red">{{ .Err.name }}</p>
         <button type="submit">提交</button>
     </form>
 </div>
