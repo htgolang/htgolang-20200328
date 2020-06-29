@@ -2,12 +2,8 @@ package utils
 
 import (
 	"time"
+	"todolist/config"
 	"unicode/utf8"
-)
-
-const (
-	TimeLayout = "2006-01-02 15:04"
-	DateLayout = "2006-01-02T15:04:05Z"
 )
 
 // 检查任务名称
@@ -30,7 +26,7 @@ func CheckTaskName(txt string) (string, bool) {
 func CheckDeadline(deadlineTime string) (string, bool) {
 	var msg string
 	ok := true
-	dt, err := time.Parse(TimeLayout, deadlineTime)
+	dt, err := time.Parse(config.TimeLayout, deadlineTime)
 	if err != nil {
 		msg = "日期格式不能为空!"
 		ok = false
