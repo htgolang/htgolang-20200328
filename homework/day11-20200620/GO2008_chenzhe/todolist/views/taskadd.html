@@ -11,16 +11,37 @@
     <p>任务名：<input name="name" type="text" value="{{ .Name }}"><t id="red">{{ .Err.name }}</t></p>
     <p>任务内容：<input name="content" type="text" value="{{ .Content }}"><t id="red">{{ .Err.content }}</t></p>
     <p>状态 <select name="status">
-            <option value="0" >新建</option>
-            <option value="1" >正在进行</option>
-            <option value="2" >暂停</option>
-            <option value="3" >完成</option>
+            {{ if eq .Status "0" }}
+                <option value="0" selected>新建</option>
+            {{ else }}
+                <option value="0" >新建</option>
+            {{ end }}
+            {{ if eq .Status "1" }}
+                <option value="1" selected="selected">正在进行</option>
+            {{ else }}
+                <option value="1" >正在进行</option>
+            {{ end }}
+            {{ if eq .Status "2" }}
+                <option value="2"  selected="selected">暂停</option>
+            {{ else }}
+                <option value="2" >暂停</option>
+            {{ end }}
+            {{ if eq .Status "3" }}
+                <option value="3"  selected="selected">完成</option>
+            {{ else }}
+                <option value="3" >完成</option>
+            {{ end }}
+
         </select></p>
     <p>开始时间：<input type="datetime-local" name="starttime" value="{{ .Starttime }}"><t id="red">{{ .Err.starttime }}</t></p>
     <p>结束时间<input type="datetime-local" name="completetime" value="{{ .Completetime }}"><t id="red">{{ .Err.completetime }}</t></p>
     <p>用户：<select name="id">
             {{ range .User}}
-            <option value="{{ .Id }}">{{ .Username }}</option>
+                {{ if eq .Id $.Id }}
+                    <option value="{{ .Id }}" selected="selected">{{ .Username }}</option>
+                {{ else }}
+                    <option value="{{ .Id }}">{{ .Username }}</option>
+                {{ end }}
             {{ end }}
         </select></p>
     <button type="submit">提交</button>

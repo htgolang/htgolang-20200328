@@ -7,6 +7,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 	//"todolist/until/task"
@@ -63,7 +64,8 @@ type Task struct {
 }
 
 type TaskData struct {
-	Id string
+	//Id string
+	Id int
 	Name string
 	Content string
 	Status string
@@ -268,11 +270,13 @@ func AddTask(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodGet{
 
 		tpl.ExecuteTemplate(w,"taskadd.html",data)
+
 	}
 	if r.Method == http.MethodPost{
 		r.ParseForm()
 		errs := make(map[string]string)
-		id := r.PostForm.Get("id")
+		id_str := r.PostForm.Get("id")
+		id,_ :=strconv.Atoi(id_str)
 		name := r.PostForm.Get("name")
 		if strings.TrimSpace(name)=="" {
 			errs["name"] = "名称有误或不能为空"
@@ -295,18 +299,6 @@ func AddTask(w http.ResponseWriter, r *http.Request) {
 		if len(errs) !=0{
 
 			tpl.ExecuteTemplate(w,"taskadd.html",TaskData{
-				Id:id,
-				Name:name,
-				Content:content,
-				Status:status,
-				Starttime:starttime,
-				Completetime:completetime,
-				Err:errs,
-				User:Users,
-
-			})
-			fmt.Println(Users)
-			fmt.Println(TaskData{
 				Id:id,
 				Name:name,
 				Content:content,
