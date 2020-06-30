@@ -9,14 +9,14 @@
 </head>
 <body>
     <br>
-    <form method="POST" action="/modify/">
+    <form method="POST" action="/task/modify/">
         <label>ID:</label>
         <input type="text" name="id" value={{ .Task.ID }} readonly />
         <br>
 
         <label>名称: </label>
         <input type="text" name="name" value="{{ .Task.Name }}" required autofocus />
-        {{ .Errors.name }}
+        {{ .Error.name }}
         <br>
 
         <label>状态: </label>
@@ -42,13 +42,13 @@
 
         <label>期限: </label>
         <input type="datetime-local" name="deadline_time" value="{{ .Task.DeadlineTime }}" required autofocus />
-        {{ .Errors.deadline_time }}
+        {{ .Error.deadlineTime }}
         <br>
 
 
         <label>描述: </label><br>
         <textarea name="content">{{ .Task.Content }}</textarea>
-        {{ .Errors.content }}
+        {{ .Error.content }}
         <br>
 
         <input type="submit" value="提交" /><br>

@@ -1,5 +1,5 @@
 label {
-    width: 50px;
+    width: 80px;
     display: inline-block;
 }
 input[type=text], select {
@@ -12,6 +12,18 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+input[type=password] {
+    width: 250px;
+    /* padding: 12px 20px; */
+    margin: 8px 0;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 
 select {
     text-align: center;

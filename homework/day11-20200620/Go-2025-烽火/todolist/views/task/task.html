@@ -5,27 +5,17 @@
     <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
 </head>
 <body>
-    <div class="navbar">
-        <a href="#home">首页</a>
-
-        <div class="subnav">
-          <button class="subnavbtn">任务管理<i class="fa fa-caret-down"></i></button>
-          <div class="subnav-content">
-            <a href="/task/add/">新增任务</a>
-            <a href="/task/query/">查询任务</a>
-          </div>
-        </div>
-
-        <div class="subnav">
-          <button class="subnavbtn">用户管理<i class="fa fa-caret-down"></i></button>
-          <div class="subnav-content">
-            <a href="/user/add/">新增用户</a>
-            <a href="/user/query/">查询用户</a>
-          </div>
-        </div>
-
-        <a href="#about">关于</a>
-    </div>
+    <!-- <div id="nav"> -->
+        <ul>
+            <li><a href="/">首页</a></li>
+            <!-- <li><a href="/task/">任务管理</a></li> -->
+            <!-- <li><a href="/user/">用户管理</a></li> -->
+            <!-- <li><a href="/query/">Query</a></li> -->
+            <!-- <li><a href="/modify/">修改任务</a></li> -->
+            <!-- <li><a href="/delete/">删除任务</a></li> -->
+            <li style="float:right"><a class="active" href="#about">About</a></li>
+        </ul>
+    <!-- </div> -->
 
     <hr>
     <table>
@@ -55,11 +45,11 @@
                 <td>{{ .Content }}</td>
                 <td>
                 {{ if ne .Status "完成" }}
-                    <a href="/task/modify/?id={{ .ID }}" target="_blank" >修改</a>
+                    <a href="/modify/?id={{ .ID }}" target="_blank" >修改</a>
                 {{ else }}
                     <label style="text-decoration:line-through; font-weight: bold;">修改</label>
                 {{ end }}
-                    <a href="/task/delete/?id={{ .ID }}">删除</a>
+                    <a href="/delete/?id={{ .ID }}">删除</a>
             </td>
             </tr>
             {{ end }}

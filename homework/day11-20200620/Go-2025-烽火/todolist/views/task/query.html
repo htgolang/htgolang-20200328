@@ -9,7 +9,7 @@
 </head>
 <body>
     <h3>查询任务:</h3>
-    <form method="GET" action="/query/?id={{ .Task.ID }}">
+    <form method="GET" action="/task/query/?id={{ .Task.ID }}">
         <div id="search">
             <input type="text" name="id" placeholder="task id..." required autofocus>
             {{ if ne 0 .Task.ID }}

@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 	"html/template"
+	"log"
 	"net/http"
 	"os"
 	"strconv"
@@ -37,6 +38,13 @@ type TaskForm struct {
 	User         int
 }
 
+func init() {
+	// 设置log
+	logfile, _ := os.OpenFile("task.log", os.O_CREATE|os.O_APPEND|os.O_RDWR, os.ModePerm)
+	defer logfile.Close()
+	log.SetOutput(logfile)
+}
+
 func (t *Task) Index(w http.ResponseWriter, r *http.Request) {
 	tasks := make([]Task, 0, 20)
 	rows, err := db.Config.DB.Query(config.SqlQueryAllTask)
@@ -57,7 +65,7 @@ func (t *Task) Index(w http.ResponseWriter, r *http.Request) {
 			if err == nil {
 				tasks = append(tasks, task)
 			} else {
-				fmt.Println(err)
+				log.Println(err)
 			}
 		}
 	}
@@ -83,7 +91,7 @@ func (t *Task) Index(w http.ResponseWriter, r *http.Request) {
 // 添加任务
 func (t *Task) AddTask(w http.ResponseWriter, r *http.Request) {
 	var (
-		errors map[string]string
+		errMsg = make(map[string]string)
 		task   TaskForm
 	)
 
@@ -98,22 +106,22 @@ func (t *Task) AddTask(w http.ResponseWriter, r *http.Request) {
 		deadlineTime := strings.TrimSpace(r.PostFormValue("deadline_time"))
 		suid := strings.TrimSpace(r.PostFormValue("user"))
 		uid, _ := strconv.Atoi(suid)
-
 		// 检查任务名称
-		if rt, ok := utils.CheckTaskName(name); !ok {
-			errors["name"] = rt
+		if err := utils.CheckTaskName(name); err != nil {
+			errMsg["name"] = err.Error()
+			fmt.Println(errMsg)
 		}
 		// 检查日期
 		st := strings.ReplaceAll(startTime, "T", " ")
 
 		dt := strings.ReplaceAll(deadlineTime, "T", " ")
-		if rt, ok := utils.CheckDeadline(dt); !ok {
-			errors["deadline_time"] = rt
+		if err := utils.CheckDeadline(dt); err != nil {
+			errMsg["deadlineTime"] = err.Error()
 		}
 
 		// 检查任务描述
-		if rt, ok := utils.CheckContent(content); !ok {
-			errors["content"] = rt
+		if err := utils.CheckContent(content); err != nil {
+			errMsg["content"] = err.Error()
 		}
 
 		task = TaskForm{
@@ -124,7 +132,7 @@ func (t *Task) AddTask(w http.ResponseWriter, r *http.Request) {
 			User:         uid,
 		}
 
-		if len(errors) == 0 {
+		if len(errMsg) == 0 {
 			if completeTime != "" {
 				ct := strings.ReplaceAll(completeTime, "T", " ")
 				db.Config.DB.Exec(config.SqlCreateTaskWithCt, task.Name, task.Content, st, ct, dt, uid)
@@ -137,10 +145,10 @@ func (t *Task) AddTask(w http.ResponseWriter, r *http.Request) {
 
 	tpl := template.Must(template.ParseFiles("views/task/add.html"))
 	tpl.ExecuteTemplate(w, "add.html", struct {
-		Task   TaskForm
-		User   []user.User
-		Errors map[string]string
-	}{task, users, errors})
+		Task  TaskForm
+		User  []user.User
+		Error map[string]string
+	}{task, users, errMsg})
 }
 
 // 查询任务
@@ -198,7 +206,7 @@ func (t *Task) ModifyTask(w http.ResponseWriter, r *http.Request) {
 		task             TaskForm
 		tempStartTime    string
 		tempDeadlineTime string
-		errors           map[string]string
+		errMsg           = make(map[string]string)
 	)
 
 	account := user.NewUser()
@@ -209,8 +217,7 @@ func (t *Task) ModifyTask(w http.ResponseWriter, r *http.Request) {
 		row := db.Config.DB.QueryRow(config.SqlQueryTask, id)
 		err := row.Scan(&task.ID, &task.Name, &task.Status, &tempStartTime, &tempDeadlineTime, &task.Content, &task.User)
 		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
+			log.Fatal(err)
 		}
 		if tempStartTime != "" {
 			startTime := strings.ReplaceAll(tempStartTime, ":00Z", "")
@@ -230,19 +237,19 @@ func (t *Task) ModifyTask(w http.ResponseWriter, r *http.Request) {
 		uid := strings.TrimSpace(r.PostFormValue("user"))
 
 		// 检查任务名称
-		if rt, ok := utils.CheckTaskName(name); !ok {
-			errors["name"] = rt
+		if err := utils.CheckTaskName(name); err != nil {
+			errMsg["name"] = err.Error()
 		}
 
 		// 检查截止日期
 		dt := strings.ReplaceAll(deadlineTime, "T", " ")
-		if rt, ok := utils.CheckDeadline(dt); !ok {
-			errors["deadline_time"] = rt
+		if err := utils.CheckDeadline(dt); err != nil {
+			errMsg["deadlineTime"] = deadlineTime
 		}
 
 		// 检查任务描述
-		if rt, ok := utils.CheckContent(content); !ok {
-			errors["content"] = rt
+		if err := utils.CheckContent(content); err != nil {
+			errMsg["content"] = content
 		}
 
 		if status == "3" {
@@ -256,10 +263,10 @@ func (t *Task) ModifyTask(w http.ResponseWriter, r *http.Request) {
 	}
 	tpl := template.Must(template.ParseFiles("views/task/modify.html"))
 	tpl.ExecuteTemplate(w, "modify.html", struct {
-		Task   TaskForm
-		User   []user.User
-		Errors map[string]string
-	}{task, users, errors})
+		Task  TaskForm
+		User  []user.User
+		Error map[string]string
+	}{task, users, errMsg})
 }
 
 // 删除任务

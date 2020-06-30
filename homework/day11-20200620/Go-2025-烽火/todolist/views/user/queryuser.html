@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询用户</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/search.css" />
+</head>
+<body>
+    <h3>查询用户:</h3>
+    <form method="GET" action="/user/query/?uid={{ .User.ID }}">
+        <div id="search">
+            <input type="text" name="uid" placeholder="user id..." required autofocus>
+            {{ if ne 0 .User.ID }}
+            {{ .Error }}
+            {{ end }}
+        </div>
+        <br>
+    </form>
+
+
+    {{ if .OK }}
+    <h3 style="text-align: center;">查询结果</h3>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>状态</th>
+                <th>密码</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ .User.ID }}</td>
+                <td>{{ .User.Name }}</td>
+                <td>{{ status .User.Status }}</td>
+                <td>{{ .User.Password }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{ end }}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>新增用户</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css" />
+</head>
+<body>
+    <h3>新增用户</h3>
+    <form method="POST" action="/user/add/">
+        <label>名称: </label>
+        <input type="text" name="name" value="{{ .User.Name }}" placeholder="username" required autofocus />{{ .Error.username }}<br />
+
+        <label>密码: </label>
+        <input type="password" name="password1"  required autofocus /> <br />
+
+        <label>再次输入: </label>
+        <input type="password" name="password2" required autofocus />{{ .Error.password }}<br />
+
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>

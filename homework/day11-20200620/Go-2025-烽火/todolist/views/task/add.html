@@ -7,9 +7,9 @@
 </head>
 <body>
     <h3>添加任务</h3>
-    <form method="POST" action="/add/">
+    <form method="POST" action="/task/add/">
         <label>名称: </label>
-        <input type="text" name="name" value="{{ .Task.Name }}" placeholder="task name..." required />{{ .Errors.name }}<br />
+        <input type="text" name="name" value="{{ .Task.Name }}" placeholder="task name..." required />{{ .Error.name }}<br />
 
         <label>开始: </label>
         <input type="datetime-local" name="start_time" value="{{ .Task.StartTime }}" required /> <br />
@@ -18,7 +18,7 @@
         <input type="datetime-local" name="complete_time" value="{{ .Task.CompleteTime }}"  /><br />
 
         <label>期限: </label>
-        <input type="datetime-local" name="deadline_time" value="{{ .Task.DeadlineTime }}"required />{{ .Errors.deadline_time }} <br />
+        <input type="datetime-local" name="deadline_time" value="{{ .Task.DeadlineTime }}" required />{{ .Error.deadlineTime }} <br />
 
         <label>用户:</label>
         <select name="user">
@@ -29,7 +29,7 @@
         <br />
 
         <label>详情: </label><br />
-        <textarea name="content" placeholder="task description...">{{ .Task.Content }}{{ .Errors.content }}</textarea><br />
+        <textarea name="content" placeholder="task description...">{{ .Task.Content }}{{ .Error.content }}</textarea><br />
         <input type="submit" value="提交" />
     </form>
 </body>
