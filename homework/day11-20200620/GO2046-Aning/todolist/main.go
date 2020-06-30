@@ -192,20 +192,26 @@ func main() {
 	//编辑
 	http.HandleFunc("/edit/", func(resp http.ResponseWriter, req *http.Request) {
 		var (
-			task TaskForm
-			// tempStartTime    string
-			// tempDeadlineTime string
-			errors = make(map[string]string)
+			task             TaskForm
+			tempStartTime    string
+			tempDeadlineTime string
+			errors           = make(map[string]string)
 		)
 		fmt.Println(req.Method)
 		if req.Method == http.MethodGet {
 			id := req.FormValue("id")
 			fmt.Println("get:", id)
 			row := db.QueryRow(sqlGetTask, id)
-			err := row.Scan(&task.ID, &task.Name, &task.Status, &task.StartTime, &task.DeadlineTime, &task.Content, &task.User)
+			err := row.Scan(&task.ID, &task.Name, &task.Status, &tempStartTime, &tempDeadlineTime, &task.Content, &task.User)
 			if err != nil {
 				fmt.Println(err)
 			}
+			if tempStartTime != "" {
+				startTime := strings.ReplaceAll(tempStartTime, ":00Z", "")
+				task.StartTime = startTime
+			}
+			deadTime := strings.ReplaceAll(tempDeadlineTime, ":00Z", "")
+			task.DeadlineTime = deadTime
 		} else if req.Method == http.MethodPost {
 			name := strings.TrimSpace(req.FormValue("name"))
 			content := strings.TrimSpace(req.FormValue("content"))
@@ -213,50 +219,35 @@ func main() {
 			deadTime := strings.TrimSpace(req.FormValue("deadline_time"))
 			id, _ := strconv.Atoi(req.PostFormValue("id"))
 
-			// id := req.FormValue("id")
-
-			// task = TaskForm{
-			// 	ID:           id,
-			// 	Name:         name,
-			// 	Content:      content,
-			// 	StartTime:    startTime,
-			// 	DeadlineTime: deadTime,
-			// }
 			//检测name
-			// nameLength := utf8.RuneCountInString(task.Name)
-			// if nameLength == 0 {
-			// 	errors["name"] = "name is not null"
-			// }
-			// if nameLength > 32 {
-			// 	errors["name"] = "name is not allow more then 32"
-			// }
-			// //检测任务描述
-			// contentLen := utf8.RuneCountInString(task.Content)
-			// if contentLen == 0 {
-			// 	errors["content"] = "content is not null"
-			// }
-			// if contentLen > 512 {
-			// 	errors["content"] = "content is not allow more then 32"
-			// }
+			nameLength := utf8.RuneCountInString(name)
+			if nameLength == 0 {
+				errors["name"] = "name is not null"
+			}
+			if nameLength > 32 {
+				errors["name"] = "name is not allow more then 32"
+			}
+			//检测任务描述
+			contentLen := utf8.RuneCountInString(content)
+			if contentLen == 0 {
+				errors["content"] = "content is not null"
+			} else if contentLen > 512 {
+				errors["content"] = "content is not allow more then 32"
+			}
 
-			// //检测时间
-			// if _, err := time.Parse("2006-01-02", startTime); err != nil {
-			// 	errors["start_time"] = "start_time not allow  null"
-			// }
-			// if _, err := time.Parse("2006-01-02", deadTime); err != nil {
-			// 	errors["deadline_time"] = "deadline_time not allow  null"
-			// }
+			//检测时间
+			if _, err := time.Parse("2006-01-02", startTime); err != nil {
+				errors["start_time"] = "start_time not allow  null"
+			}
+			if _, err := time.Parse("2006-01-02", deadTime); err != nil {
+				errors["deadline_time"] = "deadline_time not allow  null"
+			}
 
-			// if len(errors) == 0 {
-			// 	db.Exec(sqlCreate, task.Name, task.Content, task.DeadlineTime)
-			// 	http.Redirect(resp, req, "/", http.StatusFound)
-			// }
-
-			fmt.Println(sqlEditTask, name, startTime, deadTime, content, id)
-			db.Exec(sqlEditTask, name, startTime, deadTime, content, id)
-			http.Redirect(resp, req, "/", http.StatusFound)
+			if len(errors) == 0 {
+				db.Exec(sqlEditTask, name, startTime, deadTime, content, id)
+				http.Redirect(resp, req, "/", http.StatusFound)
+			}
 		}
-		// get task
 
 		tmpl := template.Must(template.ParseFiles("views/edit.html"))
 		tmpl.ExecuteTemplate(resp, "edit.html", struct {
@@ -264,6 +255,7 @@ func main() {
 			Errors map[string]string
 		}{task, errors})
 	})
+
 	//启动监听
 	http.ListenAndServe(listenAdd, nil)
 }
