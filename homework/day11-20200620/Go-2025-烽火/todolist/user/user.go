@@ -16,6 +16,7 @@ type User struct {
 	Name     string
 	Status   int
 	Password string
+	Flag     int
 }
 
 func NewUser() *User {
@@ -30,14 +31,14 @@ func init() {
 
 }
 
-func (u *User) GetAccounts() []User {
-	var accounts []User
+func GetAccounts() []User {
+	accounts := make([]User, 0)
 	rows, err := db.Config.DB.Query(config.SqlQueryAllUser)
 	if err != nil {
 		log.Fatal(err)
 	}
 	for rows.Next() {
-		var user User
+		user := User{}
 		err := rows.Scan(&user.ID, &user.Name, &user.Status)
 		if err != nil {
 			log.Println(err)

@@ -110,6 +110,7 @@ th {
 td {
     text-align: center;
     padding: 8px;
+    font-size: 14px;
 }
 
 tr:nth-child(even) {

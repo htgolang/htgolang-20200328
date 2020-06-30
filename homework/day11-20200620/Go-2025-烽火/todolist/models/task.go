@@ -95,8 +95,8 @@ func (t *Task) AddTask(w http.ResponseWriter, r *http.Request) {
 		task   TaskForm
 	)
 
-	account := user.NewUser()
-	users := account.GetAccounts()
+	// account := user.NewUser()
+	users := user.GetAccounts()
 
 	if r.Method == http.MethodPost {
 		name := strings.TrimSpace(r.PostFormValue("name"))
@@ -203,27 +203,35 @@ func (t *Task) QueryTask(w http.ResponseWriter, r *http.Request) {
 // // 修改任务
 func (t *Task) ModifyTask(w http.ResponseWriter, r *http.Request) {
 	var (
-		task             TaskForm
+		task TaskForm
+		// account          user.User
 		tempStartTime    string
 		tempDeadlineTime string
 		errMsg           = make(map[string]string)
 	)
 
-	account := user.NewUser()
-	users := account.GetAccounts()
+	// account := user.NewUser()
+	users := user.GetAccounts()
 
 	if r.Method == http.MethodGet {
-		id := r.FormValue("id")
+		id := strings.TrimSpace(r.FormValue("id"))
 		row := db.Config.DB.QueryRow(config.SqlQueryTask, id)
 		err := row.Scan(&task.ID, &task.Name, &task.Status, &tempStartTime, &tempDeadlineTime, &task.Content, &task.User)
 		if err != nil {
 			log.Fatal(err)
 		}
+		//标记select用户
+		for index, user := range users {
+			if user.ID == task.User {
+				user.Flag = 1
+				users[index] = user
+			}
+		}
+
 		if tempStartTime != "" {
 			startTime := strings.ReplaceAll(tempStartTime, ":00Z", "")
 			task.StartTime = startTime
 		}
-
 		deadlineTime := strings.ReplaceAll(tempDeadlineTime, ":00Z", "")
 		task.DeadlineTime = deadlineTime
 

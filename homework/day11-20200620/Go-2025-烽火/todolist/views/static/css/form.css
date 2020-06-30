@@ -1,6 +1,10 @@
 label {
     width: 80px;
     display: inline-block;
+    font-size: 14px;
+}
+input, select {
+    font-size: 14px;
 }
 input[type=text], select {
     width: 250px;
