@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>edit</title>
+    </head>
+    <body>
+        <form action="/edit/" method="POST">
+            <input type="hidden" name="id" value="{{ .Task.ID }}"/><br/>
+            <label>名称: </label>
+            <input type="text" name="name" value="{{ .Task.Name }}" />{{ .Errors.name }}<br/>
+
+            <label>描述: </label> 
+            <textarea name="content">{{ .Task.Content }}</textarea>{{ .Errors.content }}<br/>
+
+            <label>开始: </label> 
+            <input type="date" name="start_time" value="{{ .Task.StartTime }}"/>{{ .Errors.start_time }} <br/>
+
+            <label>期限: </label> 
+            <input type="date" name="deadline_time" value="{{ .Task.DeadlineTime }}"/>{{ .Errors.deadline_time }} <br/>
+            
+            <input type="submit" value="提交"/>
+
+        </form>
+    </body>
+</html>
