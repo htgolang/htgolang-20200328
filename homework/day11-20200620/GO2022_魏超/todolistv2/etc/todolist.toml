@@ -1,0 +1,10 @@
+[Mysql]
+UserName = "root"
+Password = "123456"
+Host = "192.168.163.200"
+Port = 3306
+DBName = "test"
+
+[HttpServer]
+Host = "0.0.0.0"
+Port = 8080

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>添加任务</title>
+        <link rel="stylesheet" href="/css/datetime.css">
+        <script src="/js/datetime.js"></script>
+    </head>
+    <body>
+        <form action="/add_task/" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label>任务名：</label>
+                    </td> 
+                    <td>
+                        <input type="text" name="task_name" value="{{ .Task.Name }}" /> {{ .Errors.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>期限：</label>
+                    </td> 
+                    <td>
+                        <input type="text" onclick="MyDatePick({fmt:'datetime'})" name="deadline_time" value="{{ datetime .Task.DeadlineTime }}" />  {{ .Errors.deadline_time }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>任务描述</label>
+                    </td>
+                    <td>
+                        <textarea name="describe" >{{ .Task.Describe }}</textarea> {{ .Errors.describe }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>责任人：</label>
+                    </td> 
+                    <td>
+                        <select name="user_id" >
+                            <option value=0 selected = "selected"> </option>
+                            {{ range .Users }}
+                                {{ if eq .ID $.Task.UserID }}
+                                    <option value={{ .ID }} selected = "selected">{{ .Name }}</option>
+                                {{ else }}
+                                    <option value={{ .ID }}>{{ .Name }}</option>
+                                {{ end }}
+                            {{ end }}
+                        </select> {{ .Errors.userid }}
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="添加"> {{ .Errors.subimt }}
+        </form>
+    </body>
+</html>
