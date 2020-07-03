@@ -1,0 +1,35 @@
+<body class="layui-layout-body" style="background: url('../../static/images/cat.png');background-size: cover;opacity: 2;">
+<form class="layui-form" action="/user/change/userpass?id={{ .user.ID }}" method="post" id="dame1" style="margin-left: 90px;">
+    <p>修改{{.user.Name}}的密码</p>
+    <div class="layui-form-item" style="width: 510px">
+        <label class="layui-form-label" style="color: #fffdfe">新密码</label>
+        <div class="layui-input-block">
+            <input type="password" name="PassWord" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button type="submit" class="layui-btn" lay-submit="" lay-filter="demo1">立即修改</button>
+        </div>
+    </div>
+</form>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+        //自定义验证规则
+        form.verify({
+            pass: [
+                /^[\S]{6,12}$/
+                ,'密码必须6到12位，且不能出现空格'
+            ],
+            content: function(value){
+                layedit.sync(editIndex);
+            }
+        });
+    });
+</script>
+</body>
