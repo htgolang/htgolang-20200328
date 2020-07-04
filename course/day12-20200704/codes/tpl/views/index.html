@@ -1,0 +1,50 @@
+{{ .name }}
+
+{{ if .body }}
+男
+{{ else }}
+女
+{{ end }}
+
+{{ range .scores }}
+{{.}}|
+{{ end }}
+
+<br/>
+{{ range $index,$value := .scores }}
+{{$index}} = {{$value}} <br />
+{{ end }}
+
+
+{{ range .users }}
+{{ . }}
+{{ end }}
+
+{{ range $key, $value := .users }}
+{{ $key }} = {{ $value }} <br/>
+{{ end }}
+
+
+{{ lower .content }}
+
+
+{{ .content|lower }}
+
+{{ define "lower" }}
+输入内容: {{ .|lower }}
+{{ end }}
+
+
+{{ template "lower" .content }}
+{{ template "lower" .content }}
+{{ template "lower" .content }}
+{{ template "lower" .content }}
+{{ template "lower" .content }}
+{{ template "lower" .content }}
+
+<br />
+{{ template "bar.html" .content}}
+{{ template "bar.html" .content}}
+{{ template "bar.html" .content}}
+{{ template "bar.html" .content}}
+{{ template "bar.html" .content}}

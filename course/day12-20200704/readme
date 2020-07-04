@@ -1,0 +1,25 @@
+MVC:
+
+M=>Model: 模型
+V=>View: 视图
+C=>Controller: 控制器
+
+分层原则
+
+
+客户端请求: http协议 => url, method, params
+
+服务器处理客户端过程: url => handler => params => db => template => html
+a. 定义处理器
+    params
+b. 处理器调用数据库对数据进行处理(增/删/改/查)
+c. 处理器调用模板基础去渲染页面
+d. 定义url处理器管理
+
+客户端渲染: http渲染页面
+
+
+beego 2
+css 1
+js 自学
+1 项目
