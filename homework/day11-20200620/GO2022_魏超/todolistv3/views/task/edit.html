@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>编辑任务</title>
+        <link rel="stylesheet" href="/css/datetime.css">
+        <script src="/js/datetime.js"></script>
+        <script src="/js/quit.js"></script>
+    </head>
+    <body>
+        <form action="/task/mod/" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label>任务名：</label>
+                    </td> 
+                    <td>
+                        {{ .Task.Name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>状态：</label>
+                    </td> 
+                    <td>
+                        <select name="status" >
+                            {{ range .StatusSlice }}
+                                {{ if eq . $.Task.Status }}
+                                    <option value={{ . }} selected = "selected">{{ status . }}</option>
+                                {{ else }}
+                                    <option value={{ . }}>{{ status . }}</option>
+                                {{ end }}
+                            {{ end }}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>任务描述</label>
+                    </td>
+                    <td>
+                        <textarea name="describe" >{{ .Task.Describe }}</textarea> {{ .Errors.describe }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>责任人：</label>
+                    </td> 
+                    <td>
+                        <select name="user_id" >
+                            <option value=0 selected = "selected"> </option>
+                            {{ range .Users }}
+                                {{ if eq .ID $.Task.UserID }}
+                                    <option value={{ .ID }} selected = "selected">{{ .Name }}</option>
+                                {{ else }}
+                                    <option value={{ .ID }}>{{ .Name }}</option>
+                                {{ end }}
+                            {{ end }}
+                        </select> {{ .Errors.userid }}
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="id" value={{ .Task.ID }}>
+            {{ .Errors.submit }}
+            <input type="submit" value="添加">
+            <input type="button" value="退出" onclick="quit('/task/list/')"/>
+        </form>
+    </body>
+</html>
