@@ -119,18 +119,17 @@ func ModUser(response http.ResponseWriter, request *http.Request) {
 
 	} else if request.Method == http.MethodPost {
 		user.Name = request.FormValue("name")
+		user.Sex, _ = strconv.Atoi(request.FormValue("sex"))
 		account := request.FormValue("account")
 		tel := request.FormValue("tel")
 		user.Address = request.FormValue("address")
 		users = models.GetUsers()
 
-		if user.Account == account {
-			errors["name"] = "不可以与原名同名"
-		} else {
+		if user.Account != account {
 			var isSameName bool
-			for _, user := range users {
-				if user.Account == account {
-					errors["name"] = "存在同名用户"
+			for _, ouser := range users {
+				if ouser.Account == account {
+					errors["account"] = "存在同名账号"
 					isSameName = true
 					break
 				}
@@ -147,7 +146,7 @@ func ModUser(response http.ResponseWriter, request *http.Request) {
 		}
 
 		if len(errors) == 0 {
-			err = user.CreateUser()
+			err = user.UpdateUser()
 			if err == nil {
 				http.Redirect(response, request, "/user/list", http.StatusFound)
 			} else {

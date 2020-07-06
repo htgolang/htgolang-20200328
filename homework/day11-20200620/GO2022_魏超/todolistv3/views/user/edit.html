@@ -27,6 +27,18 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>性别：</td>
+                    <td>
+                        {{ if eq .User.Sex 1 }}
+                            <input type="radio" name="sex" value=1 checked="checked"><label>男</label>
+                            <input type="radio" name="sex" value=0><label>女</label>
+                        {{ else }}
+                            <input type="radio" name="sex" value=1><label>男</label>
+                            <input type="radio" name="sex" value=0 checked="checked"><label>女</label>
+                        {{ end }}
+                    </td>
+                </tr>
+                <tr>
                     <td>
                         <label>电话：</label>
                     </td>
