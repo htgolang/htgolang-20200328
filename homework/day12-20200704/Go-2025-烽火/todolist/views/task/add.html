@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>添加任务</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css" />
+</head>
+<body>
+    <h3>添加任务</h3>
+    <form method="POST" action="/task/">
+        <label>名称: </label>
+        <input type="text" name="name" value="{{ .task.Name }}" placeholder="任务名..." required />{{ .errors.name }}<br />
+
+        <label>开始: </label>
+        <input type="datetime-local" name="start_time" value="{{ .task.StartTime }}" required /> <br />
+
+        <label>结束: </label>
+        <input type="datetime-local" name="complete_time" value="{{ .task.CompleteTime }}"  /><br />
+
+        <label>期限: </label>
+        <input type="datetime-local" name="deadline_time" value="{{ .task.DeadlineTime }}" required />{{ .errors.deadlineTime }}<br />
+
+        <label>用户:</label>
+        <select name="user">
+            {{ range .users }}
+            <option value="{{ .ID }}">{{ .Name }}</option>
+            {{ end }}
+        </select>
+        <br />
+
+        <label>详情: </label><br />
+        <textarea name="content" placeholder="任务详情...">{{ .task.Content }}{{ .errors.content }}</textarea><br />
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>

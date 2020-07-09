@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询任务</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/search.css" />
+</head>
+<body>
+    <h3>查询任务:</h3>
+    <form method="GET" action="/task/query/?id={{ .task.ID }}">
+        <div id="search">
+            <input type="text" name="id" placeholder="任务编号..." required autofocus>
+            {{ if and (not .errors.flag) (ne .task.ID 0) }}
+            {{ .errors.tips }}
+            {{ end }}
+        </div>
+        <br>
+    </form>
+
+
+    {{ if  .errors.flag }}
+    <h3 style="text-align: center;">查询结果</h3>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>名称</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>截止时间</th>
+                <th>任务详情</th>
+                <th>状态</th>
+                <th>用户</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ .task.ID }}</td>
+                <td>{{ .task.Name }}</td>
+                <td>{{ datetime .task.StartTime }}</td>
+                <td>{{ datetime .task.CompleteTime }}</td>
+                <td>{{ datetime .task.DeadlineTime }}</td>
+                <td>{{ .task.Content }}</td>
+                <td>{{ .task.Status }}</td>
+                <td>{{ .task.User }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {{ end }}
+</body>
+</html>
