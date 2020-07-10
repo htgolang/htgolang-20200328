@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<body>
+<form action="/tasks/login/" method="post">
+    Username:<br>
+    <input type="text" name="Username" value="{{ .Username }}">
+    <br>
+    Password:<br>
+    <input type="text" name="Password" value="{{ .Password }}">
+    <br><br>
+    {{ if .Errors.HasErrors }}
+        {{ range .Errors.ErrorsByKey "login" }}
+            {{ . }}
+            <br>
+        {{ end }}
+    {{ end }}
+    <input type="submit" value="LOGIN">
+    <input type="submit" formaction="/tasks/signup/" value="SIGNUP">
+</form>
+</body>
+</html>
