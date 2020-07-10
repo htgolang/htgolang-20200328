@@ -9,7 +9,7 @@
 </head>
 <body>
     <br>
-    <form method="POST" action="/task/modify/">
+    <form method="POST" action={{ urlfor "controllers.TaskController.Modify" }}>
         <label>ID:</label>
         <input type="text" name="id" value={{ .task.ID }} readonly />
         <br>

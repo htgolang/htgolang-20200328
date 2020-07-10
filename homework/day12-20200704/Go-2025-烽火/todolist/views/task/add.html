@@ -7,7 +7,7 @@
 </head>
 <body>
     <h3>添加任务</h3>
-    <form method="POST" action="/task/">
+    <form method="POST" action={{ urlfor "controllers.TaskController.Add" }}>
         <label>名称: </label>
         <input type="text" name="name" value="{{ .task.Name }}" placeholder="任务名..." required />{{ .errors.name }}<br />
 
