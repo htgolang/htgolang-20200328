@@ -1,0 +1,14 @@
+{{ if .errors.HasErrors }}
+    <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+        {{ range .errors.Errors }}
+            <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">{{ index . 0}}</button>
+        {{ end }}
+    </div>
+{{ end }}
+<p>详细信息</p>
+<ul>
+    <li>用户名:{{ .user.Name }}</li>
+    <li>邮箱:{{ .user.Email }}</li>
+    <li>职位:{{ .user.Role | Roles }}</li>
+    <li>联系方式:{{ .user.Phone }}</li>
+</ul>

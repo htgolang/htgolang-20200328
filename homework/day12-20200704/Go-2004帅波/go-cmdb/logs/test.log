@@ -1,0 +1,738 @@
+2020/07/05 21:38:16.763 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:51:53.634 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:52:00.778 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    19.9436ms| nomatch|[44m GET     [0m /  
+2020/07/05 21:52:00.806 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     14.959ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:00.871 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    14.9943ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 21:52:00.900 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    19.0011ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:33.096 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.9405ms| nomatch|[44m GET     [0m /login/login
+2020/07/05 21:52:33.128 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    18.9211ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:47.066 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:52:51.600 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    30.5764ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:52.362 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     20.675ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:53.774 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    18.9869ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:05.675 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:54:08.472 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|      26.92ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:09.222 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    16.9533ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:09.553 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.9197ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:09.717 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    17.9499ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:19.203 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:54:21.035 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    30.9107ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:21.630 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.9441ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:21.831 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|      21.91ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:22.001 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    21.9357ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:22.159 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    21.9711ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:24.160 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     22.184ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:32.137 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    37.7831ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.265 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9483ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.301 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.3841ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.340 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     21.994ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.376 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.0767ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.414 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     21.904ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.449 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.3772ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.481 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9491ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.517 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9892ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.559 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     24.938ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.592 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.1468ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.620 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    16.1903ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.650 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.5586ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.678 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.7269ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.707 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9517ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.740 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     21.169ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.773 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    20.9781ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.809 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.9503ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.843 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    20.6578ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.880 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    25.6149ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.911 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    16.9582ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:37.957 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9748ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:37.993 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.0297ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.025 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.4672ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.058 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     19.707ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.088 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9908ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.124 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9058ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.159 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9283ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.195 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9621ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.229 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9117ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.263 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9425ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.299 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9802ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.333 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.0119ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.364 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9114ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.394 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9121ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.428 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9093ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.461 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.2728ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.491 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.7071ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.521 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.7168ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.554 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    20.0958ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.587 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.2265ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:46.820 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:54:48.632 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9236ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:54:48.662 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      998.2µs|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 21:54:48.663 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui.js
+2020/07/05 21:54:48.708 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.9955ms|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 21:54:49.024 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 21:54:49.031 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 21:54:49.038 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      997.4µs|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 21:54:49.355 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      939.2µs|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 21:54:49.393 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 21:54:49.396 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 21:54:49.400 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.0478ms|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 21:54:57.180 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.3605ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:55:44.761 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:55:46.981 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9273ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:55:56.103 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    22.1175ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:55:56.138 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9401ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:55:59.632 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    13.0018ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:56:18.336 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      997.3µs|   match|[44m GET     [0m /static/css/modules/layer/default/icon.png
+2020/07/05 21:56:29.915 [E] [login.go:107]  user创建失败 Error 1406: Data too long for column 'password' at row 1 
+2020/07/05 21:56:29.916 [I] [login.go:112]  map[Reg:[注册失败]] 
+2020/07/05 21:56:29.917 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   991.5395ms|   match|[46m POST    [0m /register   r:/register
+2020/07/05 21:56:29.944 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    17.3102ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:57:25.822 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:57:34.582 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9554ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:57:51.478 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   982.7033ms|   match|[46m POST    [0m /register   r:/register
+2020/07/05 21:57:51.507 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.2638ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:57:51.548 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9283ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:57:57.819 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    14.9227ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:57:57.849 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9196ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:58:13.668 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    55.5185ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:58:13.717 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    36.7276ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:59:14.842 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:59:17.055 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9168ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:59:24.457 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.0156ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:59:24.495 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9746ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:59:48.798 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 21:59:55.003 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    28.8958ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:59:55.039 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    19.9468ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:00:04.897 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.1909ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:00:04.929 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.7294ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:01:09.964 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:01:44.074 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9235ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:01:51.316 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    15.9267ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:01:51.340 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    14.9234ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:02:10.740 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:02:18.142 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    25.9011ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:02:18.187 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.3328ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:02:41.986 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:02:48.310 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    26.9213ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:02:48.341 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.2184ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:03.922 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:04:08.351 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|   101.7265ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:14.535 [E] [login.go:63]  登陆失败 
+2020/07/05 22:04:14.536 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    36.6739ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:14.563 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    14.9608ms| nomatch|[44m GET     [0m /LoginErr
+2020/07/05 22:04:14.602 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.9019ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:43.977 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:04:54.152 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   971.2572ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:54.180 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    15.3335ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:04:54.201 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/element.js
+2020/07/05 22:04:56.383 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    27.8884ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:05:05.586 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9295ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:05:06.923 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    34.8938ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:21:46.293 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.9434ms| nomatch|[44m GET     [0m /login/out
+2020/07/05 22:22:00.443 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    17.1249ms|   match|[44m GET     [0m /auth/loginout   r:/auth/loginout/*
+2020/07/05 22:22:00.472 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.2089ms| nomatch|[44m GET     [0m /login
+2020/07/05 22:22:00.503 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    17.9228ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:25:03.479 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:25:06.986 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.3667ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:25:13.339 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   965.3917ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:25:13.374 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.9525ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:25:14.899 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     31.937ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:25:18.647 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    28.3563ms|   match|[44m GET     [0m /auth/out   r:/auth/out/*
+2020/07/05 22:25:18.677 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9496ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:32:10.197 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:32:35.985 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    15.9559ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:32:36.016 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9166ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:32:36.051 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.0016ms|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 22:32:36.051 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui.js
+2020/07/05 22:32:36.085 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.9943ms|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 22:32:36.372 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.0019ms|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 22:32:36.380 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      989.2µs|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 22:32:36.383 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 22:32:36.677 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      1.046ms|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 22:32:36.711 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 22:32:36.715 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      996.3µs|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 22:32:36.719 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 22:32:54.740 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   970.3748ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:32:54.763 [D] [server.go:2802]  |      127.0.0.1|[43m 405 [0m|    13.9905ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:33:19.006 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:33:21.602 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:21.603 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    30.2762ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:22.673 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:22.675 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     17.914ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:23.555 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:23.557 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9474ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:24.381 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:24.383 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.2621ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:30.665 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:30.666 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     16.959ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 22:33:39.265 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:33:41.779 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:41.780 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|      24.93ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 22:33:44.386 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:44.387 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    15.9571ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:53.618 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:33:53.620 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.9512ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:34:01.513 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|      8.018ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:34:01.544 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    19.9097ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:34:01.576 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 22:34:01.576 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/layui.js
+2020/07/05 22:34:01.609 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|      999.1µs|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 22:34:01.895 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 22:34:01.903 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 22:34:01.907 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 22:34:02.195 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|     1.0003ms|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 22:34:02.216 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 22:34:02.220 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 22:34:02.225 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|      997.8µs|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 22:34:10.705 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   957.4453ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:34:10.738 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    16.9238ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:34:10.763 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|      997.4µs|   match|[44m GET     [0m /static/lay/modules/element.js
+2020/07/05 22:34:12.383 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9989ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:34:15.268 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    16.9528ms|   match|[44m GET     [0m /user/my/info   r:/user/my/info
+2020/07/05 22:34:15.301 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    22.3082ms| nomatch|[44m GET     [0m /user/static/css/layui.css
+2020/07/05 22:34:15.329 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     2.9901ms|   match|[44m GET     [0m /static/images/panda.png
+2020/07/05 22:34:15.332 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     15.957ms| nomatch|[44m GET     [0m /user/static/layui.js
+2020/07/05 22:34:17.077 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   107.2733ms|   match|[46m POST    [0m /user/my/info   r:/user/my/info
+2020/07/05 22:34:17.133 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    33.9046ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:34:18.871 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9277ms|   match|[44m GET     [0m /user/change/mypass   r:/user/change/mypass
+2020/07/05 22:34:18.903 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    12.9656ms| nomatch|[44m GET     [0m /user/static/layui.js
+2020/07/05 22:34:23.869 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    32.9127ms|   match|[44m GET     [0m /user/change/userpass   r:/user/change/userpass
+2020/07/05 22:34:23.897 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    17.9852ms| nomatch|[44m GET     [0m /user/static/css/layui.css
+2020/07/05 22:34:23.920 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|        996µs|   match|[44m GET     [0m /static/images/cat.png
+2020/07/05 22:34:23.929 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.3952ms| nomatch|[44m GET     [0m /user/static/layui.js
+2020/07/05 22:47:25.088 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:48:48.815 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:48:53.588 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:48:53.589 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|      25.93ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:48:56.468 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:48:56.469 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    20.9436ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:50:35.119 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:50:38.279 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:50:38.282 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    30.3398ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:50:39.513 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:50:39.514 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     19.906ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:50:44.330 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:50:44.331 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9511ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:50:49.832 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     9.0081ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:50:49.864 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9756ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:50:49.893 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      998.3µs|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 22:50:49.895 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      999.1µs|   match|[44m GET     [0m /static/layui.js
+2020/07/05 22:50:49.901 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.9675ms|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 22:50:49.930 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 22:50:49.936 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      998.7µs|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 22:50:49.940 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      939.1µs|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 22:50:49.940 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 22:50:49.959 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 22:50:49.962 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 22:50:49.966 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 22:51:06.724 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   961.3982ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:06.761 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.9223ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:51:06.798 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/element.js
+2020/07/05 22:51:08.671 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.7102ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:51:11.069 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    18.2639ms|   match|[44m GET     [0m /auth/out   r:/auth/out/*
+2020/07/05 22:51:11.106 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.9709ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:15.605 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    17.9416ms|   match|[44m GET     [0m /auth/reg   r:/auth/reg/*
+2020/07/05 22:51:32.984 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   998.1812ms|   match|[46m POST    [0m /auth/reg   r:/auth/reg/*
+2020/07/05 22:51:33.023 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.9294ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:46.424 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   971.1785ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:46.458 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.1014ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:51:48.169 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9197ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:53:04.656 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:53:08.614 [I] [route.go:18]  <nil> 
+2020/07/05 22:53:08.615 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    19.9475ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:53:08.646 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9481ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:08.762 [I] [route.go:18]  <nil> 
+2020/07/05 22:53:08.763 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    19.9441ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 22:53:08.798 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.9768ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:17.393 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   983.4009ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:17.421 [I] [route.go:18]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-05 22:34:17 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$IZqXSFK.nKPjiuUurz7g0.9RUYuIJgbbkVtsLtgL8FuNAzduKXqf. 12312312312 2} 
+2020/07/05 22:53:17.428 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    23.9908ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:53:17.524 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    19.9457ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:21.896 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:53:23.999 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:53:24.001 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    21.9393ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:53:24.034 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:53:24.035 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    12.9659ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 22:54:19.767 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:55:41.774 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:55:41.774 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    24.9314ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:55:41.806 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:55:41.807 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9498ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 22:56:04.612 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 22:56:06.207 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:56:06.207 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    27.9264ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:56:06.241 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 22:56:06.242 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    20.9435ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 22:59:56.965 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 23:00:00.591 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:00:00.592 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     29.917ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:00:00.630 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:00:00.630 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    21.9418ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:10.201 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 23:01:14.930 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:14.930 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    28.9219ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:01:14.967 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:14.967 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     20.543ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:15.693 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:15.694 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.0283ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:01:15.728 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:15.729 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9552ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:16.317 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:16.320 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    21.9093ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:01:16.359 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:16.359 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    17.9532ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:20.471 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:20.472 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     19.949ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:20.500 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:20.501 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    17.3399ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:22.389 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:22.390 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.1631ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:22.420 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:22.421 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.7082ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:24.356 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:24.357 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9509ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:24.387 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:24.388 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9515ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:24.965 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:24.965 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9487ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:24.994 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:24.995 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.4127ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:25.490 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:25.491 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9469ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:25.521 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:25.522 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9491ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:25.970 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:25.971 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    13.9635ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:26.004 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:26.005 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.9476ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:26.445 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:26.445 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9524ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:26.475 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:26.475 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9552ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:40.787 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 23:01:43.609 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:01:43.642 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:04:10.128 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 23:04:11.154 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:04:11.190 [E] [server.go:2802]  gob: name not registered for interface: "github.com/strive-after/go-kubernetes/module.User"
+2020/07/05 23:04:24.743 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/05 23:04:26.465 [I] [route.go:21]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-05 22:34:17 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$IZqXSFK.nKPjiuUurz7g0.9RUYuIJgbbkVtsLtgL8FuNAzduKXqf. 12312312312 2} 
+2020/07/05 23:04:29.916 [I] [route.go:21]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-05 22:34:17 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$IZqXSFK.nKPjiuUurz7g0.9RUYuIJgbbkVtsLtgL8FuNAzduKXqf. 12312312312 2} 
+2020/07/05 23:04:42.176 [I] [route.go:21]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-05 22:34:17 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$IZqXSFK.nKPjiuUurz7g0.9RUYuIJgbbkVtsLtgL8FuNAzduKXqf. 12312312312 2} 
+2020/07/05 23:04:48.539 [I] [route.go:21]  <nil> 
+2020/07/05 23:04:53.332 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/06 10:22:58.544 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 11:53:07.492 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 11:55:16.923 [I] [route.go:18]  <nil> 
+2020/07/06 11:55:17.633 [I] [route.go:18]  <nil> 
+2020/07/06 11:55:26.611 [E] [login.go:63]  获取失败%!(EXTRA *errors.errorString=record not found) 
+2020/07/06 11:55:26.876 [I] [route.go:18]  <nil> 
+2020/07/06 11:55:41.048 [E] [login.go:63]  获取失败%!(EXTRA *errors.errorString=record not found) 
+2020/07/06 11:55:41.305 [I] [route.go:18]  <nil> 
+2020/07/06 11:55:52.802 [E] [login.go:55]  登陆失败 
+2020/07/06 11:55:53.070 [I] [route.go:18]  <nil> 
+2020/07/06 11:58:02.565 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 11:58:11.458 [E] [login.go:63]  获取失败%!(EXTRA *errors.errorString=record not found) 
+2020/07/06 11:58:11.714 [I] [route.go:18]  <nil> 
+2020/07/06 11:59:08.548 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 11:59:17.463 [I] [route.go:18]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-05 22:34:17 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$IZqXSFK.nKPjiuUurz7g0.9RUYuIJgbbkVtsLtgL8FuNAzduKXqf. 12312312312 2} 
+2020/07/06 11:59:19.245 [I] [route.go:18]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-05 22:34:17 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$IZqXSFK.nKPjiuUurz7g0.9RUYuIJgbbkVtsLtgL8FuNAzduKXqf. 12312312312 2} 
+2020/07/06 12:45:11.969 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 12:48:32.731 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 12:52:04.895 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 12:52:21.509 [E] [users.go:274]  密码更新失败 Error 1103: Incorrect table name ''
+ 当前登陆用户 qushuaibo MyPassPost  密码更新失败 
+2020/07/06 12:52:30.445 [E] [login.go:55]  登陆失败 
+2020/07/06 12:53:12.394 [E] [users.go:274]  密码更新失败 Error 1103: Incorrect table name ''
+ 当前登陆用户 qushuaibo MyPassPost  密码更新失败 
+2020/07/06 12:53:23.945 [E] [login.go:55]  登陆失败 
+2020/07/06 12:53:35.968 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 15:49:04.933 [E] [template.go:176]  parse template err: users/alluser.html template: users/alluser.html:26: function "UrlFor" not defined
+2020/07/06 15:49:24.678 [E] [template.go:176]  parse template err: users/alluser.html template: users/alluser.html:26: function "UrlFor" not defined
+2020/07/06 15:49:39.092 [E] [template.go:176]  parse template err: users/ChangeUser.html template: users/ChangeUser.html:2: function "UrlFor" not defined
+2020/07/06 15:50:04.581 [E] [template.go:176]  parse template err: users/ChangeUser.html template: users/ChangeUser.html:2: function "UrlFor" not defined
+2020/07/06 15:50:28.134 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 15:50:51.542 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 15:51:07.123 [E] [login.go:55]  登陆失败 
+2020/07/06 15:54:01.633 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 15:54:12.860 [E] [users.go:99]  strconv.Atoi: parsing "{{ .user.ID }}": invalid syntax 当前登录用户 qushuaibo ChangeUserPost 获取id 失败 
+2020/07/06 15:54:31.847 [E] [users.go:99]  strconv.Atoi: parsing "{{ .user.ID }}": invalid syntax 当前登录用户 qushuaibo ChangeUserPost 获取id 失败 
+2020/07/06 16:09:15.792 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 16:09:31.517 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 16:10:17.079 [D] [controller.go:306]  template Execute err: template: users/alluser.html:26:71: executing "users/alluser.html" at <.user.ID>: can't evaluate field user in type module.User
+2020/07/06 16:10:17.079 [E] [server.go:2807]  template: users/alluser.html:26:71: executing "users/alluser.html" at <.user.ID>: can't evaluate field user in type module.User
+2020/07/06 16:21:12.221 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 16:23:05.305 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 16:56:01.190 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 16:56:02.411 [E] [users.go:146]  strconv.Atoi: parsing "": invalid syntax 当前登录用户 qushuaibo UserInfo 获取id失败 
+2020/07/06 17:01:27.975 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 17:01:34.962 [D] [controller.go:306]  template Execute err: html/template:users/alluser.html: "\"" in attribute name: "layui-btn-radius\" right=\"2\" >查看<"
+2020/07/06 17:01:34.963 [E] [server.go:2807]  html/template:users/alluser.html: "\"" in attribute name: "layui-btn-radius\" right=\"2\" >查看<"
+2020/07/06 17:01:57.083 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 17:02:57.897 [E] [users.go:146]  strconv.Atoi: parsing "": invalid syntax 当前登录用户 qushuaibo UserInfo 获取id失败 
+2020/07/06 17:04:00.616 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 17:08:52.162 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 17:08:56.673 [I] [users.go:95]  {{0 0001-01-01 00:00:00 +0000 UTC 0001-01-01 00:00:00 +0000 UTC <nil>}     0} 
+2020/07/06 17:11:13.675 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 17:11:15.616 [I] [users.go:101]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-06 12:54:04 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$Cs3BvNtQJQFfNl/cOgtjz.CR0gxMqMH1P7FuOivIs3SvaGajcne6e 12312312312 2} 
+2020/07/06 17:11:19.990 [I] [users.go:101]  {{1 2020-07-05 21:57:51 +0800 CST 2020-07-06 12:54:04 +0800 CST <nil>} qushuaibo qushuaibo@163.com $2a$14$Cs3BvNtQJQFfNl/cOgtjz.CR0gxMqMH1P7FuOivIs3SvaGajcne6e 12312312312 2} 
+2020/07/06 17:11:30.076 [E] [users.go:64]  strconv.Atoi: parsing "": invalid syntax 当前登录用户 qushuaibo ChangeUserPost 获取id 失败 
+2020/07/06 18:03:25.112 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:04:32.240 [E] [users.go:279]  strconv.Atoi: parsing "": invalid syntax 当前登录用户 qushuaibo UserPassPost 获取id失败 
+2020/07/06 18:05:07.832 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:08:39.613 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:09:06.022 [E] [login.go:53]  登陆失败 
+2020/07/06 18:09:25.695 [E] [users.go:64]  strconv.Atoi: parsing "": invalid syntax 当前登录用户 qushuaibo ChangeUserPost 获取id 失败 
+2020/07/06 18:10:18.557 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:11:49.831 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:13:00.508 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:13:29.029 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:15:08.146 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:16:37.806 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:17:24.898 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:18:07.312 [E] [login.go:53]  登陆失败 
+2020/07/06 18:27:20.907 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:27:30.806 [D] [controller.go:306]  template Execute err: template: login.html:34:22: executing "login.html" at <.err.HasErrors>: nil pointer evaluating interface {}.HasErrors
+2020/07/06 18:27:30.806 [E] [server.go:2807]  template: login.html:34:22: executing "login.html" at <.err.HasErrors>: nil pointer evaluating interface {}.HasErrors
+2020/07/06 18:27:31.123 [D] [controller.go:306]  template Execute err: template: login.html:34:22: executing "login.html" at <.err.HasErrors>: nil pointer evaluating interface {}.HasErrors
+2020/07/06 18:27:31.123 [E] [server.go:2807]  template: login.html:34:22: executing "login.html" at <.err.HasErrors>: nil pointer evaluating interface {}.HasErrors
+2020/07/06 18:28:32.326 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:28:43.293 [E] [login.go:54]  登陆失败 
+2020/07/06 18:28:45.705 [E] [login.go:54]  登陆失败 
+2020/07/06 18:29:08.066 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:29:18.001 [E] [login.go:54]  登陆失败 
+2020/07/06 18:29:18.275 [I] [login.go:72]  &{map[]} 
+2020/07/06 18:29:18.594 [I] [login.go:72]  &{map[]} 
+2020/07/06 18:35:12.829 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:35:14.977 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:35:15.283 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:35:27.794 [E] [login.go:55]  登陆失败，2 
+2020/07/06 18:35:28.068 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:35:28.396 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:36:18.212 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:36:19.564 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:36:19.873 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:36:28.475 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:36:28.475 [E] [login.go:55]  登陆失败，2 
+2020/07/06 18:36:28.758 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:36:29.088 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:37:04.046 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:37:08.512 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:37:08.845 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:37:16.989 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:37:16.990 [E] [login.go:55]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:37:17.279 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:37:17.588 [I] [login.go:73]  &{map[]} 
+2020/07/06 18:41:10.915 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:41:14.421 [I] [login.go:70]  &{map[]} 
+2020/07/06 18:41:14.751 [I] [login.go:70]  &{map[]} 
+2020/07/06 18:41:22.101 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:41:22.102 [E] [login.go:54]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:41:22.550 [I] [login.go:70]  &{map[]} 
+2020/07/06 18:41:22.871 [I] [login.go:70]  &{map[]} 
+2020/07/06 18:42:34.599 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:42:37.166 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:42:37.791 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:42:46.891 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:42:46.891 [E] [login.go:54]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:42:47.104 [I] [login.go:71]  &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:42:47.371 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:42:47.677 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:43:45.969 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:43:45.969 [E] [login.go:54]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:43:46.143 [I] [login.go:71]  &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:43:46.411 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:43:46.732 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:43:56.556 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:43:57.295 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:44:00.212 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:44:00.514 [I] [login.go:71]  &{map[]} 
+2020/07/06 18:46:00.094 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:46:04.541 [I] [login.go:72]  &{map[]} 
+2020/07/06 18:46:04.862 [I] [login.go:72]  &{map[]} 
+2020/07/06 18:46:13.074 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:46:13.074 [E] [login.go:55]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:46:13.260 [I] [login.go:72]  &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:46:13.507 [I] [login.go:72]  &{map[]} 
+2020/07/06 18:46:13.827 [I] [login.go:72]  &{map[]} 
+2020/07/06 18:47:02.043 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:47:35.501 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:47:37.294 [I] [login.go:72]  0 
+2020/07/06 18:47:37.601 [I] [login.go:72]  0 
+2020/07/06 18:47:49.642 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:47:49.642 [E] [login.go:55]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:47:49.805 [I] [login.go:72]  1 
+2020/07/06 18:47:50.110 [I] [login.go:72]  0 
+2020/07/06 18:47:50.423 [I] [login.go:72]  0 
+2020/07/06 18:48:13.389 [I] [login.go:72]  0 
+2020/07/06 18:48:13.723 [I] [login.go:72]  0 
+2020/07/06 18:49:06.706 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:49:09.704 [I] [login.go:74]  0 
+2020/07/06 18:49:10.054 [I] [login.go:74]  0 
+2020/07/06 18:49:16.023 [I] [login.go:74]  0 
+2020/07/06 18:49:16.311 [I] [login.go:74]  0 
+2020/07/06 18:51:12.968 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:51:15.065 [I] [login.go:74]  0 
+2020/07/06 18:51:15.378 [I] [login.go:74]  0 
+2020/07/06 18:54:25.786 [I] [login.go:74]  0 
+2020/07/06 18:54:26.249 [I] [login.go:74]  0 
+2020/07/06 18:54:50.742 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:55:03.106 [I] [login.go:72]  0 
+2020/07/06 18:55:03.847 [I] [login.go:72]  0 
+2020/07/06 18:55:05.923 [I] [login.go:72]  0 
+2020/07/06 18:55:10.917 [I] [users.go:17]  show 
+2020/07/06 18:55:11.407 [I] [login.go:72]  0 
+2020/07/06 18:55:15.378 [I] [users.go:17]  show 
+2020/07/06 18:55:15.877 [I] [login.go:72]  0 
+2020/07/06 18:55:37.578 [I] [users.go:17]  show 
+2020/07/06 18:55:38.057 [I] [login.go:72]  0 
+2020/07/06 18:55:52.830 [I] [users.go:17]  show 
+2020/07/06 18:55:53.398 [I] [login.go:72]  0 
+2020/07/06 18:56:00.695 [I] [users.go:17]  show 
+2020/07/06 18:56:01.201 [I] [login.go:72]  0 
+2020/07/06 18:56:15.727 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:56:18.208 [I] [users.go:17]  show 
+2020/07/06 18:56:18.751 [I] [login.go:72]  0 
+2020/07/06 18:57:04.070 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:57:06.156 [I] [users.go:17]  show 
+2020/07/06 18:57:06.686 [I] [login.go:72]  0 
+2020/07/06 18:57:12.079 [I] [login.go:72]  0 
+2020/07/06 18:57:14.561 [I] [login.go:72]  0 
+2020/07/06 18:58:54.328 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 18:58:55.339 [I] [login.go:72]  0 
+2020/07/06 18:58:55.879 [I] [login.go:72]  0 
+2020/07/06 18:59:04.128 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 18:59:04.128 [E] [login.go:55]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 18:59:04.293 [I] [login.go:72]  1 
+2020/07/06 18:59:04.546 [I] [login.go:72]  0 
+2020/07/06 18:59:04.833 [I] [login.go:72]  0 
+2020/07/06 19:00:14.743 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 19:00:15.618 [I] [login.go:72]  0 
+2020/07/06 19:00:16.188 [I] [login.go:72]  0 
+2020/07/06 19:00:18.198 [I] [login.go:72]  0 
+2020/07/06 19:00:38.055 [E] [login.go:107]  信息重复  
+2020/07/06 19:00:38.055 [E] [errors.go:14]  map[Reg:[注册失败]] 
+2020/07/06 19:00:38.055 [I] [login.go:111]  map[Reg:[注册失败]] 
+2020/07/06 19:00:38.560 [I] [login.go:72]  0 
+2020/07/06 19:00:38.897 [I] [login.go:72]  0 
+2020/07/06 19:00:44.513 [I] [login.go:72]  0 
+2020/07/06 19:01:11.557 [E] [login.go:107]  信息重复  
+2020/07/06 19:01:11.557 [E] [errors.go:14]  map[Reg:[注册失败]] 
+2020/07/06 19:01:11.557 [I] [login.go:111]  map[Reg:[注册失败]] 
+2020/07/06 19:01:12.085 [I] [login.go:72]  0 
+2020/07/06 19:01:12.453 [I] [login.go:72]  0 
+2020/07/06 19:02:13.472 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 19:02:19.398 [I] [login.go:72]  0 
+2020/07/06 19:02:20.049 [I] [login.go:72]  0 
+2020/07/06 19:02:22.308 [I] [login.go:72]  0 
+2020/07/06 19:02:36.437 [E] [login.go:107]  信息重复  
+2020/07/06 19:02:36.438 [E] [errors.go:14]  map[Reg:[注册失败]] 
+2020/07/06 19:02:36.689 [I] [login.go:72]  0 
+2020/07/06 19:02:37.035 [I] [login.go:72]  0 
+2020/07/06 19:03:03.312 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 19:03:12.493 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 19:03:17.506 [I] [login.go:73]  0 
+2020/07/06 19:03:18.151 [I] [login.go:73]  0 
+2020/07/06 19:03:19.139 [I] [login.go:73]  0 
+2020/07/06 19:03:34.099 [E] [login.go:108]  信息重复  
+2020/07/06 19:03:34.099 [E] [errors.go:14]  map[Reg:[注册失败_two]] 
+2020/07/06 19:03:34.381 [I] [login.go:73]  0 
+2020/07/06 19:03:34.710 [I] [login.go:73]  0 
+2020/07/06 19:05:04.239 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 19:05:11.440 [I] [login.go:72]  0 
+2020/07/06 19:05:12.044 [I] [login.go:72]  0 
+2020/07/06 19:05:12.943 [I] [login.go:72]  0 
+2020/07/06 19:05:14.990 [I] [login.go:72]  0 
+2020/07/06 19:05:17.340 [I] [login.go:72]  0 
+2020/07/06 19:05:32.881 [E] [login.go:107]  信息重复  
+2020/07/06 19:05:32.881 [E] [errors.go:14]  map[Reg:[注册失败_two]] 
+2020/07/06 19:05:33.158 [I] [login.go:72]  0 
+2020/07/06 19:05:37.911 [I] [login.go:72]  0 
+2020/07/06 19:05:38.209 [I] [login.go:72]  0 
+2020/07/06 19:05:43.474 [I] [login.go:72]  0 
+2020/07/06 19:06:01.467 [E] [login.go:107]  信息重复  
+2020/07/06 19:06:01.467 [E] [errors.go:14]  map[Reg:[注册失败_two]] 
+2020/07/06 19:06:01.774 [I] [login.go:72]  0 
+2020/07/06 19:07:22.295 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/06 19:07:30.862 [I] [login.go:70]  0 
+2020/07/06 19:07:34.892 [I] [login.go:70]  0 
+2020/07/06 19:07:35.195 [I] [login.go:70]  0 
+2020/07/06 19:07:43.982 [E] [errors.go:14]  map[Login:[登陆失败,1]] 
+2020/07/06 19:07:43.982 [E] [login.go:55]  登陆失败，2 &{map[Login:[登陆失败,1]]} 
+2020/07/06 19:07:44.172 [I] [login.go:70]  1 
+2020/07/06 19:07:44.512 [I] [login.go:70]  0 
+2020/07/07 10:56:52.734 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 10:57:07.159 [I] [login.go:70]  0 
+2020/07/07 10:57:11.788 [I] [login.go:70]  0 
+2020/07/07 10:57:12.180 [I] [login.go:70]  0 
+2020/07/07 10:57:21.692 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 10:57:21.693 [E] [login.go:55]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 10:57:22.349 [I] [login.go:70]  1 
+2020/07/07 10:57:23.124 [I] [login.go:70]  0 
+2020/07/07 10:57:32.499 [I] [login.go:70]  0 
+2020/07/07 10:57:33.881 [I] [login.go:70]  0 
+2020/07/07 10:57:35.120 [I] [login.go:70]  0 
+2020/07/07 10:57:39.128 [I] [login.go:70]  0 
+2020/07/07 10:57:40.529 [E] [users.go:128]  用户不可以删除自己 
+2020/07/07 10:57:40.530 [E] [errors.go:14]  map[Del:[删除失败]] 
+2020/07/07 10:57:41.580 [I] [login.go:70]  0 
+2020/07/07 10:57:45.078 [I] [login.go:70]  0 
+2020/07/07 10:57:47.920 [I] [login.go:70]  0 
+2020/07/07 10:57:49.339 [I] [login.go:70]  0 
+2020/07/07 10:57:50.879 [I] [login.go:70]  0 
+2020/07/07 10:57:53.489 [E] [users.go:190]  user 赋值失败%!(EXTRA *errors.errorString=record not found) 当前登录用户 qushuaibo MyInfoPost 用户信息更新失败 
+2020/07/07 10:57:53.489 [E] [errors.go:14]  map[MyInfo:[获取当前用户信息失败]] 
+2020/07/07 10:57:53.675 [E] [users.go:196]  id 无效 record not found
+ 当前登录用户 qushuaibo ChangeUserPost 获取用户失败 失败 
+2020/07/07 10:57:53.675 [E] [errors.go:14]  map[MyInfo:[获取当前用户信息失败 获取当前用户信息失败]] 
+2020/07/07 10:57:55.140 [I] [login.go:70]  0 
+2020/07/07 10:58:50.632 [I] [login.go:70]  0 
+2020/07/07 10:58:50.991 [I] [login.go:70]  0 
+2020/07/07 10:58:58.427 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 10:58:58.429 [E] [login.go:55]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 10:58:58.616 [E] [errors.go:14]  map[Login:[登陆失败 登陆失败,查询错误]] 
+2020/07/07 10:58:58.617 [E] [login.go:62]  获取失败%!(EXTRA *errors.errorString=record not found) 
+2020/07/07 10:58:58.617 [I] [login.go:70]  2 
+2020/07/07 10:58:59.464 [I] [login.go:70]  0 
+2020/07/07 11:28:48.551 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 12:10:27.535 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 12:41:21.357 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 12:42:00.029 [E] [users.go:230]  密码错误 crypto/bcrypt: hashedSecret too short to be a bcrypted password
+ 当前登陆用户 qushuaibo MyPassPost  密码更新失败 
+2020/07/07 12:42:00.031 [E] [errors.go:14]  map[MyPass:[密码修改失败]] 
+2020/07/07 12:46:04.616 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 12:46:10.251 [E] [users.go:230]  更新失败 类型错误不是user类型
+ 当前登陆用户 qushuaibo MyPassPost  密码更新失败 
+2020/07/07 12:46:10.251 [E] [errors.go:14]  map[MyPass:[密码修改失败]] 
+2020/07/07 12:46:23.410 [E] [users.go:230]  更新失败 类型错误不是user类型
+ 当前登陆用户 qushuaibo MyPassPost  密码更新失败 
+2020/07/07 12:46:23.411 [E] [errors.go:14]  map[MyPass:[密码修改失败]] 
+2020/07/07 12:49:03.176 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 12:49:42.844 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 12:49:42.845 [E] [login.go:41]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 12:50:10.172 [E] [users.go:280]  修改失败 更新失败 类型错误不是user类型
+ 
+2020/07/07 12:50:10.172 [E] [errors.go:14]  map[UserPass:[密码修改失败]] 
+2020/07/07 12:50:17.337 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 12:50:17.339 [E] [login.go:41]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 12:50:17.365 [E] [errors.go:14]  map[Login:[登陆失败 登陆失败,查询错误]] 
+2020/07/07 12:50:17.365 [E] [login.go:52]  获取失败record not found
+ 
+2020/07/07 12:50:26.096 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 12:50:26.096 [E] [login.go:41]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 12:50:26.136 [E] [errors.go:14]  map[Login:[登陆失败 登陆失败,查询错误]] 
+2020/07/07 12:50:26.136 [E] [login.go:52]  获取失败record not found
+ 
+2020/07/07 12:58:18.889 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:04:07.744 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:38:40.583 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:38:52.326 [I] [login.go:35]   
+2020/07/07 13:38:53.055 [I] [login.go:35]   
+2020/07/07 13:38:58.816 [I] [login.go:35]   
+2020/07/07 13:39:01.126 [I] [login.go:35]   
+2020/07/07 13:40:02.856 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:40:05.417 [I] [login.go:35]   
+2020/07/07 13:40:11.692 [I] [login.go:35]   
+2020/07/07 13:40:16.983 [I] [login.go:35]   
+2020/07/07 13:40:17.326 [I] [login.go:35]   
+2020/07/07 13:41:41.949 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:41:48.448 [I] [login.go:35]   
+2020/07/07 13:41:50.456 [I] [login.go:35]   
+2020/07/07 13:41:52.086 [I] [login.go:35]   
+2020/07/07 13:41:53.307 [I] [login.go:35]   
+2020/07/07 13:41:56.830 [I] [login.go:35]   
+2020/07/07 13:41:57.107 [I] [login.go:35]   
+2020/07/07 13:42:06.687 [I] [login.go:35]   
+2020/07/07 13:42:08.666 [I] [login.go:35]   
+2020/07/07 13:42:09.928 [I] [login.go:35]   
+2020/07/07 13:42:11.100 [I] [login.go:35]   
+2020/07/07 13:42:15.618 [I] [login.go:35]   
+2020/07/07 13:42:15.911 [I] [login.go:35]   
+2020/07/07 13:42:37.371 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:42:43.127 [I] [login.go:35]   
+2020/07/07 13:42:43.457 [I] [login.go:35]   
+2020/07/07 13:44:09.718 [I] [login.go:35]   
+2020/07/07 13:44:10.037 [I] [login.go:35]   
+2020/07/07 13:46:16.673 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:46:26.443 [I] [login.go:35]   
+2020/07/07 13:46:26.742 [I] [login.go:35]   
+2020/07/07 13:47:09.252 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:47:14.055 [I] [login.go:35]   
+2020/07/07 13:47:14.345 [I] [login.go:35]   
+2020/07/07 13:52:40.788 [I] [login.go:35]   
+2020/07/07 13:52:41.108 [I] [login.go:35]   
+2020/07/07 13:52:50.954 [I] [login.go:35]   
+2020/07/07 13:52:51.257 [I] [login.go:35]   
+2020/07/07 13:53:18.168 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:53:20.108 [I] [login.go:35]   
+2020/07/07 13:53:20.429 [I] [login.go:35]   
+2020/07/07 13:53:47.668 [I] [login.go:35]  11 
+2020/07/07 13:53:47.977 [I] [login.go:35]   
+2020/07/07 13:54:29.044 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:54:32.001 [I] [login.go:36]  11 
+2020/07/07 13:54:32.328 [I] [login.go:36]   
+2020/07/07 13:54:44.312 [I] [login.go:36]  22 
+2020/07/07 13:54:44.609 [I] [login.go:36]   
+2020/07/07 13:56:08.466 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:56:11.409 [I] [login.go:35]   
+2020/07/07 13:56:11.721 [I] [login.go:35]   
+2020/07/07 13:56:21.159 [I] [login.go:35]  wohi 
+2020/07/07 13:56:21.490 [I] [login.go:35]   
+2020/07/07 13:56:44.728 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:56:45.116 [I] [login.go:35]   
+2020/07/07 13:56:45.406 [I] [login.go:35]   
+2020/07/07 13:56:47.528 [I] [login.go:35]   
+2020/07/07 13:56:47.804 [I] [login.go:35]   
+2020/07/07 13:56:56.729 [I] [login.go:35]   
+2020/07/07 13:56:58.807 [I] [login.go:35]   
+2020/07/07 13:57:00.817 [I] [login.go:35]  cXVib0AxNjMuY29t|1594101418079285000|b1f5aadea9310de679dbf3275a2fc2c820fa96f95982787147bbbcbdc6b7b8dc 
+2020/07/07 13:57:01.162 [I] [login.go:35]   
+2020/07/07 13:57:03.821 [I] [login.go:35]   
+2020/07/07 13:57:04.879 [I] [login.go:35]   
+2020/07/07 13:57:42.221 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 13:57:50.397 [I] [login.go:35]   
+2020/07/07 13:57:52.367 [I] [login.go:35]   
+2020/07/07 13:57:54.639 [I] [login.go:35]   
+2020/07/07 13:57:54.970 [I] [login.go:35]   
+2020/07/07 13:58:18.535 [I] [login.go:35]   
+2020/07/07 13:58:20.492 [I] [login.go:35]   
+2020/07/07 13:58:22.280 [I] [login.go:35]   
+2020/07/07 13:58:23.559 [I] [login.go:35]   
+2020/07/07 13:58:28.515 [I] [login.go:35]  qubo@163.com 
+2020/07/07 13:58:28.806 [I] [login.go:35]   
+2020/07/07 13:58:34.924 [I] [login.go:35]   
+2020/07/07 13:58:36.903 [I] [login.go:35]   
+2020/07/07 13:58:38.590 [I] [login.go:35]   
+2020/07/07 13:58:49.410 [I] [login.go:35]  qubo@163.com 
+2020/07/07 13:58:49.729 [I] [login.go:35]   
+2020/07/07 14:00:18.069 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 14:00:29.825 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 14:00:29.825 [E] [login.go:43]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 14:00:53.735 [I] [login.go:69]  qubo@163.com 1 
+2020/07/07 14:00:53.735 [I] [login.go:72]  qubo@163.com 2 
+2020/07/07 14:05:23.361 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 14:05:23.362 [E] [login.go:43]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 14:06:51.125 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/07 14:07:00.415 [E] [errors.go:14]  map[Login:[登陆失败]] 
+2020/07/07 14:07:00.416 [E] [login.go:44]  登陆失败，2 &{map[Login:[登陆失败]]} 
+2020/07/07 14:07:00.583 [E] [errors.go:14]  map[Login:[登陆失败 登陆失败,查询错误]] 
+2020/07/07 14:07:00.583 [E] [login.go:52]  获取失败record not found
+ 
+2020/07/08 12:51:56.170 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 12:56:55.680 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:12:43.023 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:13:09.219 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:13:47.742 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:14:15.477 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:14:29.821 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:15:16.962 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:15:46.845 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:16:12.889 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:16:38.841 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:17:04.146 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/08 19:18:45.765 [I] [asm_amd64.s:1373]  http server Running on http://0.0.0.0:9000
+2020/07/10 17:19:17.121 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/10 23:10:17.841 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/10 23:10:47.748 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/10 23:12:18.381 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/10 23:12:32.122 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000
+2020/07/10 23:15:28.557 [I] [asm_amd64.s:1357]  http server Running on http://0.0.0.0:9000

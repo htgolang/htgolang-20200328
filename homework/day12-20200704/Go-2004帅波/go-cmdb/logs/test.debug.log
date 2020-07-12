@@ -1,0 +1,239 @@
+2020/07/05 21:52:00.778 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    19.9436ms| nomatch|[44m GET     [0m /  
+2020/07/05 21:52:00.806 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     14.959ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:00.871 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    14.9943ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 21:52:00.900 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    19.0011ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:33.096 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.9405ms| nomatch|[44m GET     [0m /login/login
+2020/07/05 21:52:33.128 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    18.9211ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:51.600 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    30.5764ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:52.362 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     20.675ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:52:53.774 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    18.9869ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:08.472 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|      26.92ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:09.222 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    16.9533ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:09.553 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.9197ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:09.717 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    17.9499ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:21.035 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    30.9107ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:21.630 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.9441ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:21.831 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|      21.91ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:22.001 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    21.9357ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:22.159 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    21.9711ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:24.160 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     22.184ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:54:32.137 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    37.7831ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.265 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9483ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.301 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.3841ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.340 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     21.994ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.376 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.0767ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.414 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     21.904ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.449 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.3772ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.481 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9491ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.517 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9892ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.559 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     24.938ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.592 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.1468ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.620 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    16.1903ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.650 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.5586ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.678 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.7269ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.707 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9517ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.740 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     21.169ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.773 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    20.9781ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.809 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.9503ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.843 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    20.6578ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.880 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    25.6149ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:32.911 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    16.9582ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:37.957 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9748ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:37.993 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.0297ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.025 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.4672ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.058 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     19.707ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.088 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9908ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.124 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9058ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.159 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9283ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.195 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9621ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.229 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9117ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.263 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9425ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.299 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.9802ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.333 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.0119ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.364 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9114ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.394 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9121ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.428 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.9093ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.461 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.2728ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.491 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.7071ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.521 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.7168ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.554 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    20.0958ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:38.587 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.2265ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 21:54:48.632 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9236ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:54:48.662 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      998.2µs|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 21:54:48.663 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui.js
+2020/07/05 21:54:48.708 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.9955ms|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 21:54:49.024 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 21:54:49.031 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 21:54:49.038 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      997.4µs|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 21:54:49.355 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      939.2µs|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 21:54:49.393 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 21:54:49.396 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 21:54:49.400 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.0478ms|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 21:54:57.180 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.3605ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:55:46.981 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9273ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:55:56.103 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    22.1175ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:55:56.138 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9401ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:55:59.632 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    13.0018ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:56:18.336 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      997.3µs|   match|[44m GET     [0m /static/css/modules/layer/default/icon.png
+2020/07/05 21:56:29.917 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   991.5395ms|   match|[46m POST    [0m /register   r:/register
+2020/07/05 21:56:29.944 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    17.3102ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:57:34.582 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9554ms|   match|[44m GET     [0m /register   r:/register
+2020/07/05 21:57:51.478 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   982.7033ms|   match|[46m POST    [0m /register   r:/register
+2020/07/05 21:57:51.507 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    18.2638ms| nomatch|[44m GET     [0m /login
+2020/07/05 21:57:51.548 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9283ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:57:57.819 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    14.9227ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:57:57.849 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9196ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:58:13.668 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    55.5185ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:58:13.717 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    36.7276ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:59:17.055 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9168ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:59:24.457 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.0156ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:59:24.495 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9746ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 21:59:55.003 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    28.8958ms| nomatch|[46m POST    [0m /login
+2020/07/05 21:59:55.039 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    19.9468ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:00:04.897 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    21.1909ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:00:04.929 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.7294ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:01:44.074 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9235ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:01:51.316 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    15.9267ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:01:51.340 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    14.9234ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:02:18.142 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    25.9011ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:02:18.187 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.3328ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:02:48.310 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    26.9213ms| nomatch|[46m POST    [0m /login
+2020/07/05 22:02:48.341 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.2184ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:08.351 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|   101.7265ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:14.536 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    36.6739ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:14.563 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    14.9608ms| nomatch|[44m GET     [0m /LoginErr
+2020/07/05 22:04:14.602 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.9019ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:54.152 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   971.2572ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:04:54.180 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    15.3335ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:04:54.201 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/element.js
+2020/07/05 22:04:56.383 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    27.8884ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:05:05.586 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9295ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:05:06.923 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    34.8938ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:21:46.293 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.9434ms| nomatch|[44m GET     [0m /login/out
+2020/07/05 22:22:00.443 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    17.1249ms|   match|[44m GET     [0m /auth/loginout   r:/auth/loginout/*
+2020/07/05 22:22:00.472 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    17.2089ms| nomatch|[44m GET     [0m /login
+2020/07/05 22:22:00.503 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    17.9228ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:25:06.986 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.3667ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:25:13.339 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   965.3917ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:25:13.374 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.9525ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:25:14.899 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     31.937ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:25:18.647 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    28.3563ms|   match|[44m GET     [0m /auth/out   r:/auth/out/*
+2020/07/05 22:25:18.677 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9496ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:32:35.985 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    15.9559ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:32:36.016 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9166ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:32:36.051 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.0016ms|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 22:32:36.051 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/layui.js
+2020/07/05 22:32:36.085 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.9943ms|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 22:32:36.372 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.0019ms|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 22:32:36.380 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      989.2µs|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 22:32:36.383 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 22:32:36.677 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      1.046ms|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 22:32:36.711 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 22:32:36.715 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      996.3µs|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 22:32:36.719 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 22:32:54.740 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   970.3748ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:32:54.763 [D] [server.go:2802]  |      127.0.0.1|[43m 405 [0m|    13.9905ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:33:21.603 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    30.2762ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:22.675 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     17.914ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:23.557 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9474ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:24.383 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.2621ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:30.666 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     16.959ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 22:33:41.780 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|      24.93ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 22:33:44.387 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    15.9571ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:33:53.620 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.9512ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:34:01.513 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|      8.018ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:34:01.544 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    19.9097ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:34:01.576 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 22:34:01.576 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/layui.js
+2020/07/05 22:34:01.609 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|      999.1µs|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 22:34:01.895 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 22:34:01.903 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 22:34:01.907 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 22:34:02.195 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|     1.0003ms|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 22:34:02.216 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 22:34:02.220 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 22:34:02.225 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|      997.8µs|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 22:34:10.705 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   957.4453ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:34:10.738 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    16.9238ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:34:10.763 [D] [server.go:2802]  |      127.0.0.1|[47m 304 [0m|      997.4µs|   match|[44m GET     [0m /static/lay/modules/element.js
+2020/07/05 22:34:12.383 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.9989ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:34:15.268 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    16.9528ms|   match|[44m GET     [0m /user/my/info   r:/user/my/info
+2020/07/05 22:34:15.301 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    22.3082ms| nomatch|[44m GET     [0m /user/static/css/layui.css
+2020/07/05 22:34:15.329 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     2.9901ms|   match|[44m GET     [0m /static/images/panda.png
+2020/07/05 22:34:15.332 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|     15.957ms| nomatch|[44m GET     [0m /user/static/layui.js
+2020/07/05 22:34:17.077 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   107.2733ms|   match|[46m POST    [0m /user/my/info   r:/user/my/info
+2020/07/05 22:34:17.133 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    33.9046ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:34:18.871 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9277ms|   match|[44m GET     [0m /user/change/mypass   r:/user/change/mypass
+2020/07/05 22:34:18.903 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    12.9656ms| nomatch|[44m GET     [0m /user/static/layui.js
+2020/07/05 22:34:23.869 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    32.9127ms|   match|[44m GET     [0m /user/change/userpass   r:/user/change/userpass
+2020/07/05 22:34:23.897 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    17.9852ms| nomatch|[44m GET     [0m /user/static/css/layui.css
+2020/07/05 22:34:23.920 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|        996µs|   match|[44m GET     [0m /static/images/cat.png
+2020/07/05 22:34:23.929 [D] [server.go:2802]  |      127.0.0.1|[43m 404 [0m|    20.3952ms| nomatch|[44m GET     [0m /user/static/layui.js
+2020/07/05 22:48:53.589 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|      25.93ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:48:56.469 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    20.9436ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:50:38.282 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    30.3398ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:50:39.514 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     19.906ms| nomatch|[44m GET     [0m /user/show
+2020/07/05 22:50:44.331 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9511ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:50:49.832 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|     9.0081ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:50:49.864 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9756ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:50:49.893 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      998.3µs|   match|[44m GET     [0m /static/css/layui.css
+2020/07/05 22:50:49.895 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      999.1µs|   match|[44m GET     [0m /static/layui.js
+2020/07/05 22:50:49.901 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|     1.9675ms|   match|[44m GET     [0m /static/images/Pegasus.jpg
+2020/07/05 22:50:49.930 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/form.js
+2020/07/05 22:50:49.936 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      998.7µs|   match|[44m GET     [0m /static/lay/modules/layer.js
+2020/07/05 22:50:49.940 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|      939.1µs|   match|[44m GET     [0m /static/css/modules/layer/default/layer.css
+2020/07/05 22:50:49.940 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/jquery.js
+2020/07/05 22:50:49.959 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/layedit.js
+2020/07/05 22:50:49.962 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/laydate.js
+2020/07/05 22:50:49.966 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/modules/laydate/default/laydate.css
+2020/07/05 22:51:06.724 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   961.3982ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:06.761 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.9223ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:51:06.798 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/lay/modules/element.js
+2020/07/05 22:51:08.671 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    26.7102ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:51:11.069 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|    18.2639ms|   match|[44m GET     [0m /auth/out   r:/auth/out/*
+2020/07/05 22:51:11.106 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.9709ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:15.605 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    17.9416ms|   match|[44m GET     [0m /auth/reg   r:/auth/reg/*
+2020/07/05 22:51:32.984 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   998.1812ms|   match|[46m POST    [0m /auth/reg   r:/auth/reg/*
+2020/07/05 22:51:33.023 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    20.9294ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:46.424 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   971.1785ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:51:46.458 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.1014ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:51:48.169 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    28.9197ms|   match|[44m GET     [0m /user/show   r:/user/show
+2020/07/05 22:53:08.615 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    19.9475ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:53:08.646 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    18.9481ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:08.763 [D] [server.go:2802]  |      127.0.0.1|[47m 301 [0m|    19.9441ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 22:53:08.798 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    22.9768ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:17.393 [D] [server.go:2802]  |      127.0.0.1|[47m 302 [0m|   983.4009ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:17.428 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    23.9908ms|   match|[44m GET     [0m /     r:/
+2020/07/05 22:53:17.524 [D] [server.go:2802]  |      127.0.0.1|[42m 200 [0m|    19.9457ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/05 22:53:24.001 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    21.9393ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:53:24.035 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    12.9659ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 22:55:41.774 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    24.9314ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:55:41.807 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9498ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 22:56:06.207 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    27.9264ms| nomatch|[44m GET     [0m /  
+2020/07/05 22:56:06.242 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    20.9435ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:00:00.592 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     29.917ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:00:00.630 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    21.9418ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:14.930 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    28.9219ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:01:14.967 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     20.543ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:15.694 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.0283ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:01:15.729 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9552ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:16.320 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    21.9093ms| nomatch|[44m GET     [0m /  
+2020/07/05 23:01:16.359 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    17.9532ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:20.472 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|     19.949ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:20.501 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    17.3399ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:22.390 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.1631ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:22.421 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.7082ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:24.357 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9509ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:24.388 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9515ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:24.965 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9487ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:24.995 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.4127ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:25.491 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9469ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:25.522 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    18.9491ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:25.971 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    13.9635ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:26.005 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    19.9476ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/05 23:01:26.445 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9524ms| nomatch|[44m GET     [0m /auth/login
+2020/07/05 23:01:26.475 [D] [server.go:2802]  |      127.0.0.1|[41m 503 [0m|    16.9552ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/06 16:10:17.079 [D] [controller.go:306]  template Execute err: template: users/alluser.html:26:71: executing "users/alluser.html" at <.user.ID>: can't evaluate field user in type module.User
+2020/07/06 17:01:34.962 [D] [controller.go:306]  template Execute err: html/template:users/alluser.html: "\"" in attribute name: "layui-btn-radius\" right=\"2\" >查看<"
+2020/07/06 18:27:30.806 [D] [controller.go:306]  template Execute err: template: login.html:34:22: executing "login.html" at <.err.HasErrors>: nil pointer evaluating interface {}.HasErrors
+2020/07/06 18:27:31.123 [D] [controller.go:306]  template Execute err: template: login.html:34:22: executing "login.html" at <.err.HasErrors>: nil pointer evaluating interface {}.HasErrors
