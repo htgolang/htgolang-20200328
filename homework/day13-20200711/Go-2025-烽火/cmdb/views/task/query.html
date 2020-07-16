@@ -37,9 +37,9 @@
             <tr>
                 <td>{{ .ID }}</td>
                 <td>{{ .Name }}</td>
-                <td>{{  .StartTime | .FormatDate  }}</td>
-                <td>{{  .CompleteTime | .FormatDate }}</td>
-                <td>{{  .DeadlineTime | .FormatDate }}</td>
+                <td>{{  dateformat .StartTime  "2006-01-02 15:04:05" }}</td>
+                <td>{{  dateformat .CompleteTime  "2006-01-02 15:04:05" }}</td>
+                <td>{{  dateformat .DeadlineTime  "2006-01-02 15:04:05" }}</td>
                 <td>{{  .Content }}</td>
                 <td>{{ .StatusText }}</td>
                 <td>{{ .RealUser }}</td>

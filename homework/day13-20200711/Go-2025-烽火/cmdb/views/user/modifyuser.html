@@ -23,8 +23,8 @@
 
             <label>性别: </label>
             <select name="gender">
-                <option value=0>男</option>
-                <option value=1>女</option>
+                <option value=0 {{ if eq .user.Gender 0 }} selected {{ end }}>男</option>
+                <option value=1 {{ if eq .user.Gender 1 }} selected {{ end }} >女</option>
             </select>
             <br />
             <label>部门: </label>

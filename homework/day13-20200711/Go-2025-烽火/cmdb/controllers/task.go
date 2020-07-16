@@ -2,30 +2,55 @@ package controllers
 
 import (
 	"cmdb/base/controllers/auth"
+	"cmdb/base/errors"
 	"cmdb/models"
 	"fmt"
 	"net/http"
+	"strings"
+	"time"
 
 	"github.com/astaxie/beego"
 )
+
+const TimeLayout = "2006-01-02 15:04"
 
 type TaskController struct {
 	auth.AuthController
 }
 
+func formatTime(t string) *time.Time {
+	if t != "" {
+		ft, _ := time.Parse(TimeLayout, strings.ReplaceAll(t, "T", " "))
+		return &ft
+	}
+	return nil
+}
+
 // 添加任务
 func (c *TaskController) Add() {
 	task := &models.Task{}
+	errors := errors.New()
 	users := models.GetAllAccounts()
 
 	if c.Ctx.Input.IsPost() {
+		st := formatTime(c.GetString("start_time"))
+		ct := formatTime(c.GetString("complete_time"))
+		dt := formatTime(c.GetString("deadline_time"))
 		c.ParseForm(task)
-		models.AddTask(task)
-		action := beego.AppConfig.DefaultString("auth::HomeAction", "HomeController.Index")
-		c.Redirect(beego.URLFor(action), http.StatusFound)
+		task.StartTime = st
+		task.CompleteTime = ct
+		task.DeadlineTime = dt
+		err := models.AddTask(task)
+		if err == nil {
+			action := beego.AppConfig.DefaultString("auth::HomeAction", "HomeController.Index")
+			c.Redirect(beego.URLFor(action), http.StatusFound)
+		} else {
+			errors.Add("msg", "添加失败!")
+		}
 	}
 	c.Data["task"] = task
 	c.Data["users"] = users
+	c.Data["errors"] = errors
 	c.TplName = "task/add.html"
 }
 

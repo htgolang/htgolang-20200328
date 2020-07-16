@@ -35,11 +35,11 @@
         <br>
 
         <label>开始: </label>
-        <input type="datetime-local" name="start_time" value="{{ .task.StartTime |.task.FormatTime }}" required autofocus />
+        <input type="datetime-local" name="start_time" value={{ dateformat .task.StartTime "2006-01-02T15:04:05" }} required autofocus />
         <br>
 
         <label>期限: </label>
-        <input type="datetime-local" name="deadline_time" value="{{ .task.DeadlineTime| .task.FormatTime }}" required autofocus />
+        <input type="datetime-local" name="deadline_time" value={{ dateformat .task.DeadlineTime "2006-01-02T15:04:05" }} required autofocus />
 
         <br>
 

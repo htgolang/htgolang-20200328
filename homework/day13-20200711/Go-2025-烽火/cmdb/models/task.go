@@ -7,10 +7,10 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
-const (
-	TimeLayout = "2006-01-02T15:04:05"
-	DateLayout = "2006-01-02 15:04:05"
-)
+// const (
+// 	TimeLayout = "2006-01-02T15:04:05"
+// 	DateLayout = "2006-01-02 15:04:05"
+// )
 
 type Task struct {
 	ID           int        `form:"id" orm:"column(id)"`
@@ -18,7 +18,7 @@ type Task struct {
 	StartTime    *time.Time `form:"start_time" orm:"column(start_time)"`
 	CompleteTime *time.Time `form:"complete_time" orm:"column(complete_time);null"`
 	DeadlineTime *time.Time `form:"deadline_time" orm:"column(deadline_time);"`
-	Status       string     `form:"status" orm:""`
+	Status       int        `form:"status" orm:""`
 	Content      string     `form:"content" orm:"null"`
 	User         int        `form:"user" orm:""`
 }
@@ -29,13 +29,13 @@ func init() {
 
 func (task *Task) StatusText() string {
 	switch task.Status {
-	case "0":
+	case 0:
 		return "新建"
-	case "1":
+	case 1:
 		return "开始"
-	case "2":
+	case 2:
 		return "暂停"
-	case "3":
+	case 3:
 		return "完成"
 	}
 	return "未知"
@@ -45,23 +45,10 @@ func (task *Task) RealUser() string {
 	return GetUserNameById(task.User)
 }
 
-func (task *Task) FormatTime(tt *time.Time) string {
-	if tt == nil {
-		return time.Now().Format(TimeLayout)
-	}
-	return tt.Format(TimeLayout)
-}
-
-func (task *Task) FormatDate(tt *time.Time) string {
-	if tt == nil {
-		return time.Now().Format(DateLayout)
-	}
-	return tt.Format(DateLayout)
-}
-
-func AddTask(task *Task) {
+func AddTask(task *Task) error {
 	ormer := orm.NewOrm()
-	ormer.Insert(task)
+	_, err := ormer.Insert(task)
+	return err
 }
 
 func QueryTask(query string) []*Task {

@@ -30,7 +30,12 @@
 
         <label>详情: </label><br />
         <textarea name="content" placeholder="任务详情">{{ .task.Content }}</textarea><br />
+
         <input type="submit" value="提交" />
+
+        {{ range .errors.Errors }}
+            {{ index . 0 }}
+        {{ end }}
     </form>
 </body>
 </html>
