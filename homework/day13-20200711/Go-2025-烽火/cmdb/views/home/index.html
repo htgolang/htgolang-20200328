@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ config "String" "AppName" "CMDB" }}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">首页</a>
+
+        <div class="subnav">
+          <button class="subnavbtn">{{ config "String" "TaskTitle" "任务管理" }}<i class="fa fa-caret-down"></i></button>
+          <div class="subnav-content">
+            <a href={{ urlfor "controllers.TaskController.Add" }}>新增任务</a>
+            <a href={{ urlfor "controllers.TaskController.Query" }}>查询任务</a>
+          </div>
+        </div>
+
+        <div class="subnav">
+          <button class="subnavbtn">{{ config "String" "UserTitle" "用户管理" }}<i class="fa fa-caret-down"></i></button>
+          <div class="subnav-content">
+            <a href={{ urlfor "UserController.Add" }}>新增用户</a>
+            <a href={{ urlfor "UserController.Query" }}>查询用户</a>
+          </div>
+        </div>
+
+        <a href="#about">关于</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config "String" "TaskTitle" "任务管理"}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css" />
+</head>
+<body>
+    <br>
+    <form method="POST" action={{ urlfor "TaskController.Modify" }}>
+        <input type="hidden" name="id" value="{{ .task.ID }}"  />
+        <br>
+
+        <label>名称: </label>
+        <input type="text" name="name" value="{{ .task.Name }}"   autofocus />
+        <br>
+
+        <label>状态: </label>
+        <select name="status">
+            <option value="0"  {{ if eq  .task.Status "0" }} selected {{ end }}>新建</option>
+            <option value="1"  {{ if eq  .task.Status "1" }} selected {{ end }}>开始</option>
+            <option value="2"  {{ if eq  .task.Status "2" }} selected {{ end }}>暂停</option>
+            <option value="3"  {{ if eq  .task.Status "3" }} selected {{ end }}>完成</option>
+        </select>
+        <br>
+
+        <label>用户: </label>
+        <select name="user">
+            {{ range .users }}
+            <option value="{{ .ID }}" {{ if .Flag }} selected {{ end }} >{{ .Name }}</option>
+            {{ end }}
+        </select>
+        <br>
+
+        <label>开始: </label>
+        <input type="datetime-local" name="start_time" value="{{ .task.StartTime |.task.FormatTime }}" required autofocus />
+        <br>
+
+        <label>期限: </label>
+        <input type="datetime-local" name="deadline_time" value="{{ .task.DeadlineTime| .task.FormatTime }}" required autofocus />
+
+        <br>
+
+        <label>描述: </label><br>
+        <textarea name="content">{{ .task.Content }}</textarea>
+        <br>
+
+        <input type="submit" value="提交" /><br>
+    </form>
+</body>
+</html>

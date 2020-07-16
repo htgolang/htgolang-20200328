@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{config "String" "UserTitle" "用户管理"}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/search.css" />
+</head>
+<body>
+    <h3>查询用户:</h3>
+    <form method="GET" action={{ urlfor "UserController.Query" }}>
+        <div id="search">
+            <input type="text" name="query" value="{{ .query }}" required autofocus>
+        </div>
+        <br>
+    </form>
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>员工编号</th>
+                <th>用户名</th>
+                <th>姓名</th>
+                <th>部门</th>
+                <th>性别</th>
+                <th>联系方式</th>
+                <th>邮箱</th>
+                <th>联系地址</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .users }}
+                <tr>
+                    <td>{{ .StaffID }}</td>
+                    <td>{{ .Name }}</td>
+                    <td>{{ .Nickname }}</td>
+                    <td>{{ .Department }}</td>
+                    <td>{{ .GenderText }}</td>
+                    <td>{{ .Tel }}</td>
+                    <td>{{ .Email }}</td>
+                    <td>{{ .Addr }}</td>
+                    <td>{{ .StatusText }}</td>
+                    <td>
+                        <a href="/user/modify/?id={{ .ID }}" target="_blank" >编辑</a>
+                        <a href="/user/delete/?id={{ .ID }}" target="_blank" >删除</a>
+                    </td>
+                </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</body>
+</html>

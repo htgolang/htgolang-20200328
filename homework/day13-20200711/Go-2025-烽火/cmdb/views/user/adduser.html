@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>{{config "String" "UserTitle" "用户管理"}}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/mystyle.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/form.css" />
+</head>
+<body>
+    <h3>添加用户</h3>
+    <form method="POST" action={{ urlfor "UserController.Add" }}>
+        <label>用户名: </label>
+        <input type="text" name="name" value="{{ .user.Name }}"  required /><br />
+
+        <label>密码: </label>
+        <input type="password" name="password" value="" required /> <br />
+
+        <label>花名: </label>
+        <input type="text" name="nickname" value="{{ .user.Nickname }}"  required /><br />
+
+        <label>性别: </label>
+        <select name="gender">
+            <option value=0>男</option>
+            <option value=1>女</option>
+        </select>
+        <br />
+        <label>部门: </label>
+        <input type="text" name="department" value="{{ .user.Department }}" /><br />
+
+        <label>联系方式: </label>
+        <input type="text" name="tel" value="{{ .user.Tel }}" /> <br />
+
+        <label>地址: </label>
+        <input type="text" name="addr" value="{{ .user.Addr }}" /><br />
+
+        <label>邮箱: </label>
+        <input type="text" name="email" value="{{ .user.Email }}" /><br />
+
+        <input type="submit" value="提交" />
+    </form>
+</body>
+</html>
