@@ -1,0 +1,55 @@
+2020/07/13 18:04:57.727 [C] [panic.go:969]  the request url is  /manager/all
+2020/07/13 18:04:57.727 [C] [panic.go:969]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:969
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:212
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /usr/local/go/src/runtime/signal_unix.go:695
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /Users/qushuaibo/Desktop/go-cmdb/controls/manager.go:19
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:460
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:321
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/astaxie/beego@v1.12.1/router.go:853
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:2807
+2020/07/13 18:04:57.727 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:1895
+2020/07/13 18:04:57.728 [C] [panic.go:969]  /usr/local/go/src/runtime/asm_amd64.s:1373
+2020/07/13 18:08:37.894 [C] [panic.go:969]  the request url is  /manager/all
+2020/07/13 18:08:37.894 [C] [panic.go:969]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2020/07/13 18:08:37.894 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:969
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:212
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /usr/local/go/src/runtime/signal_unix.go:695
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /Users/qushuaibo/Desktop/go-cmdb/controls/manager.go:19
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:460
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:321
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/astaxie/beego@v1.12.1/router.go:853
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:2807
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:1895
+2020/07/13 18:08:37.895 [C] [panic.go:969]  /usr/local/go/src/runtime/asm_amd64.s:1373
+2020/07/13 18:09:34.245 [C] [panic.go:969]  the request url is  /manager/all
+2020/07/13 18:09:34.245 [C] [panic.go:969]  Handler crashed with error runtime error: invalid memory address or nil pointer dereference
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:969
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:212
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/runtime/signal_unix.go:695
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /Users/qushuaibo/Desktop/go-cmdb/controls/manager.go:19
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:460
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:321
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/astaxie/beego@v1.12.1/router.go:853
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:2807
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:1895
+2020/07/13 18:09:34.245 [C] [panic.go:969]  /usr/local/go/src/runtime/asm_amd64.s:1373
+2020/07/13 18:26:41.584 [C] [panic.go:969]  the request url is  /user/show
+2020/07/13 18:26:41.584 [C] [panic.go:969]  Handler crashed with error reflect: reflect.flag.mustBeAssignable using unaddressable value
+2020/07/13 18:26:41.584 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:969
+2020/07/13 18:26:41.584 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/jinzhu/gorm@v1.9.14/scope.go:865
+2020/07/13 18:26:41.584 [C] [panic.go:969]  /usr/local/go/src/runtime/panic.go:969
+2020/07/13 18:26:41.584 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:247
+2020/07/13 18:26:41.584 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:234
+2020/07/13 18:26:41.584 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:1526
+2020/07/13 18:26:41.584 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/jinzhu/gorm@v1.9.14/callback_query.go:48
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/jinzhu/gorm@v1.9.14/scope.go:869
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/jinzhu/gorm@v1.9.14/main.go:354
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /Users/qushuaibo/Desktop/go-cmdb/module/user.go:136
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /Users/qushuaibo/Desktop/go-cmdb/controls/users.go:35
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:460
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /usr/local/go/src/reflect/value.go:321
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /Users/qushuaibo/go/pkg/mod/github.com/astaxie/beego@v1.12.1/router.go:853
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:2807
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /usr/local/go/src/net/http/server.go:1895
+2020/07/13 18:26:41.585 [C] [panic.go:969]  /usr/local/go/src/runtime/asm_amd64.s:1373

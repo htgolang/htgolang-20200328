@@ -1,0 +1,3 @@
+2020/07/13 18:30:35.456 [D] [controller.go:306]  template Execute err: template: manager/alltask.html:16:42: executing "manager/alltask.html" at <.Id>: can't evaluate field Id in type module.Manager
+2020/07/13 18:50:26.557 [D] [controller.go:306]  template Execute err: template: manager/alltask.html:13:18: executing "manager/alltask.html" at <.UserName>: can't evaluate field UserName in type module.Manager
+2020/07/13 18:50:51.701 [D] [controller.go:306]  template Execute err: template: manager/alltask.html:13:42: executing "manager/alltask.html" at <.ID>: can't evaluate field ID in type module.Manager

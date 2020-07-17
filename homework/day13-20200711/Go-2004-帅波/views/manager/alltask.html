@@ -1,0 +1,22 @@
+<table>
+    <thead>
+    <tr>
+        <th>任务名称</th>
+        <th>操   作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .Managers}}
+        <tr>
+            <td>{{.Name}}</td>
+            <td>
+                <a href="/task/pause?name={{.Name}}" >暂停</a>
+                <a href="/task/cancel?name={{.Name}}" >取消</a>
+                <a href="/task/retry?name={{.Name}}" >重试</a>
+                <a href="/task/del?name={{.Name}}">删除</a>
+            </td>
+        </tr>
+    {{end}}
+    </tbody>
+</table>
+

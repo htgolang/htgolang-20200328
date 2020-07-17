@@ -1,0 +1,46 @@
+<table class="layui-table">
+    <colgroup>
+        <col width="150">
+        <col width="150">
+        <col width="150">
+        <col width="300">
+        <col>
+    </colgroup>
+    {{ if .errors.HasErrors }}
+        <div class="site-demo-button" id="layerDemo" style="margin-bottom: 0;">
+            {{ range .errors.Errors }}
+                <button data-method="offset" data-type="auto" class="layui-btn layui-btn-normal">{{ index . 0}}</button>
+            {{ end }}
+        </div>
+    {{ end }}
+    <form action="{{ urlfor `UserController.Query` }}" method="GET">
+        <input name="q" value="{{ .q }}" />
+        <input type="submit" value="查询"/>
+    </form>
+    <thead>
+    <tr>
+        <th>用户名</th>
+        <th>职位</th>
+        <th>联系方式</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .users }}
+    <tr>
+        <td>{{ .Name }}</td>
+        <td>{{ .Role | Roles }}</td>
+        <td>{{ .Phone }}</td>
+        <td>
+            {{if compare $.conuserrole 2}}
+            <a href="{{ urlfor `UserController.Info`}}?id={{.ID}}" class="layui-btn layui-btn-radius" right="2" >查看</a>
+            <a href="{{ urlfor `UserController.ChangeUser`}}?id={{.ID}}" class="layui-btn layui-btn-radius layui-btn-warm" >编辑</a>
+            <a href="{{ urlfor `UserController.UserPass` }}?id={{.ID}}"class="layui-btn layui-btn-radius layui-btn-warm" >重置密码</a>
+            <a href="{{ urlfor `UserController.Del`}}?id={{.ID}}" class="layui-btn layui-btn-radius layui-btn-danger" methods="delete" >删除</a>
+            {{end}}
+        </td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+
