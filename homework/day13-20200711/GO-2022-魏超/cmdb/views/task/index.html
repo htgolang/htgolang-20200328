@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>任务列表</title>
+        <script src="/js/quit.js"></script>
+    </head>
+    <body>
+        <a href="/task/add/">添加</a>
+        <table frame="box" border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>名称</td>
+                    <th>负责人</th>
+                    <th>状态</th>
+                    <th>开始时间</th>
+                    <th>完成时间</th>
+                    <th>截止时间</th>
+                    <th>任务描述</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Tasks }}
+                    <tr>
+                        <td>{{ .Name }}</td>
+                        <td>{{ headleuser .UserID }}</td>
+                        <td>{{ status .Status }}</td>
+                        <td>{{ datetime .StartTime }}</td>
+                        <td>{{ datetime .CompleteTime }}</td>
+                        <td>{{ datetime .DeadlineTime }}</td>
+                        <td>{{ .Describe }}</td>
+                        <td>
+                            <a href="/task/mod/?id={{ .ID }}">编辑</a>
+                            <a href="/task/del/?id={{ .ID }}">删除</a>
+                        </td>
+                    </tr>
+                {{ end }}
+            </tbody>
+        </table>
+        <input type="button" value="退出" onclick="quit('/menu/')"/>
+    </body>
+</html>
