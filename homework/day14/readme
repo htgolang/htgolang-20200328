@@ -1,0 +1,15 @@
+1. 整理css, bootstrap => 浏览 w3school bootstrap
+2. 开始js课程
+3. 用户管理做完
+    新增
+    编辑 => 不能编辑密码
+    删除
+    查询
+    编辑自己的密码 (一定要做)
+4. TODOlist做完
+5. 删除数据(扩展)
+    用逻辑删除 => 数据数据不删除, 只通过数据标识已删除
+    deleted_at
+    在删除数据时将deleted_at赋值为当时时间
+
+    查询 deleted_at is null => isnull
