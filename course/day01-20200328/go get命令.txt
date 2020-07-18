@@ -1,3 +1,14 @@
+我的go版本：go1.14.4 windows/amd64
+
+#下载golang.org包
+https://github.com/golang
+
+除了老师提到的 crypto/lint/net/syncsys/text/tools，还需要下载 mod 和 xerrors 两个包
+解压出来的文件夹为*-master，把“-master”去掉，将8个文件夹移动到GOPATH\src\golang.org\x\下
+
+否则go get会报错：
+unrecognized import path "golang.org/x/****": https fetch: Get "https://golang.org/x/mod/semver?go-get=1": dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+
 #下载github包
 go get -d github.com/acroca/go-symbols github.com/cweill/gotests/...   github.com/davidrjenni/reftools/cmd/fillstruct   github.com/haya14busa/goplay/cmd/goplay   github.com/mdempsky/gocode   github.com/ramya-rao-a/go-outline   github.com/rogpeppe/godef   github.com/sqs/goreturns   github.com/uudashr/gopkgs/v2/cmd/gopkgs   github.com/zmb3/gogetdoc  github.com/fatih/gomodifytags  github.com/josharian/impl  github.com/alecthomas/gometalinter
 
@@ -5,3 +16,6 @@ go get -d github.com/acroca/go-symbols github.com/cweill/gotests/...   github.co
 #安装github和golang.org包
 go get golang.org/x/tools/cmd/godoc   golang.org/x/tools/cmd/goimports  golang.org/x/tools/cmd/gorename  golang.org/x/tools/cmd/guru  golang.org/x/lint/golint    github.com/acroca/go-symbols github.com/cweill/gotests/...   github.com/davidrjenni/reftools/cmd/fillstruct   github.com/haya14busa/goplay/cmd/goplay   github.com/mdempsky/gocode   github.com/ramya-rao-a/go-outline   github.com/rogpeppe/godef   github.com/sqs/goreturns   github.com/uudashr/gopkgs/v2/cmd/gopkgs   github.com/zmb3/gogetdoc  github.com/fatih/gomodifytags  github.com/josharian/impl  github.com/alecthomas/gometalinter
 
+
+#gometalinter安装
+gometalinter --install
