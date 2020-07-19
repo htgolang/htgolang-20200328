@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>user-manage</title>
+  </head>
+  <body>
+    <form action="{{ urlfor `UserController.Query` }}" method="get">
+      <label>sort: </label>
+      <input name="q" value="">
+      <input type="submit" value="go!">
+    </form>
+    <a href="{{ urlfor `AuthController.Logout` }}">goout</a>
+    <table>
+      <thead>
+        <tr>
+          <th>statffid</th>
+          <th>name</th>
+          <th>pickname</th>
+          <th>gender</th>
+          <th>tel</th>
+          <th>email</th>
+          <th>addr</th>
+          <th>status</th>
+          <th>op</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range .users }}
+          <tr>
+            <td>{{ .StaffId }}</td>
+            <td>{{ .Name }}</td>
+            <td>{{ .NickName}}</td>
+            <td>{{ .GenderText }}</td>
+            <td>{{ .Tel }}</td>
+            <td>{{ .Email }}</td>
+            <td>{{ .Addr }}</td>
+            <td>{{ .StatusText }}</td>
+            <td>
+              edit
+              del
+            </td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </body>
+</html>
