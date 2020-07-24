@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>注册中心</title>
+        <script src="/js/quit.js"></script>
+    </head>
+    <body>
+        <form action="/register/" method="POST">
+            <table>
+                <tr>
+                    <td>用户名：</td>
+                    <td>
+                        <input type="text" name="name" value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>性别：</td>
+                    <td>
+                        <input type="radio" name="sex" value=0><label>女</label>
+                        <input type="radio" name="sex" value=1 checked="checked"><label>男</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>账户名：</td>
+                    <td>
+                        <input type="text" name="account" value="{{ .User.Account }}"> {{ .Errors.account }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>电话：</td>
+                    <td>
+                        <input type="text" name="tel", value="{{ .User.Tel }}"/> {{ .Errors.tel }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>联系地址：</td>
+                    <td>
+                        <textarea name="address"> {{ .User.Address }} </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td>
+                        <input type="password" name="password" value=""/>  {{ .Errors.password }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>密码确认：</td>
+                    <td>
+                        <input type="password" name="confirmpassword" value=""/> {{ .Errors.confirmpassword }}
+                    </td>
+                </tr>
+            </table>
+            {{ .Errors.submit }}
+            <input type="submit" value="提交">
+            <input type="button" value="退出" onclick="quit('/login/')" />
+        </form>
+    </body>
+</html>

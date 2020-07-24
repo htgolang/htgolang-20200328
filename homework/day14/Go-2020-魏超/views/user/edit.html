@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>编辑用户</title>
+        <link rel="stylesheet" href="/css/datetime.css">
+        <script src="/js/datetime.js"></script>
+        <script src="/js/quit.js"></script>
+    </head>
+    <body>
+        <form action="/user/mod/" method="POST">
+            <table>
+                <tr>
+                    <td>
+                        <label>用户名：</label>
+                    </td> 
+                    <td>
+                        <input name="name" value="{{ .User.Name }}"/> {{ .Errors.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>账户名：</label>
+                    </td> 
+                    <td>
+                        <input type="text" name="account" value="{{ .User.Account }}"/> {{ .Errors.account }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>性别：</td>
+                    <td>
+                        {{ if eq .User.Sex 1 }}
+                            <input type="radio" name="sex" value=1 checked="checked"><label>男</label>
+                            <input type="radio" name="sex" value=0><label>女</label>
+                        {{ else }}
+                            <input type="radio" name="sex" value=1><label>男</label>
+                            <input type="radio" name="sex" value=0 checked="checked"><label>女</label>
+                        {{ end }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>电话：</label>
+                    </td>
+                    <td>
+                        <input type="text" name="tel" value="{{ .User.Tel }}"/> {{ .Errors.tel }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>密码：</label>
+                    </td> 
+                    <td>
+                        ******* <a href="/user/passwd/?id={{ .User.ID }}">更改</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>注册时间：</td>
+                    <td>{{ datetime .User.RegisterTime }}</td>
+                </tr>
+                <tr>
+                    <td>联系地址：</td>
+                    <td>
+                        <textarea name="address"> {{ .User.Address }} </textarea>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="id" value={{ .User.ID }}>
+            {{ .Errors.submit }}
+            <input type="submit" value="提交">
+            <input type="button" value="退出" onclick="quit('/user/list/')"/>
+        </form>
+    </body>
+</html>
