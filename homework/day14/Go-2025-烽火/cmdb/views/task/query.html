@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config "String" "TaskQuery" "查询任务" }}</title>
+    {{ assets_css "/static/third/bootstrap-4.5.0/css/bootstrap.min.css" }}
+    {{ assets_css "/static/css/layout.css"}}
+</head>
+<body>
+    {{ template "base/templates/nav.html" . }}
+    <div class="container-fluid m-2">
+        <div class="row">
+            <div class="col-1">
+                <a href="{{ urlfor `TaskController.Add`}}" class="btn btn-primary">新建</a>
+            </div>
+            <div class="col-11">
+                <form class="form-inline mb-2 float-right" action="{{ urlfor `TaskController.Query` }}" method="GET">
+                    <div class="form-group mr-2">
+                        <label class="sr-only">查询:</label>
+                        <input class="form-control" name="query" placeholder="请输入字符串" value="{{ .query }}" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-outline-secondary" value="查询"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <table class="table table-sm table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>开始时间</th>
+                        <th>结束时间</th>
+                        <th>截止时间</th>
+                        <th>任务详情</th>
+                        <th>状态</th>
+                        <th>用户</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range .tasks }}
+                    <tr>
+                        <td>{{ .ID }}</td>
+                        <td>{{ .Name }}</td>
+                        <td>{{  dateformat .StartTime  "2006-01-02 15:04:05" }}</td>
+                        {{ if eq .Status 3 }}
+                        <td>{{  dateformat .CompleteTime  "2006-01-02 15:04:05" }}</td>
+                        {{ else }}
+                        <td>--</td>
+                        {{ end }}
+                        <td>{{  dateformat .DeadlineTime  "2006-01-02 15:04:05" }}</td>
+                        <td>{{  .Content }}</td>
+                        <td>{{ .StatusText }}</td>
+                        <td>{{ .RealUser }}</td>
+                        <td>
+                            {{ if eq $.loginUser.ID .User }}
+                            <a class="btn btn-sm btn-primary" href="{{ urlfor `TaskController.Modify` }}?id={{ .ID }}">编辑</a>
+                            {{ end }}
+                            {{ if eq $.loginUser.ID .User }}
+                            <a class="btn btn-sm btn-danger" href="{{ urlfor `TaskController.Delete`}}?id={{ .ID }}">删除</a>
+                            {{ end }}
+                        </td>
+                    </tr>
+                    {{ end }}
+                </tbody>
+    </table>
+</body>
+</html>
