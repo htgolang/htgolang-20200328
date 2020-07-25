@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>{{ .title }}</title>
+        {{ assets_css "/static/components/bootstrap-4.5.0/css/bootstrap.min.css"}}
+        {{ assets_css "/static/css/layout.css"}}
+        {{ .SectionStyle }}
+    </head>
+    <body >
+        {{ template "base/templates/nav.html" . }}
+        <div class="container-fluid m-2">
+            <div class="row">
+                <div class="col-12">
+                    {{ .LayoutContent }}
+                </div>
+            </div>
+        </div>
+        {{ .SectionScript }}
+    </body>
+</html>

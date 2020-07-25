@@ -1,0 +1,34 @@
+2020/07/25 15:48:10.314 [I] [asm_amd64.s:1357]  http server Running on http://:8080
+2020/07/25 15:48:14.876 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     6.9824ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 15:48:14.954 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     4.9651ms|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 15:48:14.955 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      999.8µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 15:48:15.112 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      999.8µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 15:48:29.826 [E] [auth.go:42]  用户认证失败: xxxx 
+2020/07/25 15:48:29.828 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     9.9997ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/25 15:48:29.897 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 15:48:29.900 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      964.5µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 15:48:30.098 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9956ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 15:49:34.539 [I] [asm_amd64.s:1357]  http server Running on http://:8080
+2020/07/25 15:49:38.213 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0036ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 15:49:38.340 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 15:49:38.342 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      993.9µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 15:49:38.525 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     9.0311ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 15:49:38.976 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     8.0018ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 15:49:39.050 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 15:49:39.050 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 15:49:39.229 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    14.0184ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 15:49:39.694 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9994ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 15:49:39.772 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 15:49:39.774 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      995.3µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 15:49:39.958 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9712ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 15:49:42.519 [E] [auth.go:42]  用户认证失败: xxxx 
+2020/07/25 15:49:42.523 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    10.0081ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/25 15:49:42.658 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 15:49:42.661 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      982.3µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 15:49:42.812 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      996.7µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 16:05:15.395 [I] [auth.go:45]  用户认证成功: kk 
+2020/07/25 16:05:15.395 [D] [server.go:2802]  |            ::1|[47m 302 [0m|   101.9792ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/25 16:05:15.416 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    16.0153ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 16:05:15.482 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      998.4µs|   match|[44m GET     [0m /static/css/layout.css
+2020/07/25 16:05:15.482 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 16:05:15.616 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     4.0114ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map

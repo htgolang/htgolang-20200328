@@ -1,0 +1,168 @@
+[x]1. 用户管理 => 修改自己密码
+    a => 打开用户修改密码页面
+        /*
+        controller 参数 uid => 验证用户uid当前用户 => 是 => 获取用户信息显示 (用户名) => 加载视图
+                                                    不是 =>
+                        session => uid => loginuser
+        */
+        controller => 加载视图
+        views/tpl
+        rounter(url=>controller)
+    b. => 提交数据
+        旧密码 => 新密码（确认）
+
+        Form
+
+        parseForm
+
+        检查旧密码
+        新密码 和 确认密码是不是一致
+        新旧不能一样
+        密码 必须包含数字，大小写英文，特殊字符(.@!$#) 至少3中, 6
+
+        update user set password="xxx" where id=uid
+
+[x]2. CSRF
+    网络攻击
+    扩展请求伪造
+
+    a. 配置
+    开启CSRF防护
+    配置Token => key
+    过期时间
+
+    b. 打开页面生成TOken
+        从Controller生成 传递到页面
+
+    c. 提交数据提交Token
+        beego自动验证(POST,DELETE,PUT)
+        csrf_token =>
+
+
+[x]3. Flash
+    处理成功后将消息存储 cookie
+    想要显示时从存储中获取消息并显示 从cookie中读取/删掉
+
+    页面使用后端模板
+    从当前Controller某个URL跳转到另外一个URL
+
+    存储
+    flash := beego.NewFlash
+
+    flash.Set(key, value)
+
+    flash.Store(&c.Controller)
+
+    // 获取
+    flash := beego.ReadFromRequest(&c.Controller)
+
+    // readFromRequest     c.Data[key] = value
+
+    flash.Data
+
+[x]4. 错误处理
+[x]5. 验证
+[x]6. 日志
+[x]7. Layout&LayoutSection
+[x]13. Cache
+    缓存
+8. 用户权限
+    jd
+        万志强 => user
+        kk => user
+        管理侧 => 添加商品
+                  维护价格
+                 用户管理
+    角色 不同角色 不同功能
+         相同角色 不同数据
+
+    水平权限: 相同角色, 数据不共享, 数据的属性
+    垂直权限: 不同角色 A => 1, 2, 3 A-> 4(权限错误，提权)
+                      B => 2, 3, 4
+
+    Todolist
+
+
+    user 角色 role 1 => 管理员 2 =>普通用户
+
+    修改密码
+
+    Task管理
+    用户管理
+
+    管理员: 操作用户管理， 所有用户的Task管理
+            UserController
+                Prepare => 判断用户时非管理员 => 跳转到无权限页面
+                            是管理员 => 继续访问
+            TaskController
+
+    普通用户： Task管理，只能对自己创建的任务进行管理
+
+            Task => User属性
+
+            TaskController
+                Query => user == current.ID
+                Add => current.ID => db
+                Detail => id, user => data
+                modify => id, id =data => data.user == current.ID
+                delete => id => data, data.user == current.ID
+
+
+
+    如何限制普通用户操作UserController
+                    发起请求-》请求操作成功
+
+
+
+    如果限制未登录用户操作UserController
+        session => User 有 放行
+                        无 跳转到登录页面
+
+
+    role {
+        1 : [controller1.Action1, controller2.Action2],
+        2 : [controller1.Action1, controller1.Action2]
+    }
+
+    Authorization => session => user => role => actions
+                    GetControllerAndAction
+        在 actions => 有权限
+        不在 => 无权限
+
+9. 过滤器
+[x]10. 部署
+[x]11. HTTPS
+[x]12. cobra
+    beego orm --db --force --verbose
+
+    main web
+         db
+         init
+
+name {
+    attr: value;
+}
+
+html->head
+<style type="text/css">
+</style>
+
+<link href="css path" rel="stylesheet" type="text/css" />
+
+
+User
+type userService struct {
+
+}
+
+Add
+Find/Query
+Detail
+Delete
+
+
+UserService = new(userService)
+
+
+A UserService.Add
+B UserServiceInstance
