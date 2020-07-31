@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config "String" "TaskEdit" "编辑任务"}}</title>
+    {{ assets_css "/static/third/bootstrap-4.5.0/css/bootstrap.min.css" }}
+    {{ assets_css "/static/css/layout.css"}}
+</head>
+<body>
+    {{ template "base/templates/nav.html" . }}
+
+    <div class="container-fluid m2">
+        <form method="POST" action={{ urlfor "TaskController.Modify" }}>
+            <div class="form-group">
+            <input type="hidden" name="_xsrf" value="{{.xsrf_token}}" />
+            <input type="hidden" name="id" value="{{ .task.ID }}"  />
+
+            <label>名称: </label>
+            <input class="form-control form-control-sm col-2" type="text" name="name" value="{{ .task.Name }}"   autofocus />
+
+            <label>状态: </label>
+            <select class="form-control form-control-sm col-2" name="status">
+                <option value="0"  {{ if eq  .task.Status 0 }} selected {{ end }}>新建</option>
+                <option value="1"  {{ if eq  .task.Status 1 }} selected {{ end }}>开始</option>
+                <option value="2"  {{ if eq  .task.Status 2 }} selected {{ end }}>暂停</option>
+                <option value="3"  {{ if eq  .task.Status 3 }} selected {{ end }}>完成</option>
+            </select>
+
+            {{ if .is_admin }}
+            <label>用户: </label>
+            <select class="form-control form-control-sm col-2" name="user">
+                {{ range .users }}
+                <option value="{{ .ID }}" {{ if eq $.task.User .ID }} selected {{ end }} >{{ .Name }}</option>
+                {{ end }}
+            </select>
+            {{ end }}
+
+            <label>开始: </label>
+            <input class="form-control form-control-sm col-2" type="datetime-local" name="start_time" value={{ dateformat .task.StartTime "2006-01-02T15:04" }}  autofocus />
+
+            <label>期限: </label>
+            <input class="form-control form-control-sm col-2" type="datetime-local" name="deadline_time" value={{ dateformat .task.DeadlineTime "2006-01-02T15:04" }}  autofocus />
+
+            <label>描述: </label><br>
+            <textarea class="form-control form-control-sm col-2" name="content">{{ .task.Content }}</textarea>
+        </div>
+            <input class="btn btn-sm btn-primary" type="submit" value="提交" />
+        </form>
+    </div>
+</body>
+</html>
