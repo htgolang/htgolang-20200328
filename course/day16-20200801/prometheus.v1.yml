@@ -1,0 +1,26 @@
+global:
+  query_log_file: "prometheus.log"
+  external_labels:
+    env: test
+
+alerting:
+  alertmanagers:
+    - static_configs:
+      - targets:
+        - "localhost:9093"
+
+rule_files:
+  - "rules/*.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+  - job_name: "node"
+    basic_auth:
+      username: "node"
+      password: "node@2020"
+    static_configs:
+      - targets:
+        - "localhost:9100"
+        - "localhost:9101"
