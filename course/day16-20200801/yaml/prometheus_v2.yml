@@ -1,0 +1,36 @@
+global:
+  evaluation_interval: 15s
+  external_labels:
+    env: test
+  query_log_file: prometheus.log
+  scrape_interval: 15s
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - localhost:9093
+rule_files:
+- rules/*.yml
+scrape_configs:
+- job_name: prometheus
+  basic_auth: {}
+  static_configs:
+  - targets:
+    - localhost:9090
+  file_sd_configs: []
+- job_name: node
+  basic_auth:
+    password: node@2020
+    username: node
+  file_sd_configs:
+  - files:
+    - sd/file/node/*.yaml
+    - sd/file/node/*.json
+- job_name: mysqld
+  basic_auth:
+    password: ""
+    username: ""
+  file_sd_configs:
+  - files:
+    - sd/file/mysqld/*.yaml
+    - sd/file/mysqld/*.json

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>BOOTSTRAP</title>
+        <link type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3 offset-5">
+                    <form>
+                        <h1>用户登录</h1>
+                        <div class="form-group">
+                            <label>姓名</label>
+                            <input type="text" class="form-control" name="name" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>密码</label>
+                            <input type="password" class="form-control" name="name" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block" value="登录" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 offset-5">
+                    <form class="form-inline">
+                        <h1>用户登录</h1>
+                        <div class="form-group">
+                            <label>姓名</label>
+                            <input type="text" class="form-control" name="name" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <label>密码</label>
+                            <input type="password" class="form-control" name="name" value=""/>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block" value="登录" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3 offset-5">
+                    <form>
+                        <h1>用户登录</h1>
+                        <div class="form-group row">
+                            <label class="col-2 col-form-label">姓名</label>
+                            <div class="col-8">
+                                <input type="text" class="form-control form-control-sm" name="name" value=""/>
+                                <small class="form-text text-muted">姓名只能包含大小写英文字母</small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label  class="col-2 col-form-label">密码</label>
+                            <div class="col-8">
+                                <input type="password" class="form-control form-control-lg" name="name" value=""/>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label  class="col-2 col-form-label">性别</label>
+                            <div class="col-8">
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="gender" value="1"/>
+                                    <label class="form-check-label">男</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="checkbox" class="form-check-input" name="gender" value="0"/>
+                                    <label class="form-check-label">女</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label  class="col-2 col-form-label">备注</label>
+                            <div class="col-8">
+                                <textarea class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label  class="col-2 col-form-label">部门</label>
+                            <div class="col-8">
+                                <select class="form-control">
+                                    <option>开发</option>
+                                    <option>运维</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="offset-2 col-8">
+                                <input type="submit" class="btn btn-primary btn-block" value="登录" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <form>
+            <input type="hidden" name="h" value="h"/>
+            <input type="text" name="r" value="r" readonly="readonly"/>
+            <input type="text" name="d" value="d" disabled="disabled" />
+            <input type="submit"/>
+        </form>
+    </body>
+</html>

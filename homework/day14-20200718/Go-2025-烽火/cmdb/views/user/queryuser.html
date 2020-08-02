@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{config "String" "UserTitle" "用户管理"}}</title>
+    {{ assets_css "/static/third/bootstrap-4.5.0/css/bootstrap.min.css" }}
+    {{ assets_css "/static/css/layout.css"}}
+
+</head>
+<body>
+    {{ template "base/templates/nav.html" . }}
+
+    <div class="container-fluid m-2">
+        <div class="row">
+            <div class="col-1">
+                <a href="{{ urlfor `UserController.Add`}}" class="btn btn-primary">新建</a>
+            </div>
+            <div class="col-11">
+                <form class="form-inline mb-2 float-right" action="{{ urlfor `UserController.Query` }}" method="GET">
+                    <div class="form-group mr-2">
+                        <label class="sr-only">查询:</label>
+                        <input class="form-control" name="query" placeholder="请输入字符串" value="{{ .query }}" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-outline-secondary" value="查询"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <table class="table table-sm table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>员工编号</th>
+                        <th>用户名</th>
+                        <th>姓名</th>
+                        <th>部门</th>
+                        <th>性别</th>
+                        <th>联系方式</th>
+                        <th>邮箱</th>
+                        <th>联系地址</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{ range .users }}
+                        <tr>
+                            <td>{{ .StaffID }}</td>
+                            <td>{{ .Name }}</td>
+                            <td>{{ .Nickname }}</td>
+                            <td>{{ .Department }}</td>
+                            <td>{{ .GenderText }}</td>
+                            <td>{{ .Tel }}</td>
+                            <td>{{ .Email }}</td>
+                            <td>{{ .Addr }}</td>
+                            <td>{{ .StatusText }}</td>
+                            <td>
+                                <a href="{{ urlfor `UserController.Modify` }}?id={{ .ID }}" class="btn btn-sm btn-info" >编辑</a>
+                                {{ if ne $.loginUser.ID .ID }}
+                                <a href="{{ urlfor `UserController.Delete`}}?id={{ .ID }}" class="btn btn-sm btn-danger" >删除</a>
+                                {{ end }}
+                            </td>
+                        </tr>
+                    {{ end }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

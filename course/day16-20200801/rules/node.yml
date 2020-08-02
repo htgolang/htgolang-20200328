@@ -1,0 +1,29 @@
+groups:
+  - name: node
+    rules:
+      - record: node_cpu_total
+        expr: count(node_cpu_seconds_total{mode="system"}) by (instance,job)
+      - record: node_cpu_precent
+        expr: sum(1-irate(node_cpu_seconds_total{mode="idle"}[5m])) by (instance,job) * 100
+      - record: node_mem_precent
+        expr: (1 - node_memory_MemAvailable_bytes/ node_memory_MemTotal_bytes) * 100
+
+  - name: node_alert
+    rules:
+      - alert: "CPU使用率告警"
+        expr: node_cpu_precent > 90
+        for: 3m
+        labels:
+          level: heigh
+        annotations:
+          summary: "节点{{ $labels.job }}.{{ $labels.instance }}CPU使用率过高 {{ $value }}"
+          description: "CPU使用率3分钟之内都超过60%"
+
+      - alert: "内存使用率告警"
+        expr: node_mem_precent > 60
+        for: 3m
+        labels:
+          level: heigh
+        annotations:
+          summary: "节点{{ $labels.job }}.{{ $labels.instance }}内存使用率过高 {{ $value }}"
+          description: "内存使用率3分钟之内都超过60%"

@@ -1,0 +1,142 @@
+2020/07/25 17:49:17.198 [I] [asm_amd64.s:1357]  http server Running on http://:8080
+2020/07/25 17:49:17.200 [C] [asm_amd64.s:1357]  ListenAndServe:  listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+2020/07/25 17:49:17.201 [I] [asm_amd64.s:1357]  https server Running on https://:10443
+2020/07/25 17:49:37.570 [I] [asm_amd64.s:1357]  http server Running on http://:8080
+2020/07/25 17:49:37.573 [I] [asm_amd64.s:1357]  https server Running on https://:10443
+2020/07/25 17:49:51.383 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     8.5349ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 17:49:51.393 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.9979ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 17:50:00.038 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57717: remote error: tls: unknown certificate
+2020/07/25 17:50:00.038 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57716: remote error: tls: unknown certificate
+2020/07/25 17:50:00.418 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57719: remote error: tls: unknown certificate
+2020/07/25 17:50:00.421 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57720: remote error: tls: unknown certificate
+2020/07/25 17:50:02.589 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57722: remote error: tls: unknown certificate
+2020/07/25 17:50:02.589 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57721: remote error: tls: unknown certificate
+2020/07/25 17:50:02.594 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57723: remote error: tls: unknown certificate
+2020/07/25 17:50:02.603 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      979.1µs|   match|[44m GET     [0m /     r:/
+2020/07/25 17:50:02.610 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.9932ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 17:50:02.675 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.0042ms|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 17:50:02.676 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9873ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 17:50:02.887 [D] [server.go:2802]  |            ::1|[43m 404 [0m|    11.9859ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/25 17:50:07.719 [I] [auth.go:48]  用户认证成功: kk 
+2020/07/25 17:50:07.719 [D] [server.go:2802]  |            ::1|[47m 302 [0m|   131.9762ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/25 17:50:07.732 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     8.0017ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 17:50:07.758 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/layout.css
+2020/07/25 17:50:26.373 [I] [asm_amd64.s:1357]  https server Running on https://:10443
+2020/07/25 17:50:30.687 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57740: remote error: tls: unknown certificate
+2020/07/25 17:50:30.709 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    19.9995ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 17:50:30.962 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.5369ms|   match|[44m GET     [0m /static/css/layout.css
+2020/07/25 17:51:00.490 [I] [asm_amd64.s:1357]  https server Running on https://:443
+2020/07/25 17:51:04.556 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57791: remote error: tls: unknown certificate
+2020/07/25 17:51:04.556 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:57792: remote error: tls: unknown certificate
+2020/07/25 17:51:04.574 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    15.0055ms|   match|[44m GET     [0m /     r:/
+2020/07/25 17:51:04.647 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      993.4µs|   match|[44m GET     [0m /static/css/layout.css
+2020/07/25 17:51:04.650 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     6.9965ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 17:51:04.801 [D] [server.go:2802]  |            ::1|[43m 404 [0m|     7.9826ms| nomatch|[44m GET     [0m /favicon.ico
+2020/07/25 18:22:55.725 [I] [asm_amd64.s:1357]  https server Running on https://:443
+2020/07/25 18:23:21.270 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:58564: remote error: tls: unknown certificate
+2020/07/25 18:23:21.324 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    50.9871ms|   match|[44m GET     [0m /     r:/
+2020/07/25 18:23:21.416 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/layout.css
+2020/07/25 18:23:21.421 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     5.9963ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 18:37:09.952 [I] [asm_amd64.s:1357]  https server Running on https://:443
+2020/07/25 18:37:14.480 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:58986: remote error: tls: unknown certificate
+2020/07/25 18:37:14.491 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9972ms|   match|[44m GET     [0m /     r:/
+2020/07/25 18:37:14.500 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9995ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.507 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9992ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.511 [D] [server.go:2802]  |            ::1|[47m 302 [0m|           0s|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.522 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     6.9972ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.533 [D] [server.go:2802]  |            ::1|[47m 302 [0m|           0s|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.559 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.9997ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.564 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.0004ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.572 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      999.8µs|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.578 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      996.7µs|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.597 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     5.0002ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.612 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.0013ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.623 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.9995ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.630 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9998ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.640 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9973ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.643 [D] [server.go:2802]  |            ::1|[47m 302 [0m|           0s|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.664 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     6.0158ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.682 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     3.0019ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.696 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.0016ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:14.705 [D] [server.go:2802]  |            ::1|[47m 302 [0m|           0s|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:14.992 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    16.0033ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.105 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    57.9969ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.179 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      995.5µs|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.270 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    23.0013ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.314 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9993ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.394 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      6.998ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.426 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     8.0021ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.492 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    22.0096ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.552 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     9.9927ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.641 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    16.9971ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.666 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     3.0092ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.727 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    39.5419ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.791 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    45.0018ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.826 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    15.0049ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.873 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    13.0192ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:15.938 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    27.0016ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:15.974 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     7.9978ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:16.012 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    16.9998ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:16.052 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      6.999ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:16.138 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    45.0082ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:19.250 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    39.9885ms|   match|[44m GET     [0m /     r:/
+2020/07/25 18:37:19.295 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.9712ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:19.405 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    43.0013ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:19.453 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    14.0031ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:19.531 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    22.9979ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:19.576 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     3.0036ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:19.655 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    46.0255ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:19.720 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    11.0561ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:19.836 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    99.0226ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:19.893 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    14.0023ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:20.003 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    31.9765ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:20.107 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     17.021ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:20.202 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    36.9994ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:20.253 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     5.9995ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:20.351 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    47.9989ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:20.392 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.9872ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:20.470 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    46.5435ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:20.642 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    62.0104ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:20.841 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    81.0035ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:20.944 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    31.0057ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.141 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      992.8µs|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.151 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      5.002ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.161 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      998.9µs|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.174 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     5.0024ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.206 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.0283ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.214 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     3.0001ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.226 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.0004ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.235 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.9996ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.244 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9959ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.280 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    23.9964ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.294 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      998.5µs|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.306 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     6.0079ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.330 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     9.9837ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.346 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.9978ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.361 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      999.4µs|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.371 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.9988ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.388 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     2.9754ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.413 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    10.0003ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:26.425 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      992.8µs|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:26.430 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     1.0004ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:28.430 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    42.0003ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:28.595 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0253ms|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 18:37:28.596 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     5.0036ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 18:37:29.046 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      1.984ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 18:37:37.723 [I] [auth.go:48]  用户认证成功: admin 
+2020/07/25 18:37:37.723 [D] [server.go:2802]  |            ::1|[47m 302 [0m|   314.9999ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:37.875 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    80.9943ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:38.014 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/layout.css
+2020/07/25 18:37:38.028 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    14.0043ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 18:37:38.350 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    24.0103ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 18:37:45.260 [D] [server.go:2802]  |            ::1|[47m 302 [0m|     4.0004ms|   match|[44m GET     [0m /auth/logout   r:/auth/logout/*
+2020/07/25 18:37:45.275 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    12.0147ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:45.328 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/login.css
+2020/07/25 18:37:45.333 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     6.9993ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 18:37:45.453 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    17.9939ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map
+2020/07/25 18:37:55.841 [I] [auth.go:48]  用户认证成功: admin 
+2020/07/25 18:37:55.842 [D] [server.go:2802]  |            ::1|[47m 302 [0m|   136.9978ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/07/25 18:37:55.857 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    10.9983ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/07/25 18:37:55.946 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/layout.css
+2020/07/25 18:37:55.951 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     5.9949ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/07/25 18:37:56.210 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     4.0006ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css.map

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>用户管理</title>
+        <script src="/js/quit.js"></script>
+    </head>
+    <body>
+        <a href="/user/add/" >添加</a>
+        <table  frame="box" border="1" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>用户名</th>
+                    <th>账号名:</th>
+                    <th>性别</th>
+                    <th>电话</th>
+                    <th>注册日期</th>
+                    <th>地址</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ range .Users }}
+                <tr>
+                    <td>{{ .Name }}</td>
+                    <td>{{ .Account }}</td>
+                    <td>{{ headlesex .Sex }}</td>
+                    <td>{{ .Tel }}</td>
+                    <td>{{ datetime .RegisterTime }}</td>
+                    <td>{{ .Address }}
+                    <td>
+                        <a href="/user/mod/?id={{ .ID }}">编辑</a>
+                        <a href="/user/del/?id={{ .ID }}">删除</a>
+                    </td>
+                </tr>
+                {{ end }}
+            </tbody>
+        </table>
+        <input type="button" value="退出" onclick="quit('/menu/')"/>
+    </body>
+</html>

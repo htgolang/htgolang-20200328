@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>管理平台登录</title>
+        <style>
+            .tableCenter {
+                background-color: rgb(20, 124, 89);
+                width: 50%;
+                margin: 0 auto;
+                border: solid 1px #ff0000
+            }
+            
+            .theadtitle {
+                font-weight: bold;
+            }
+
+            .tdformat {
+                width: 50%;
+                text-align: left;
+            }
+
+            body {
+                text-align: center
+            }
+        </style>
+
+    <script type="text/javascript">
+    /*
+     * 注册
+     */
+    function regist() {
+        // 如果需要在新窗口打开注册界面
+        // window.open('/register/');
+        // 如果需要在当前窗口打开登录界面
+        window.location.href = '/register/';
+    }
+    </script>
+    </head>
+    <body>
+        <form action="/login/" method="POST" >
+            <table class="tableCenter">
+                <thead>
+                    <tr>
+                        <td colspan="2" class="theadtitle">Welcome Login</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>账号名</td>
+                        <td class="tdformat">
+                            <input type="text" name="account" value=""/> {{ .Errors.account }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>密码</td>
+                        <td class="tdformat">
+                            <input type="password" name="password" value=""/> {{ .Errors.password }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            {{ .Errors.login }}
+                            <input type="submit" value="登录" />
+                            <input type="button" value="注册" onclick="regist()" />
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+
+                </tfoot>
+            
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>{{ config "String"  "AppName"  "CMDB" }}</title>
+  </head>
+  <body>
+    <form action="{{ urlfor `AuthController` }}" method="POST">
+      <label>name:</label>
+      <input type="text" name="name" value="{{ .form.Name }}"><br/>
+
+      <label>passwd:</label>
+      <input type="password" name="password" value=""><br/>
+
+      {{ if .errors.HasErrors }}
+          {{ range .errors.Errors }}
+            {{ index . 0 }}
+          {{ end }}
+      {{ end }} 
+      <br/>
+      <input type="submit" value="login"><br/>
+
+    </form>
+  </body>
+</html>

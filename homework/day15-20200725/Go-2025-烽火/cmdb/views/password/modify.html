@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{config "String" "PasswordTitle" "修改密码"}}</title>
+    {{ assets_css "/static/third/bootstrap-4.5.0/css/bootstrap.min.css" }}
+    {{ assets_css "/static/css/layout.css"}}
+</head>
+<body>
+    {{ template "base/templates/nav.html" . }}
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-4 offset-4">
+                <form method="POST" action={{ urlfor "PasswordController.Modify" }}>
+                    <div class="form-group">
+                        <div class="col">
+                            <input class="form-control form-control-sm" type="hidden" name="_xsrf" value="{{.xsrf_token}}" />
+                        </div>
+                    </div>
+                    {{ if ne .text "" }}
+                        <div class="alert alert-primary" role="alert">{{ .text }}</div>
+                    {{ end }}
+                    <div class="form-group">
+                        <label class="col-4 col-form-label">旧密码: </label>
+                        <div class="col-8">
+                            <input class="form-control form-control-sm" type="password" name="old_password" value="" />
+                            <small class="form-text text-muted">密码必须由6-20位的字符串(大小写英文字符, 数字，下划线)组成</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-4 col-form-label">密码: </label>
+                        <div class="col-8">
+                            <input class="form-control form-control-sm" type="password" name="password" value="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="col-4 col-form-label">再次输入: </label>
+                        <div class="col-8">
+                            <input class="form-control form-control-sm" type="password" name="password2" value="" />
+                        </div>
+                    </div>
+
+                    {{ if .errors.HasErrors }}
+                        {{ range .errors.Errors }}
+                            <div class="text-danger">{{ index . 0 }}</div>
+                        {{ end }}
+                    {{ end }}
+                    <div class="form-group ">
+                        <label class="col-4 col-form-label"></label>
+                        <div class="col-8">
+                            <input class="btn btn-sm btn-primary btn-block" type="submit" value="提交" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

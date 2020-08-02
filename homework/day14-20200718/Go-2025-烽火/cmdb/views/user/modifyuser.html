@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{config "String" "UserTitle" "编辑用户"}}</title>
+    {{ assets_css "/static/third/bootstrap-4.5.0/css/bootstrap.min.css" }}
+    {{ assets_css "/static/css/layout.css"}}
+</head>
+<body>
+    {{ template "base/templates/nav.html" . }}
+    <div class="container-fluid m-2">
+        <form method="POST" action={{ urlfor "UserController.Modify" }}>
+            <div class="form-group">
+                <input class="form-control form-control-sm col-2" type="hidden" name="id" value="{{ .user.ID }}"/>
+
+                <label>用户名: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="name" value="{{ .user.Name }}" />
+
+                {{ if eq .loginUser.ID .user.ID }}
+                <label>密码: </label>
+                <input class="form-control form-control-sm col-2" type="password" name="password" value="{{ .user.Password }}" />
+                {{ end }}
+
+                <label>花名: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="nickname" value="{{ .user.Nickname }}" />
+
+                <label>性别: </label>
+                <select class="form-control form-control-sm col-2" name="gender">
+                    <option value=0 {{ if eq .user.Gender 0 }} selected {{ end }}>男</option>
+                    <option value=1 {{ if eq .user.Gender 1 }} selected {{ end }} >女</option>
+                </select>
+
+                <label>部门: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="department" value="{{ .user.Department }}" />
+
+                <label>联系方式: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="tel" value="{{ .user.Tel }}" />
+
+                <label>地址: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="addr" value="{{ .user.Addr }}" />
+
+                <label>邮箱: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="email" value="{{ .user.Email }}" />
+            </div>
+                <input class="btn btn-sm btn-dark" type="submit" value="提交" />
+        </form>
+    </div>
+</body>
+</html>

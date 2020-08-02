@@ -1,0 +1,146 @@
+c.Data["token_input"] = template.HTML(`<input type="text" value="xxx" name="xxxx" />`)
+
+
+{{ token_input }} // <input xxxx/> []
+
+beego 防止xss攻击 <input/> &lt;
+
+
+菜单（显示）：
+    用户管理
+    任务管理
+
+管理员
+    用户管理
+    任务管理
+
+普通用户
+    任务管理
+
+user => role
+role => template => if => func
+
+hasPerssion(.user, "key")
+
+
+menus := []Module{
+    Moudule("user", "action", "用户管理", [contaoller.action]),
+    Moudule("task", "action", "任务管理")
+},
+
+垂直权限 : rbac
+水平权限 : 基于属性的
+
+role =>
+    管理员 => user, task
+    普通用户 => task
+
+
+    Prepare()
+    loginUser.Role => Modules => [Controller.action]
+
+    c.GetControllerAndAction() in [Controller.Action]
+
+    else
+        无权限
+        c.Redirect()
+        c.Abort("notpermission")
+
+
+exported_instance
+
+push gateway
+prometheus级联
+
+
+
+规则
+    产生告警
+    生成新的时间序列的
+
+
+运算 => 即时(瞬时)向量
+
+on(url)
+
+request {url=abc, code=200}
+request {url=abc, code=400}
+request {url=abc1, code=200}
+request {url=abc1, code=400}
+
+request {url=abc} 1
+request {url=abc} 2
+request {url=abc1} 3
+request {url=abc1} 4
+
++
+
+request_total {url=abc} 10
+request_total {url=abc1} 11
+
+                on()
+left + right group_left()
+             group_right()
+
+left join
+right join
+inner join
+
+集合运算
+count
+sum
+min
+max
+avg
+topk
+bottomk
+
+开发
+1. 基于Prometheus开发应用 API，配置， PromQL
+    服务发现 => CMDB Prometheus Target 配置
+    图形化管理 => 可视化
+    告警规则管理
+    告警 alertmanager => CMDB
+         email
+         短信
+
+    多个Prometheus
+
+
+    配置文件操作 yml, json
+    API => http client
+
+    file_sd_configs:
+
+
+    1. 服务发现
+
+    a. prometheus 增删改查
+        id, name, ip
+    b. job管理 job 增删改查
+        id, prometheus, jobname, scheme, metrics, basic_auth, tls
+    c. target
+        target
+
+    DB
+
+    prometheus => config
+
+    Agent
+
+    systemctl reload exec
+    http client api
+
+    2. api 获取数据
+        展示数据，图形化，js (js + 主机资源监控)
+
+    3. Exporter
+        Agent => prometheus client => 统计
+                 采集目标进行通信(socket)
+
+    4. 告警 => Db存储
+              通知 短信 => 腾讯云
+
+
+2. Prometheus
+    服务发现

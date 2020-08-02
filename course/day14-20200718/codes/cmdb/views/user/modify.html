@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>用户编辑</title>
+        {{ assets_css "/static/components/bootstrap-4.5.0/css/bootstrap.min.css"}}
+        {{ assets_css "/static/css/layout.css"}}
+    </head>
+    <body >
+        {{ template "base/templates/nav.html" . }}
+        <div class="container-fluid m-2">
+            <div class="row">
+                <div class="col-12">
+                    <form action="{{ urlfor `UserController.Modify`}}" method="POST">
+                        <input type="hidden" name="id" value="{{ .form.ID }}" />
+                        <div class="form-group row">
+                            <label class="col-form-label col-2">用户名</label>
+                            <div class="col-6">
+                                <input type="text" class="form-control" value="{{ .form.Name }}" name="name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-6 offset-2">
+                                <input type="submit" class="btn btn-info" value="更新"/>
+                            </div>
+                        </div>
+=
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

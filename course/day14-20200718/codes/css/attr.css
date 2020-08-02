@@ -1,0 +1,40 @@
+div {
+    width: 300px;
+    height: 300px;
+    background-color: gray;
+    color: red!important;
+    border-radius: 150px;
+    font-size: 30px;
+}
+div.hidden {
+    display: none;
+}
+div.B {
+    text-align: center;
+    color: green;
+}
+
+div.C {
+    float: right;
+}
+
+span.SA {
+    float: right;
+}
+span.SC {
+    float: left;
+}
+ul {
+    list-style-type:square;
+}
+ol {
+    list-style-type:upper-alpha;
+}
+table {
+    width: 100%;
+}
+table th,td {
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>{{config "String" "UserAdd" "添加用户"}}</title>
+    {{ assets_css "/static/third/bootstrap-4.5.0/css/bootstrap.min.css" }}
+    {{ assets_css "/static/css/layout.css"}}
+</head>
+<body>
+    {{ template "base/templates/nav.html" . }}
+
+    <div class="container-fluid">
+        <form method="POST" action={{ urlfor "UserController.Add" }}>
+            <div class="form-group">
+                <label>用户名: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="name" value="{{ .user.Name }}"  />
+                <!-- <small class="form-text text-muted">用户名</small> -->
+
+
+                <label>密码: </label>
+                <input class="form-control form-control-sm col-2" type="password" name="password" value="" required />
+
+                <label>花名: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="nickname" value="{{ .user.Nickname }}"  required />
+
+                <label>性别: </label>
+                <select class="form-control form-control-sm col-2" name="gender ">
+                    <option value=0>男</option>
+                    <option value=1>女</option>
+                </select>
+
+                <label>部门: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="department" value="{{ .user.Department }}" />
+
+                <label>联系方式: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="tel" value="{{ .user.Tel }}" />
+
+                <label>地址: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="addr" value="{{ .user.Addr }}" />
+
+                <label>邮箱: </label>
+                <input class="form-control form-control-sm col-2" type="text" name="email" value="{{ .user.Email }}" />
+
+            </div>
+            <input class="btn btn-sm btn-primary" type="submit" value="提交" />
+        </form>
+    </div>
+</body>
+</html>

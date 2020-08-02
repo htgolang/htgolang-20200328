@@ -1,0 +1,11 @@
+groups:
+  - name: target
+    rules:
+      - alert: target is down
+        expr: up == 0
+        for: 1m
+        lables:
+          level: heigh
+        annotations:
+          summary: "节点离线"
+          description: "节点离线"

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ config "String" "TaskAdd" "添加任务"}}</title>
+    {{ assets_css "/static/third/bootstrap-4.5.0/css/bootstrap.min.css" }}
+    {{ assets_css "/static/css/layout.css"}}
+</head>
+<body>
+    {{ template "base/templates/nav.html" . }}
+    <div class="container-fluid m2">
+        <div class="form-group">
+            <form method="POST" action={{ urlfor "TaskController.Add" }}>
+
+            <label>名称: </label>
+            <input class="form-control form-control-sm col-2" type="text" name="name" value="{{ .task.Name }}" placeholder="任务名..."  />
+
+            <label>开始: </label>
+            <input class="form-control form-control-sm col-2" type="datetime-local" name="start_time" value="{{ .task.StartTime }}"  />
+
+            <label>期限: </label>
+            <input class="form-control form-control-sm col-2" type="datetime-local" name="deadline_time" value="{{ .task.DeadlineTime }}"  />
+
+            <label>用户:</label>
+            <select class="form-control form-control-sm col-2" name="user">
+                {{ range .users }}
+                <option value="{{ .ID }}">{{ .Name }}</option>
+                {{ end }}
+            </select>
+
+            <label>详情: </label>
+            <textarea class="form-control form-control-sm col-2" name="content" placeholder="任务详情">{{ .task.Content }}</textarea>
+
+        </div>
+            <input class="btn btn-sm btn-primary" type="submit" value="提交" />
+        </form>
+    </div>
+</body>
+</html>
