@@ -1,0 +1,17 @@
+---
+addr: http://localhost:9090
+server:
+  token: xxx
+  addr: https://localhost/
+log:
+  filename: logs/promagent.log
+  maxbackups: 7
+  maxsize: 5
+  compress: true
+task:
+  register:
+    interval: 1m
+  profile:
+    interval: 10s
+    tpl: ./etc/prometheus/prometheus.yml.tpl
+    output: ./etc/prometheus/prometheus.yml

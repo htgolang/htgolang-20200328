@@ -1,0 +1,148 @@
+1. prometheus
+    Node
+        => 查询, 删除
+
+        Agent => API register => 不存在 添加
+                                 存在 更新
+
+        => 属性
+            uuid
+            hostname
+            addr https://host:port/
+            #username
+            #password
+            created_at
+            updated_at
+            deleted_at
+
+    Job
+        => 增 删 改 查
+        => 属性
+            任务标识 [a-zA-Z][0-9a-zA-Z_]
+            备注
+            Node node_id
+            created_at
+            updated_at
+            deleted_at
+
+    Target
+        => 增 删 改 查
+        名称
+        备注
+        Addr
+        Job
+        created_at
+        updated_at
+        deleted_at
+
+数据库关系
+
+1:1
+用户 <=> 密码
+
+user
+    id
+    name
+
+password
+    id
+    user_id
+    password
+
+
+user
+    id
+    password_id
+    name
+
+password
+    id
+    password
+
+1:n
+账号 <=> 收货地址(n)
+
+user
+    id
+    name
+
+Addr
+    id
+    user_id
+    addr
+    tel
+
+n:m
+
+host
+    1.1.1.1 开发 北京
+    1.1.1.2 开发 上海
+    1.1.1.3 测试 北京
+
+标签
+    开发
+    测试
+    线上
+
+    北京
+    上海
+
+第三张表
+    host_id
+    tag_id
+
+    1.1.1.1 开发
+    1.1.1.1 北京
+    1.1.1.2 开发
+    1.1.1.2 上海
+    1.1.1.3 测试
+    1.1.1.3 北京
+
+
+
+ORM:
+1:1
+    关联的外键 设置再那个(储采的表table)模型: FK *FK `orm:"rel(fk)"`
+
+    User: Password(存储)
+
+    User
+        Password *Password `orm:"reverse(one)"`
+
+    Password
+        User *User `orm:"rel(fk)"`
+
+1: n:
+    关联的外键 设置再那个(储采的表table)模型: FK *FK `orm:"rel(fk)"`
+
+    User
+        Addr []*Addr `orm:"reverse(many)"`
+    Addr
+        User *User `orm:"rel(fk)"`
+
+m:n:
+    某个模型: FK []*FK `orm:"rel(m2m)"`
+    另一个模型: Other []*Ohter `orm:"reverse(many)"`
+
+Agent:
+    1. 注册
+    2. 获取配置 => 生成prometheus配置
+
+    Task
+        Init
+        Run()
+
+问题:
+    1. prometheus.yaml => 修改 => prometheus reload
+        => api => 开启lifecycle nginx => req
+            Authorization: Basic base64(name:password)
+        => systemctl reload =>
+            需要有系统命令 systemctl
+    2. job: 其他配置， target其他配置 根据自己业务需求添加
+    3. 每间隔 每次重新写问题 每次重新加载 当内容变化后才加载
+        prometheus:
+            job: job1 job2 无变化不需要reload
+        target:
+            无变化不许写入文件
+
+        jobs targets 排序 sort json.Marshal => []byte => 写入

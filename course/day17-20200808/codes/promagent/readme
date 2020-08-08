@@ -1,0 +1,13 @@
+1. 命令行参数解析
+    flag
+    cobar
+
+
+Agent:
+    UUID
+    Addr http://host:port/path
+
+    LogConfig
+    ServerConfig
+        Addr
+        Token
