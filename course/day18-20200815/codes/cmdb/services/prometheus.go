@@ -3,6 +3,7 @@ package services
 import (
 	"cmdb/forms"
 	"cmdb/models"
+	"cmdb/utils"
 	"fmt"
 	"time"
 
@@ -208,8 +209,79 @@ func (s *targetService) Modify(form *forms.TargetModifyForm) *models.Target {
 	return nil
 }
 
+type alertService struct {
+}
+
+func (m *alertService) Alert(form *forms.AlertForm) {
+	ormer := orm.NewOrm()
+	queryset := ormer.QueryTable(&models.Alert{})
+	queryset = queryset.Filter("fingerprint", form.Fingerprint)
+	queryset = queryset.Filter("deleted_at__isnull", true)
+	queryset = queryset.Filter("status", "firing")
+	if form.IsNew() {
+		// 如果有为处理的告警，不在添加
+		if count, err := queryset.Count(); err == nil && count == 0 {
+			// 添加
+			alert := &models.Alert{
+				Fingerprint:  form.Fingerprint,
+				Alertname:    form.AlertName(),
+				Status:       form.Status,
+				StartsAt:     form.StartsAt,
+				GeneratorURL: form.GeneratorURL,
+				Labels:       form.LabelsString(),
+				Annotations:  form.AnnotationsString(),
+			}
+			ormer.Insert(alert)
+		}
+	} else {
+		// 更新
+		queryset.Update(orm.Params{
+			"EndsAt": form.EndsAt,
+			"Status": form.Status,
+		})
+	}
+}
+
+// Query 查询
+func (s *alertService) Query(form *forms.AlertQueryParams) *utils.Page {
+	var alerts []*models.Alert
+	queryset := orm.NewOrm().QueryTable(&models.Alert{})
+	cond := orm.NewCondition()
+	cond = cond.And("deleted_at__isnull", true)
+
+	if form.Q != "" {
+		qcond := orm.NewCondition()
+		qcond = qcond.Or("alertname__icontains", form.Q)
+		cond = cond.AndCond(qcond)
+	}
+
+	if form.Status != "" && form.Status != "all" {
+		qcond := orm.NewCondition()
+		qcond = qcond.Or("status", form.Status)
+		cond = cond.AndCond(qcond)
+	}
+
+	if form.StartTime() != nil {
+		qcond := orm.NewCondition()
+		qcond = qcond.Or("created_at__gte", form.StartTime())
+		cond = cond.AndCond(qcond)
+	}
+
+	if form.EndTime() != nil {
+		qcond := orm.NewCondition()
+		qcond = qcond.Or("created_at__lt", form.EndTime())
+		cond = cond.AndCond(qcond)
+	}
+
+	queryset.SetCond(cond).OrderBy("-created_at").Offset(form.Offset()).Limit(form.PageSize()).All(&alerts)
+	total, _ := queryset.SetCond(cond).Count()
+	// NewPage(alerts, total, form.PageQueryParams)
+	return utils.NewPage(alerts, total, form.PageSize(), form.PageNum(), form.Inputs)
+}
+
 var (
 	NodeService   = new(nodeService)
 	JobService    = new(jobService)
 	TargetService = new(targetService)
+	AlertService  = new(alertService)
 )

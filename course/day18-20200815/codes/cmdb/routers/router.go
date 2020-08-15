@@ -6,12 +6,20 @@ package routers
 
 import (
 	"github.com/astaxie/beego"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 
 	"cmdb/controllers"
 	v1 "cmdb/controllers/api/v1"
+	"cmdb/filters"
 )
 
 func init() {
+
+	beego.InsertFilter("/*", beego.BeforeExec, filters.BeforeExecute)
+	beego.InsertFilter("/*", beego.AfterExec, filters.AfterExecute, false)
+
+	beego.Handler("/metrics", promhttp.Handler())
+
 	beego.ErrorController(&controllers.ErrorController{})
 	beego.Router("/", &controllers.HomeController{}, "*:Index")
 
@@ -24,6 +32,7 @@ func init() {
 	beego.AutoRouter(&controllers.NodeController{})
 	beego.AutoRouter(&controllers.JobController{})
 	beego.AutoRouter(&controllers.TargetController{})
+	beego.AutoRouter(&controllers.AlertController{})
 
 	// /v1/
 	v1 := beego.NewNamespace("/v1", beego.NSAutoRouter(&v1.PrometheusController{}))

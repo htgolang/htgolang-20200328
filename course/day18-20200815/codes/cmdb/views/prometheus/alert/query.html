@@ -1,34 +1,23 @@
-{{ if .flash.notice }}
-<div class="row">
-    <div class="col">
-        <div class="alert alert-primary" role="alert">
-            {{ .flash.notice }}
-        </div>
-    </div>
-</div>
-{{ end }}
 <div class="row">
     <div class="col-12">
         <form class="form-inline mb-2 float-right" action="{{ urlfor `AlertController.Query` }}" method="GET">
             <div class="form-group mr-2">
-                <label class="">查询: </label>
-                <input class="form-control" name="q" placeholder="请输入查找字符串" value="{{ .form.Q }}"/>
+                <label class="">查询:</label>
+                <input class="form-control" name="q" placeholder="请输入查找字符串" value="{{ .form.Q }}" />
             </div>
             <div class="form-group mr-2">
-                <label class="">状态: </label>
-                <select class="form-control" name="status">
-                    <option value="all" {{ if eq `all` .form.Status }}selected{{ end }}>全部</option>
-                    <option value="firing" {{ if eq `firing` .form.Status }}selected{{ end }}>正在发生</option>
-                    <option value="resolved" {{ if eq `resolved` .form.Status }}selected{{ end }}>已解决</option>
+                <label class="">状态:</label>
+                <select name="status" class="form-control">
+                    <option value="all" {{ if eq .form.Status `all` }}selected{{ end }}>所有</option>
+                    <option value="firing" {{ if eq .form.Status `firing` }}selected{{ end }}>未解决</option>
+                    <option value="resolved" {{ if eq .form.Status `resolved` }}selected{{ end }}>已解决</option>
                 </select>
             </div>
             <div class="form-group mr-2">
-                <label class="">开始时间: </label>
-                <input class="form-control"  type="datetime-local" name="stime"  value="{{ .form.Stime }}" />
-            </div>
-            <div class="form-group mr-2">
-                <label class="">结束时间: </label>
-                <input class="form-control" type="datetime-local" name="etime" value="{{ .form.Etime }}" />
+                <label class="">时间:</label>
+                <input class="form-control" name="stime" type="datetime-local" value="{{ .form.Stime }}"/>
+                <label class="mr-2 ml-2">-</label>
+                <input class="form-control" name="etime" type="datetime-local" value="{{ .form.Etime }}"/>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-outline-secondary" value="查询"/>
@@ -37,64 +26,65 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12">
-        <table class="table table-sm table-striped table-hover table-bordered">
-            <thead>
+    <table class="table table-sm table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>告警时间</th>
+                <th>名称</th>
+                <th>状态</th>
+                <th>开始时间</th>
+                <th>结束时间</th>
+                <th>标签</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .page.Datas }}
                 <tr>
-                    <th>时间</th>
-                    <th>名称</th>
-                    <th>状态</th>
-                    <th>发生时间</th>
-                    <th>结束时间</th>
-                    <th>详情</th>
-                    <th>备注</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{ range .page.Datas }}
-                    <tr>
-                        <td>{{ dateformat .CreatedAt "2006-01-02 15:04:05"}}</td>
-                        <td>
-                            <a target="_blank" href="{{ .GeneratorURL}}">{{ .AlertName }}</a></td>
-                        <td>{{ .Status }}</td>
-                        <td>{{ dateformat .StartsAt "2006-01-02 15:04:05" }}</td>
+                    <td>{{ dateformat .CreatedAt "2006-01-02 15:04:05" }}</td>
+                    <td>
+                        <a href="{{ .GeneratorURL }}" target="_blank">{{ .Alertname }}</a>
+                    </td>
+                    <td>{{ .Status }}</td>
+                    <td>{{ dateformat .StartsAt "2006-01-02 15:04:05" }}</td>
+                    <td>
                         {{ if .EndsAt }}
-                            <td>{{ dateformat .EndsAt "2006-01-02 15:04:05" }}</td>
+                            {{ dateformat .EndsAt "2006-01-02 15:04:05" }}
                         {{ else }}
-                            <td>-</td>
+                            -
                         {{ end }}
-                        <td>{{ .Labels }})</td>
-                        <td>{{ .Annotations }})</td>
-                    </tr>
-                {{ else }}
-                    <tr>
-                        <td colspan="8">暂无数据</td>
-                    </tr>
-                {{ end }}
-            </tbody>
-        </table>
-    </div>
+                    </td>
+                    <td>{{ .Labels }}</td>
+                    <td>{{ .Annotations }}</td>
+                </tr>
+            {{ else }}
+                <tr>
+                    <td colspan="7">暂无数据</td>
+                </tr>
+            {{ end }}
+        </tbody>
+    </table>
 </div>
 <div class="row">
     <div class="col-12">
-        <nav class="float-right">
-            <ul class="pagination">
-                <li class="page-item {{ if eq .page.PrevPage .page.PageNum }}disabled{{ end }}">
-                    <a class="page-link" href="{{ urlfor `AlertController.Query` }}?{{ .page.QueryParams }}&pageNum={{ .page.PrevPage }}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                {{ range .page.Pages }}
-                    <li class="page-item {{ if eq . $.page.PageNum }}active{{ end }}">
-                        <a class="page-link" href="{{ urlfor `AlertController.Query` }}?{{ $.page.QueryParams }}&pageNum={{ . }}">{{ . }}</a>
+        <div class=" float-right">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item {{ if eq .page.PageNum .page.PrevPage }}disabled{{ end }}">
+                        <a class="page-link" href="{{ urlfor `AlertController.Query`}}?pageNum={{ .page.PrevPage }}&{{ .page.QueryParams }}" aria-label="Previous">
+                            <span aria-hidden="true">上一页</span>
+                        </a>
                     </li>
-                {{ end }}
-                <li class="page-item {{ if eq .page.NextPage .page.PageNum }}disabled{{ end }}">
-                    <a class="page-link" href="{{ urlfor `AlertController.Query` }}?{{ .page.QueryParams }}&pageNum={{ .page.NextPage }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
+                    {{ range .page.Pages }}
+                        <li class="page-item {{ if eq . $.page.PageNum}}active{{ end }}"><a class="page-link" href="{{ urlfor `AlertController.Query`}}?pageNum={{.}}&{{ $.page.QueryParams }}">{{ . }}</a></li>
+                    {{ end }}
+                    <li class="page-item {{ if eq .page.PageNum .page.NextPage }}disabled{{ end }}">
+                        <a class="page-link" href="{{ urlfor `AlertController.Query`}}?pageNum={{ .page.NextPage }}&{{ .page.QueryParams }}" aria-label="Next">
+                            <span aria-hidden="true">下一页</span>
+                        </a>
                 </li>
-            </ul>
-        </nav>
+                </ul>
+            </nav>
+            </div>
     </div>
 </div>

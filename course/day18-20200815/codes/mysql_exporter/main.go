@@ -2,7 +2,9 @@ package main
 
 import (
 	"database/sql"
+	"mysql_exporter/auth"
 	"mysql_exporter/collectors"
+	"mysql_exporter/config"
 	"net/http"
 
 	"github.com/prometheus/client_golang/prometheus"
@@ -12,7 +14,20 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+func initConfig() *config.ExporterConfig {
+	// 配置文件解析
+	return &config.ExporterConfig{
+		Web: &config.WebConfig{
+			Addr: ":9999",
+			Auth: &config.AuthConfig{"kk", "81dc9bdb52d04dc20036dbd8313ed055"},
+		},
+	}
+}
+
 func main() {
+
+	config := initConfig()
+
 	addr := ":9999"
 	mysqlAddr := "localhost:3306"
 	dsn := "golang:golang@2020@tcp(localhost:3306)/mysql?charset=utf8mb4&loc=PRC&parseTime=true"
@@ -54,7 +69,8 @@ func main() {
 	}))
 
 	// 注册控制器
-	http.Handle("/metrics", promhttp.Handler())
+	http.Handle("/metrics", auth.BasicAuth(config.Web.Auth, promhttp.Handler()))
+
 	// 启动web服务
 	http.ListenAndServe(addr, nil)
 }

@@ -4,6 +4,7 @@ import (
 	"cmdb/base/controllers/auth"
 	"cmdb/forms"
 	"cmdb/services"
+	"fmt"
 	"net/http"
 
 	"github.com/astaxie/beego"
@@ -160,4 +161,19 @@ func (c *TargetController) Modify() {
 	c.Data["xsrf_token"] = c.XSRFToken()
 	c.Data["jobs"] = services.JobService.Query("")
 	c.TplName = "prometheus/target/modify.html"
+}
+
+type AlertController struct {
+	prometheusController
+}
+
+func (c *AlertController) Query() {
+	form := forms.NewAlertQueryParams(c.Input())
+	if err := c.ParseForm(form); err == nil {
+		fmt.Printf("%#v\n", form.PageQueryParams)
+		fmt.Printf("%#v\n", form)
+		c.Data["page"] = services.AlertService.Query(form)
+	}
+	c.Data["form"] = form
+	c.TplName = "prometheus/alert/query.html"
 }

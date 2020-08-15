@@ -6,6 +6,9 @@ import (
 	"cmdb/forms"
 	"cmdb/services"
 	"encoding/json"
+	"fmt"
+
+	"github.com/tidwall/gjson"
 )
 
 type PrometheusController struct {
@@ -39,4 +42,17 @@ func (c *PrometheusController) Config() {
 	rt := services.JobService.QueryByUUID(uuid)
 
 	c.Data["json"] = response.NewJsonResponse(200, "ok", rt)
+}
+
+func (c *PrometheusController) Alert() {
+	fmt.Println(string(c.Ctx.Input.RequestBody))
+	gjson.GetBytes(c.Ctx.Input.RequestBody, "alerts").ForEach(func(key, alert gjson.Result) bool {
+		var form forms.AlertForm
+		if err := json.Unmarshal([]byte(alert.Raw), &form); err == nil {
+			services.AlertService.Alert(&form)
+		} else {
+			fmt.Println(err)
+		}
+		return true
+	})
 }

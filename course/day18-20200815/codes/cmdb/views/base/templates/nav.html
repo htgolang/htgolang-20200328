@@ -19,6 +19,7 @@
                   <a class="dropdown-item {{ if eq .subnav `node` }}active{{ end }}" href="{{ urlfor `NodeController.Query` }}">节点</a>
                   <a class="dropdown-item {{ if eq .subnav `job` }}active{{ end }}" href="{{ urlfor `JobController.Query` }}">任务</a>
                   <a class="dropdown-item {{ if eq .subnav `target` }}active{{ end }}" href="{{ urlfor `TargetController.Query` }}">目标</a>
+                  <a class="dropdown-item {{ if eq .subnav `alert` }}active{{ end }}" href="{{ urlfor `AlertController.Query` }}">告警</a>
                 </div>
               </li>
         </ul>

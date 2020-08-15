@@ -42,6 +42,24 @@ type Target struct {
 	Job *Job `orm:"rel(fk)" json:"-"`
 }
 
+type Alert struct {
+	ID          int    `orm:"column(id);"`
+	Fingerprint string `orm:"varchar(64);"`
+	Alertname   string `orm:"varchar(64);"`
+	Status      string `orm:"varchar(16);"`
+
+	StartsAt *time.Time `orm:""`
+	EndsAt   *time.Time `orm:"null"`
+
+	GeneratorURL string `orm:"column(generatorURL);type(text)"`
+	Labels       string `orm:"type(text)"`
+	Annotations  string `orm:"type(text)"`
+
+	CreatedAt *time.Time `orm:"auto_now_add" json:"-"`
+	UpdatedAt *time.Time `orm:"auto_now" json:"-"`
+	DeletedAt *time.Time `orm:"null" json:"-"`
+}
+
 func init() {
-	orm.RegisterModel(new(Node), new(Job), new(Target))
+	orm.RegisterModel(new(Node), new(Job), new(Target), new(Alert))
 }

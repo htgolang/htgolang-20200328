@@ -13,17 +13,10 @@ type PageQueryParams struct {
 }
 
 func (p *PageQueryParams) PageNum() int64 {
-	if p.PNum < 1 {
-		return 1
+	if p.PNum >= 1 {
+		return p.PNum
 	}
-	return p.PNum
-}
-
-func (p *PageQueryParams) PageSize() int64 {
-	if p.PSize < 1 || p.PSize > 100 {
-		return 10
-	}
-	return p.PSize
+	return 1
 }
 
 func (p *PageQueryParams) Offset() int64 {
@@ -31,9 +24,16 @@ func (p *PageQueryParams) Offset() int64 {
 	return (p.PageNum() - 1) * p.PageSize()
 }
 
+func (p *PageQueryParams) PageSize() int64 {
+	if p.PSize <= 0 || p.PSize > 100 {
+		return 3
+	}
+	return p.PSize
+}
+
 type Page struct {
-	Total    int64
 	Datas    interface{}
+	Total    int64
 	PageSize int64
 	PageNum  int64
 
@@ -44,38 +44,32 @@ type Page struct {
 	QueryParams template.URL
 }
 
-func NewPage(total int64, datas interface{}, pageSize int64, pageNum int64, inputs url.Values) *Page {
-	pages := make([]int64, 0, 11)
+func NewPage(datas interface{}, total int64, pageSize int64, pageNum int64, inputs url.Values) *Page {
 
 	maxPage := total / pageSize
 	if total%pageSize != 0 {
 		maxPage += 1
 	}
 
-	startPage := pageNum - 5
-	endPage := pageNum + 5
-	if startPage < 1 {
-		endPage -= startPage
-		startPage = 1
-	}
-
-	if endPage > maxPage {
-		startPage -= endPage - maxPage
-		endPage = maxPage
-	}
-	if startPage < 1 {
-		startPage = 1
-	}
-
 	prevPage := pageNum - 1
-	if prevPage < 1 {
+	if prevPage <= 1 {
 		prevPage = 1
 	}
 	nextPage := pageNum + 1
-	if nextPage > maxPage {
+	if nextPage >= maxPage {
 		nextPage = maxPage
 	}
+	// [5]   [1] 2 [3]
+	startPage := pageNum - 2
+	endPage := pageNum + 2
+	if startPage <= 1 {
+		startPage = 1
+	}
+	if endPage >= maxPage {
+		endPage = maxPage
+	}
 
+	pages := []int64{}
 	for page := startPage; page <= endPage; page++ {
 		pages = append(pages, page)
 	}
@@ -83,8 +77,8 @@ func NewPage(total int64, datas interface{}, pageSize int64, pageNum int64, inpu
 	inputs.Del("pageNum")
 
 	return &Page{
-		Total:       total,
 		Datas:       datas,
+		Total:       total,
 		PageSize:    pageSize,
 		PageNum:     pageNum,
 		PrevPage:    prevPage,

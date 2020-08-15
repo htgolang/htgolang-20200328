@@ -16,13 +16,12 @@ func (c *APIController) Prepare() {
 	c.EnableXSRF = false // 针对Controller关闭XSRF检查
 
 	token := fmt.Sprintf("Token %s", beego.AppConfig.DefaultString("api::token", ""))
+	bearer := fmt.Sprintf("Bearer %s", beego.AppConfig.DefaultString("api::token", ""))
 	headerToken := c.Ctx.Input.Header("Authorization")
 
-	fmt.Println(token)
-	fmt.Println(headerToken)
-
-	if token != headerToken {
+	if token != headerToken && bearer != headerToken {
 		c.Data["json"] = response.Unauthorization
+		c.ServeJSON()
 	}
 }
 

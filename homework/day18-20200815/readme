@@ -1,0 +1,4 @@
+1. mysql_exporter
+2. 告警管理
+3. 告警发送
+    email: https://godoc.org/gopkg.in/gomail.v2
