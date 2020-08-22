@@ -1,0 +1,221 @@
+1. Alartmanager告警通知
+    a. 短信 腾讯
+    b. 邮件 smtp
+
+    告警通知以分组为单位
+    告警处理以告警为单位
+2. Redis
+    a. redis基本操作
+    b. redigo使用
+    c. beego session redis
+    d. beego cache redis
+3. syncd 代码部署
+    a. 介绍&功能演示
+    b. gin介绍
+    c. 代码走读
+        认证&授权 jwt
+        编译过程
+        部署过程
+
+    目的：
+        a. 学习别人的开发思路
+        b. beego => gin
+        c. 学习看开源代码
+
+邮件和短信发送
+    邮件:
+        smtp服务器 smtp协议发送邮件
+        邮件网关 http api 邮件参数+url+认证
+
+        From:
+        To:
+        cc:
+        主题:
+        内容:
+        附件:
+
+腾讯授权码:
+wbxjliuwtlzdbehe
+
+smtp.qq.com
+
+
+SecretId: AKID44qsOsP1g5GB9qxu1ndW8CzuZIYYfr3y
+
+SecretKey:5qYz4uSnrUrJUe5GDvLUheZEcsQYQKyZ
+
+
+API url/request/response
+认证
+
+请求结构体
+结构体名称 => url
+结构体的属性 => request 参数
+
+http request => http response
+
+响应结构体
+
+
+告警发送:
+    1. api接收告警信息
+    2. json反序列化 => 告警组 告警信息
+    3. 告警组 => 发送告警
+        发送邮件
+            告警内容生成 => html/template
+            主题 => 告警名称
+            通知者 => 配置
+
+            发送:
+                smtp服务器，端口，用户名，密码
+
+        发送短信
+            短信内容 => 腾讯云 短信模板 只能传递参数
+            通知者 => 配置
+            发送：
+                SDK调用方式
+                地址，结构体/对象, 函数调用
+        通知者
+            必须通知者 => 配置（运维）
+            业务通知者 => 具体业务所属人相关 => 通知管理
+                        告警中的labels筛选通知者
+    4. 告警信息 => 告警处理
+
+template 函数调用 =》
+
+同步方式
+    需要等待执行完成后返回
+异步方式
+    不需要等待执行结束直接返回
+
+    队列
+        db
+        rabbitmq/kafka
+        redis
+        file
+
+redis:
+    key value 基于内存的存储
+
+    1. 缓存
+    2. 分布式功能, 持久化 rdp, aof 存储
+    3. 分布式锁, 原子操作 setnx
+        zookeeper/etcd
+    4. 消息队列, aof
+        rabbitmq/kafka/activmq
+
+    key value => map key value=>type
+
+    type:
+        key:
+            组成 英文字母(大小写), 数字, _
+            开头 英文字母
+            功能层级名称
+                cmdb:xxx:
+
+            cmdb:test:
+        常用的数据类型
+        key
+            判断key是否存储
+                keys *
+                exstis key
+            判断key类型
+                type key
+            设置过期时间/ 查看过期时间
+                ttl/expire
+            删除key
+                del
+        string
+            设置/更新:
+                set key value
+            获取
+                get key
+            加1(n)/减1(n)
+                incr/decr
+                incrby/decrby
+            追加
+                append
+
+            缓存:
+                1. 先从缓存中获取
+                    获取到返回
+                2. 查询/计算
+                    放入缓存 设置失效时间
+                    返回
+        list []interface{}
+            左/右
+
+            放入元素PUSH
+                 LPUSH/RPUSH
+
+            拿出元素POP
+                LPOP/RPOP
+                阻塞
+            获取元素数量
+                llen
+
+            查看所有元素
+                0 -1
+                lrange key start end
+            2 1
+
+            队列
+                先入先出
+                    LPUSH RPOP
+                    RPUSH LPOP
+
+                阻塞
+                    RPOP => 无元素返回nil
+
+            for {
+                value := rpop => value
+                if value == nil {
+                    time.Sleep(1s)
+                    continue
+                }
+                op(value)
+            }
+
+
+            for {
+                value := brpop => key value
+                if value == nil {
+                    continue
+                }
+                op(value)
+            }
+        hash map
+            key hash
+                k => v
+
+        set 集合 元素不重复
+            sadd
+            srem
+            sinmember
+            smembers
+
+            sinter
+            sdiff
+            sunion
+        zset 有序集合
+            zadd
+
+            优先级任务
+            权重 任务ID
+
+            zrange key 0 0
+            zrevrange key 0 0
+
+            zrem member
+
+
+            task:id hash
+
+        地理位置
+        bitmap
+        ...
+
+    默认无认证
+        require
+
+    go 操作
