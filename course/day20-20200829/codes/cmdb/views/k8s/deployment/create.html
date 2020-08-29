@@ -1,0 +1,50 @@
+<form action="{{ urlfor `DeploymentController.Create`}}" method="POST">
+    <input type="hidden" name="_xsrf" value="{{ .xsrf_token }}" />
+    <div class="form-group row">
+        <label class="col-form-label col-2">命名空间</label>
+        <div class="col-6">
+            <select name="namespace" class="form-control">
+                {{ range .namespaces }}
+                    <option value="{{ .Name }}" {{ if eq .Name $.form.Namespace }} selected=selected {{ end }}>{{ .Name }}</option>
+                {{ else }}
+                    <option value="0">暂无命名空间可用</option>
+                {{ end }}
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-2">名称</label>
+        <div class="col-6">
+            <input type="text" class="form-control" value="{{ .form.Name }}" name="name"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-2">镜像</label>
+        <div class="col-6">
+            <input type="text" class="form-control" name="image" value="{{ .form.Image }}" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-2">标签</label>
+        <div class="col-6">
+            <textarea class="form-control" name="labels">{{ .form.Labels }}</textarea>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+               请每行输入一个标签, 格式为"标签名:标签值", 例如: "env: test"
+            </small>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-2">端口</label>
+        <div class="col-6">
+            <textarea class="form-control" name="ports">{{ .form.Ports }}</textarea>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                请每行输入一个暴露端口, 格式为"协议,端口号,名称", 例如: "TCP,80,HTTP"
+             </small>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-6 offset-2">
+            <input type="submit" class="btn btn-info" value="创建"/>
+        </div>
+    </div>
+</form>

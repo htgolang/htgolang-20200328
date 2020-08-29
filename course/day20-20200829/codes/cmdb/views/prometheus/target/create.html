@@ -1,0 +1,38 @@
+<form action="{{ urlfor `TargetController.Create`}}" method="POST">
+    <input type="hidden" name="_xsrf" value="{{ .xsrf_token }}" />
+    <div class="form-group row">
+        <label class="col-form-label col-2">任务</label>
+        <div class="col-6">
+            <select name="job" class="form-control">
+                {{ range .jobs }}
+                    <option value="{{ .ID }}">{{ .Key }}({{ .Node.Hostname }})</option>
+                {{ else }}
+                    <option value="0">暂无任务可用</option>
+                {{ end }}
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-2">名称</label>
+        <div class="col-6">
+            <input type="text" class="form-control" value="{{ .form.Name }}" name="name"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-2">地址</label>
+        <div class="col-6">
+            <input type="text" class="form-control" value="{{ .form.Addr }}" name="addr"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-form-label col-2">备注</label>
+        <div class="col-6">
+            <textarea class="form-control" name="remark">{{ .form.Remark }}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-6 offset-2">
+            <input type="submit" class="btn btn-info" value="创建"/>
+        </div>
+    </div>
+</form>

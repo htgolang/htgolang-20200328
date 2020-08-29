@@ -1,0 +1,21 @@
+1. k8s搭建
+    kubeadm
+
+    kubeadm init \
+    --apiserver-advertise-address 10.0.0.10 \
+    --image-repository registry.aliyuncs.com/google_containers \
+    --kubernetes-version v1.18.6 \
+    --service-cidr 10.1.0.0/16 \
+    --pod-network-cidr 10.244.0.0/16
+
+    kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+
+    discovery-token-ca-cert-hash: https://kubernetes.io/zh/docs/reference/setup-tools/kubeadm/kubeadm-join/
+    /api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
+2. k8s client介绍
+3. k8s管理
+    deployment
+    service
+    ingress
+4. docker

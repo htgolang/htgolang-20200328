@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-1">
+        <a href="{{ urlfor `DeploymentController.Create`}}" class="btn btn-primary">新建</a>
+    </div>
+    <div class="col-11">
+        <form class="form-inline mb-2 float-right" action="{{ urlfor `DeploymentController.Query` }}" method="GET">
+            <div class="form-group mr-2">
+                <label class="sr-only">查询:</label>
+                <input class="form-control" name="q" placeholder="请输入查找字符串" value="{{ .q }}" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-outline-secondary" value="查询"/>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-sm table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>命名空间</th>
+                <th>名字</th>
+                <th>副本(可用/总共)</th>
+                <th>标签</th>
+                <th>选择器</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .deployments }}
+                <tr>
+                    <td>{{ .Namespace }}</td>
+                    <td>{{ .Name }}</td>
+                    <td>{{ .Status.AvailableReplicas }}/ {{ .Status.Replicas }}</td>
+                    <td>
+                        <ul>
+                            {{ range $k, $v := .Labels }}
+                                <span class="badge badge-success">{{ $k }}={{ $v }}</span>
+                            {{ end }}
+                        </ul>
+                    </td>
+                    <td>
+                            {{ range $k, $v := .Spec.Selector.MatchLabels }}
+                                <span class="badge badge-success">{{ $k }}={{ $v }}</span>
+                            {{ end }}
+                    </td>
+                    <td>{{ .CreationTimestamp.Format "2006-01-02 15:04:05" }}</td>
+                    <td>
+                        <a href="{{ urlfor `DeploymentController.Modify` }}?name={{ .Name }}&namespace={{ .Namespace }}" class="btn btn-sm btn-warning">编辑</a>
+                        <a href="{{ urlfor `DeploymentController.Delete` }}?name={{ .Name }}&namespace={{ .Namespace }}" class="btn btn-sm btn-danger">删除</a>
+                    </td>
+                </tr>
+            {{ else }}
+                <tr>
+                    <td colspan="5">暂无数据</td>
+                </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</div>

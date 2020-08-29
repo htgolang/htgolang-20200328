@@ -2246,3 +2246,38 @@
 2020/08/15 19:25:17.877 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      993.5µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
 2020/08/15 19:25:21.222 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    38.0166ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
 2020/08/15 19:25:23.885 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     4.5403ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:25:41.824 [I] [asm_amd64.s:1357]  https server Running on https://:443
+2020/08/15 19:25:41.992 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:62370: remote error: tls: unknown certificate
+2020/08/15 19:25:42.020 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    20.0033ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:48.228 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    20.0034ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:51.873 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    33.0032ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:53.553 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    18.0008ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:53.893 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     3.0024ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:25:54.072 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    17.0017ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:55.389 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    17.0004ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:56.228 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    12.9978ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:56.759 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    16.9995ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:59.481 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     25.017ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:25:59.898 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    12.0024ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:26:00.914 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    16.0018ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:26:01.950 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      18.01ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:26:03.340 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    20.0006ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:26:04.324 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    12.9995ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:26:05.073 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    22.9946ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/15 19:26:08.886 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     5.0074ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:26:23.886 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     5.9979ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:26:38.888 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     6.0002ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:26:53.883 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|          3ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:27:08.888 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     8.0045ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:27:23.900 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|    10.0064ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:27:38.893 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     7.0023ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:27:53.885 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     3.9961ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:28:08.887 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     5.0009ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:28:23.886 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     4.9994ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:28:38.886 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     6.0199ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:28:51.117 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     3.0049ms|   match|[46m POST    [0m /v1/prometheus/alert   r:/v1/prometheus/alert/*
+2020/08/15 19:28:53.886 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     4.9644ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:29:08.888 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     9.0019ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:29:23.885 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     5.0048ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:29:38.889 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     5.9983ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/08/15 19:29:50.889 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|    19.9998ms|   match|[46m POST    [0m /v1/prometheus/alert   r:/v1/prometheus/alert/*

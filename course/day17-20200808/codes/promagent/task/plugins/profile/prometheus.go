@@ -72,5 +72,6 @@ func writePrometheus(tpl, path string, jobs []*Job) error {
 	if err := encoder.Encode(config); err != nil {
 		return err
 	}
+	// reload prometheus
 	return nil
 }

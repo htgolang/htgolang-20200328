@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: cmdb
+    labels:
+        env: test
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: cmdb
+            env: test
+    template:
+        metadata:
+            labels:
+                app: cmdb
+                env: test
+        spec:
+            containers:
+            - name: web
+              image: nginx:latest
+              ports:
+              - name: http
+                containerPort: 80
+                protocol: TCP
+            - name: redis
+              image: redis:latest
+              ports:
+                - name: redis
+                  containerPort: 6379
+                  protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: cmdb-service
+    labels:
+        env: test
+spec:
+    type: NodePort
+    selector:
+        env: test
+        app: cmdb
+    ports:
+    - name: http
+      port: 80
+      protocol: TCP
+    - name: redis
+      port: 8888
+      targetPort: 6379

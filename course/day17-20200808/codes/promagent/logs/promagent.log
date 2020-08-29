@@ -1,0 +1,5 @@
+{"level":"info","msg":"promagent is running","pid":16600,"time":"2020-08-09T09:36:31+08:00"}
+{"level":"info","msg":"task is running...","task":"profile","time":"2020-08-09T09:36:31+08:00"}
+{"level":"info","msg":"task is running...","task":"register","time":"2020-08-09T09:36:31+08:00"}
+{"error":"Get https://localhost/v1/prometheus/config?uuid=e0c660e6-e949-4163-8d90-332e91fa4418: dial tcp [::1]:443: connectex: No connection could be made because the target machine actively refused it.","level":"error","msg":"error profile","time":"2020-08-09T09:42:12+08:00"}
+{"level":"info","msg":"promagent stopped","time":"2020-08-09T09:42:23+08:00"}
