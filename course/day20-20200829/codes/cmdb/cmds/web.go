@@ -6,8 +6,6 @@ import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	"github.com/spf13/cobra"
-
-	"cmdb/config"
 )
 
 var webCommand = &cobra.Command{
@@ -21,8 +19,6 @@ var webCommand = &cobra.Command{
 		if !verbose {
 			beego.BeeLogger.DelLogger("console")
 		}
-
-		config.Init("redis", `{"key":"cmdb:cache","conn":"127.0.0.1:6379","dbNum":"0","password":"jKAFXjnE5f8kwFG3kFpcetPTlQHuIzXb"}`)
 
 		orm.Debug = verbose
 		dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/cmdb?charset=utf8mb4&loc=PRC&parseTime=true",

@@ -1,0 +1,54 @@
+{{ if .flash.notice }}
+<div class="row">
+    <div class="col">
+        <div class="alert alert-primary" role="alert">
+            {{ .flash.notice }}
+        </div>
+    </div>
+</div>
+{{ end }}
+<div class="row">
+    <div class="col-12">
+        <form class="form-inline mb-2 float-right" action="{{ urlfor `NodeController.Query` }}" method="GET">
+            <div class="form-group mr-2">
+                <label class="sr-only">查询:</label>
+                <input class="form-control" name="q" placeholder="请输入查找字符串" value="{{ .q }}" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-outline-secondary" value="查询"/>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-sm table-striped table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>主机名</th>
+                <th>UUID</th>
+                <th>地址</th>
+                <th>创建时间</th>
+                <th>更新时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ range .nodes }}
+                <tr>
+                    <td>{{ .Hostname }}</td>
+                    <td>{{ .UUID }}</td>
+                    <td>{{ .Addr }}</td>
+                    <td>{{ dateformat .CreatedAt "2006-01-02 15:04:05" }}</td>
+                    <td>{{ dateformat .UpdatedAt "2006-01-02 15:04:05" }}</td>
+                    <td>
+                        <a href="{{ urlfor `NodeController.Delete` }}?pk={{ .ID }}" class="btn btn-sm btn-danger">删除</a>
+                    </td>
+                </tr>
+            {{ else }}
+            <tr>
+                <td colspan="6">暂无数据</td>
+            </tr>
+            {{ end }}
+        </tbody>
+    </table>
+</div>

@@ -26,7 +26,7 @@ func (p *PageQueryParams) Offset() int64 {
 
 func (p *PageQueryParams) PageSize() int64 {
 	if p.PSize <= 0 || p.PSize > 100 {
-		return 3
+		return 10
 	}
 	return p.PSize
 }

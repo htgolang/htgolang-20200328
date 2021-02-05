@@ -4355,3 +4355,116 @@
 2020/08/29 18:58:37.676 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    74.9989ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
 2020/08/29 18:58:40.109 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    66.9939ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
 2020/08/29 18:58:41.749 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    77.9982ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:03:23.392 [I] [asm_amd64.s:1357]  https server Running on https://:443
+2020/08/29 19:03:23.414 [server.go:3054]  [HTTP] http: TLS handshake error from 127.0.0.1:65184: remote error: tls: unknown certificate
+2020/08/29 19:03:27.923 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:65191: remote error: tls: unknown certificate
+2020/08/29 19:03:28.022 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    95.0003ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:03:28.072 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/layout.css
+2020/08/29 19:03:28.075 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.0008ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/08/29 19:03:28.075 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.0008ms|   match|[44m GET     [0m /static/components/jquery/jquery-3.5.1.min.js
+2020/08/29 19:03:28.076 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     4.0003ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/js/bootstrap.bundle.min.js
+2020/08/29 19:03:33.105 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    88.0131ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:03:35.450 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    13.0221ms|   match|[44m GET     [0m /deployment/delete   r:/deployment/delete/*
+2020/08/29 19:03:35.612 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    152.064ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:03:46.316 [D] [server.go:2802]  |            ::1|[42m 200 [0m|   165.0042ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/29 19:03:51.122 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     82.001ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/29 19:03:53.190 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    89.9988ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/08/29 19:03:54.387 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     76.001ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:05:22.803 [D] [server.go:2802]  |            ::1|[42m 200 [0m|   101.9912ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:05:23.878 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    53.9947ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:05:26.115 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    95.9997ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:05:27.593 [D] [server.go:2802]  |            ::1|[42m 200 [0m|   170.1284ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/08/29 19:05:28.477 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     78.001ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:38:08.574 [I] [asm_amd64.s:1357]  https server Running on https://:443
+2020/09/03 22:38:12.310 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:50909: remote error: tls: unknown certificate
+2020/09/03 22:38:14.425 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:50921: remote error: tls: unknown certificate
+2020/09/03 22:38:18.221 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:50934: remote error: tls: unknown certificate
+2020/09/03 22:38:18.222 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:50933: remote error: tls: unknown certificate
+2020/09/03 22:38:18.225 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:50935: remote error: tls: unknown certificate
+2020/09/03 22:38:18.228 [D] [server.go:2802]  |            ::1|[47m 302 [0m|          1ms|   match|[44m GET     [0m /     r:/
+2020/09/03 22:38:18.233 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.9983ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/09/03 22:38:18.267 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     4.0027ms|   match|[44m GET     [0m /static/css/login.css
+2020/09/03 22:38:18.444 [D] [server.go:2802]  |            ::1|[42m 200 [0m|   184.0023ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/09/03 22:38:18.476 [D] [server.go:2802]  |            ::1|[47m 302 [0m|      994.9µs|   match|[44m GET     [0m /     r:/
+2020/09/03 22:38:18.486 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9979ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/09/03 22:38:18.511 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/login.css
+2020/09/03 22:38:18.514 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9968ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/09/03 22:38:18.601 [D] [server.go:2802]  |            ::1|[43m 404 [0m|      2.002ms| nomatch|[44m GET     [0m /favicon.ico
+2020/09/03 22:38:25.728 [I] [auth.go:48]  用户认证成功: admin 
+2020/09/03 22:38:25.729 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    103.009ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/09/03 22:38:25.763 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    31.9999ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/09/03 22:38:25.792 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     9.0034ms|   match|[44m GET     [0m /static/css/layout.css
+2020/09/03 22:38:26.070 [D] [server.go:2802]  |            ::1|[42m 200 [0m|   287.5377ms|   match|[44m GET     [0m /static/components/jquery/jquery-3.5.1.min.js
+2020/09/03 22:38:26.131 [D] [server.go:2802]  |            ::1|[42m 200 [0m|   348.5335ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/js/bootstrap.bundle.min.js
+2020/09/03 22:38:29.268 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    33.0009ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/09/03 22:38:30.756 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    36.0001ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/09/03 22:38:57.686 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    29.9995ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/09/03 22:39:23.952 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     3.9969ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:39:38.880 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     1.0054ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:39:39.180 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    51.0025ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/09/03 22:39:49.708 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    28.9984ms|   match|[44m GET     [0m /node/query   r:/node/query/*
+2020/09/03 22:39:51.107 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    32.9995ms|   match|[44m GET     [0m /job/query   r:/job/query/*
+2020/09/03 22:39:52.690 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    49.5431ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/09/03 22:39:53.879 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     1.0095ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:39:54.413 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:51054: remote error: tls: unknown certificate
+2020/09/03 22:39:54.446 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    30.0177ms|   match|[44m GET     [0m /target/query   r:/target/query/*
+2020/09/03 22:39:58.822 [D] [server.go:2802]  |            ::1|[42m 200 [0m|   131.9992ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:40:01.557 [D] [server.go:2802]  |            ::1|[47m 302 [0m|           0s|   match|[44m GET     [0m /auth/logout   r:/auth/logout/*
+2020/09/03 22:40:01.564 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     2.9958ms|   match|[44m GET     [0m /auth/login   r:/auth/login/*
+2020/09/03 22:40:01.592 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.0082ms|   match|[44m GET     [0m /static/css/login.css
+2020/09/03 22:40:08.879 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     2.0023ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:40:21.657 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:51083: remote error: tls: unknown certificate
+2020/09/03 22:40:21.748 [I] [auth.go:48]  用户认证成功: admin 
+2020/09/03 22:40:21.748 [D] [server.go:2802]  |            ::1|[47m 302 [0m|    87.9958ms|   match|[46m POST    [0m /auth/login   r:/auth/login/*
+2020/09/03 22:40:21.779 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    27.9963ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/09/03 22:40:21.792 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/layout.css
+2020/09/03 22:40:21.797 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      995.7µs|   match|[44m GET     [0m /static/components/jquery/jquery-3.5.1.min.js
+2020/09/03 22:40:21.797 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      995.7µs|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/js/bootstrap.bundle.min.js
+2020/09/03 22:40:23.879 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|      997.2µs|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:40:32.985 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:51096: remote error: tls: unknown certificate
+2020/09/03 22:40:33.032 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      43.02ms|   match|[44m GET     [0m /home/index   r:/home/index/*
+2020/09/03 22:40:33.049 [D] [server.go:2802]  |            ::1|[42m 200 [0m|           0s|   match|[44m GET     [0m /static/css/layout.css
+2020/09/03 22:40:34.089 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    23.9991ms|   match|[44m GET     [0m /node/query   r:/node/query/*
+2020/09/03 22:40:38.879 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|        998µs|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:40:47.288 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|   1.5320078s|   match|[46m POST    [0m /v1/prometheus/alert   r:/v1/prometheus/alert/*
+2020/09/03 22:40:53.879 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     1.9846ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:40:56.397 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:51118: remote error: tls: unknown certificate
+2020/09/03 22:40:56.423 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    21.9871ms|   match|[44m GET     [0m /job/query   r:/job/query/*
+2020/09/03 22:41:04.581 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:51126: remote error: tls: unknown certificate
+2020/09/03 22:41:04.613 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    28.9908ms|   match|[44m GET     [0m /target/query   r:/target/query/*
+2020/09/03 22:41:08.880 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|      1.995ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:41:17.444 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:51139: remote error: tls: unknown certificate
+2020/09/03 22:41:17.480 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    31.9962ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/09/03 22:41:23.879 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     2.0018ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:41:38.888 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     9.0053ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:41:53.951 [I] [asm_amd64.s:1357]  https server Running on https://:443
+2020/09/03 22:41:54.066 [server.go:3054]  [HTTP] http: TLS handshake error from [::1]:51195: remote error: tls: unknown certificate
+2020/09/03 22:41:54.101 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    32.0041ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/09/03 22:41:54.116 [server.go:3054]  [HTTP] http: TLS handshake error from 127.0.0.1:51198: remote error: tls: unknown certificate
+2020/09/03 22:41:54.125 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     1.9999ms|   match|[44m GET     [0m /static/css/layout.css
+2020/09/03 22:41:54.128 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     4.9983ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/css/bootstrap.min.css
+2020/09/03 22:41:54.128 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     4.9983ms|   match|[44m GET     [0m /static/components/jquery/jquery-3.5.1.min.js
+2020/09/03 22:41:54.128 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     3.9984ms|   match|[44m GET     [0m /static/components/bootstrap-4.5.0/js/bootstrap.bundle.min.js
+2020/09/03 22:42:08.881 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|      998.5µs|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:42:10.502 [D] [server.go:2802]  |            ::1|[42m 200 [0m|      48.01ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:42:23.887 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     6.9988ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:42:25.679 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    36.9985ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:42:27.423 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    29.9917ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:42:28.569 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    33.0025ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:42:29.621 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     21.033ms|   match|[44m GET     [0m /deployment/modify   r:/deployment/modify/*
+2020/09/03 22:42:31.417 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    31.0615ms|   match|[44m GET     [0m /user/query   r:/user/query/*
+2020/09/03 22:42:33.186 [D] [server.go:2802]  |            ::1|[42m 200 [0m|     24.996ms|   match|[44m GET     [0m /node/query   r:/node/query/*
+2020/09/03 22:42:34.447 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    24.9985ms|   match|[44m GET     [0m /node/query   r:/node/query/*
+2020/09/03 22:42:36.256 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    23.9965ms|   match|[44m GET     [0m /job/query   r:/job/query/*
+2020/09/03 22:42:36.978 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    25.0034ms|   match|[44m GET     [0m /job/create   r:/job/create/*
+2020/09/03 22:42:38.461 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    36.9989ms|   match|[44m GET     [0m /alert/query   r:/alert/query/*
+2020/09/03 22:42:38.880 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     1.9987ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:42:53.880 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     1.9873ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:43:01.010 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    33.9979ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:43:04.335 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    31.0061ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:43:05.469 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    75.0273ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:43:06.258 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    34.0359ms|   match|[44m GET     [0m /deployment/query   r:/deployment/query/*
+2020/09/03 22:43:07.439 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    23.0251ms|   match|[44m GET     [0m /node/query   r:/node/query/*
+2020/09/03 22:43:08.397 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    29.0305ms|   match|[44m GET     [0m /target/query   r:/target/query/*
+2020/09/03 22:43:08.880 [D] [server.go:2802]  |       10.0.0.2|[42m 200 [0m|     1.9784ms|   match|[44m GET     [0m /metrics   r:/metrics
+2020/09/03 22:43:09.838 [D] [server.go:2802]  |            ::1|[42m 200 [0m|    21.9956ms|   match|[44m GET     [0m /node/query   r:/node/query/*

@@ -19,7 +19,7 @@ func initConfig() *config.ExporterConfig {
 	return &config.ExporterConfig{
 		Web: &config.WebConfig{
 			Addr: ":9999",
-			Auth: &config.AuthConfig{"kk", "81dc9bdb52d04dc20036dbd8313ed055"},
+			Auth: &config.AuthConfig{"kk", "2f64f20f7ecd620286e3cd1f6f821122"},
 		},
 	}
 }
